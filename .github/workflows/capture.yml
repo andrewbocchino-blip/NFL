@@ -1,0 +1,53 @@
+name: capture-odds
+
+# The time-critical job. nflverse ships CLOSING lines only, so the opener
+# record cannot be backfilled — every missed window is lost permanently.
+# This is the one workflow that must be running before Week 1 lines post.
+
+on:
+  schedule:
+    # every 3h Tue-Sun, plus tighter cadence around Sunday kickoff (UTC)
+    - cron: '0 */3 * * 2,3,4,5,6'
+    - cron: '0,30 15,16,17 * * 0'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: capture-odds
+  cancel-in-progress: false
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Verify odds math before spending credits
+        run: python nfl_lines.py selftest
+
+      - name: Capture board
+        env:
+          ODDS_PROXY: ${{ secrets.ODDS_PROXY }}
+          ODDS_REGION: us
+        run: python nfl_lines.py snapshot
+
+      - name: Screen for off-market prices (PAPER ONLY)
+        env:
+          ODDS_PROXY: ${{ secrets.ODDS_PROXY }}
+        run: python nfl_lines.py screen --log || true
+
+      - name: Commit
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/
+          git diff --staged --quiet && echo "no line movement to record" && exit 0
+          git commit -m "capture: $(date -u +%Y-%m-%dT%H:%MZ)"
+          git pull --rebase --autostash
+          git push
