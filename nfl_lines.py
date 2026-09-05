@@ -44,6 +44,7 @@ import os
 import statistics
 import sys
 import time
+import urllib.error
 import urllib.parse
 import urllib.request
 
@@ -52,6 +53,13 @@ SNAP_PATH = "data/nfl_odds_snapshots.jsonl"
 HITS_PATH = "data/nfl_screen_hits.jsonl"
 PROXY = os.environ.get("ODDS_PROXY", "").rstrip("/")
 REGION = os.environ.get("ODDS_REGION", "us")
+
+# Route the worker exposes for odds. The deployed worker self-documents at its
+# base URL and routes odds under /odds/{sport}/odds — NOT the raw Odds API
+# path /v4/sports/{sport}/odds. Getting this wrong 404s every capture, so it
+# is configurable rather than hardcoded.
+ODDS_PATH = os.environ.get("ODDS_PATH_TEMPLATE", "/odds/{sport}/odds")
+QUOTA_PATH = os.environ.get("ODDS_QUOTA_PATH", "/quota")
 
 
 # ---------------------------------------------------------------------------
@@ -118,18 +126,40 @@ def fetch_board(markets: str = "spreads,totals,h2h") -> list[dict]:
     if not PROXY:
         raise SystemExit(
             "ODDS_PROXY is not set. Point it at the Cloudflare worker, e.g.\n"
-            "  export ODDS_PROXY=https://<worker>.workers.dev\n"
-            "The worker passes sport keys through, so no worker change is needed "
-            "for NFL — it draws on the existing key and credit pool.")
+            "  export ODDS_PROXY=https://mlb.andrew-bocchino.workers.dev\n"
+            "The worker holds the API key. No key belongs in this repo.")
     q = urllib.parse.urlencode({"regions": REGION, "markets": markets,
                                 "oddsFormat": "american"})
-    url = f"{PROXY}/v4/sports/{SPORT}/odds?{q}"
+    url = f"{PROXY}{ODDS_PATH.format(sport=SPORT)}?{q}"
     req = urllib.request.Request(url, headers={"User-Agent": "nfl-model/2"})
-    with urllib.request.urlopen(req, timeout=60) as resp:
-        remaining = resp.headers.get("x-requests-remaining")
-        body = json.loads(resp.read().decode("utf8"))
+    try:
+        with urllib.request.urlopen(req, timeout=60) as resp:
+            remaining = resp.headers.get("x-requests-remaining")
+            body = json.loads(resp.read().decode("utf8"))
+    except urllib.error.HTTPError as e:
+        if e.code == 404:
+            raise SystemExit(
+                f"404 from the worker at:\n  {url}\n\n"
+                f"The worker routes odds under '{ODDS_PATH.format(sport=SPORT)}'. "
+                f"If yours differs, set ODDS_PATH_TEMPLATE, e.g.\n"
+                f"  export ODDS_PATH_TEMPLATE='/v4/sports/{{sport}}/odds'\n"
+                f"Open the worker's base URL in a browser — it lists its own "
+                f"endpoints.") from e
+        if e.code in (401, 403):
+            raise SystemExit(
+                f"{e.code} from the worker. The API key is missing or rejected "
+                f"inside Cloudflare. Check the worker's Settings -> Variables "
+                f"and Secrets. The key does NOT go in this repo.") from e
+        raise
+    if not isinstance(body, list):
+        raise SystemExit(
+            f"Expected a list of games, got {type(body).__name__}. The worker "
+            f"may not pass this sport through. Response head: {str(body)[:300]}")
     if remaining:
         print(f"[nfl_lines] Odds API credits remaining: {remaining}", file=sys.stderr)
+    if not body:
+        print("[nfl_lines] Worker returned an empty list — no NFL games priced "
+              "right now, or the sport key is not passed through.", file=sys.stderr)
     return body
 
 
@@ -204,6 +234,16 @@ def snapshot(markets: str = "spreads,totals,h2h", changes_only: bool = True) -> 
     print(f"[nfl_lines] wrote {n} changed rows ({skipped} unchanged) "
           f"to {SNAP_PATH} at {ts}")
     return n
+
+
+def quota() -> dict:
+    """Credits remaining. The worker exposes this and it costs nothing."""
+    if not PROXY:
+        raise SystemExit("ODDS_PROXY is not set.")
+    req = urllib.request.Request(f"{PROXY}{QUOTA_PATH}",
+                                 headers={"User-Agent": "nfl-model/2"})
+    with urllib.request.urlopen(req, timeout=30) as resp:
+        return json.loads(resp.read().decode("utf8"))
 
 
 def load_snapshots(path: str = SNAP_PATH) -> list[dict]:
@@ -384,7 +424,8 @@ def selftest() -> int:
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("cmd", choices=["selftest", "snapshot", "screen", "grade-clv"])
+    ap.add_argument("cmd", choices=["selftest", "quota", "snapshot", "screen",
+                                    "grade-clv"])
     ap.add_argument("--min-ev", type=float, default=0.02)
     ap.add_argument("--min-books", type=int, default=4)
     ap.add_argument("--log", action="store_true",
@@ -393,6 +434,9 @@ def main():
 
     if args.cmd == "selftest":
         sys.exit(selftest())
+    if args.cmd == "quota":
+        print(json.dumps(quota(), indent=2))
+        return
     if args.cmd == "snapshot":
         snapshot()
         return
