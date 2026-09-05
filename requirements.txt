@@ -1,0 +1,5 @@
+# nfl_model / nfl_lines / nfl_baselines need only the stdlib.
+# pandas + pyarrow are required solely to read nflverse play-by-play parquet,
+# i.e. by nfl_fit.py and nfl_backtest.py.
+pandas>=2.0
+pyarrow>=14.0

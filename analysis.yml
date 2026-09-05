@@ -1,0 +1,50 @@
+name: analysis
+
+# Manual only. Downloads ~160MB of nflverse parquet and takes several
+# minutes, so it does not belong on a push trigger. Run it when the model
+# or the fitted parameters change, or after a season ends.
+
+on:
+  workflow_dispatch:
+    inputs:
+      train_seasons:
+        description: 'Training seasons (space separated)'
+        default: '2018 2019 2020 2021 2022 2023'
+      test_seasons:
+        description: 'Backtest seasons (space separated)'
+        default: '2018 2019 2020 2021 2022 2023 2024 2025'
+
+permissions:
+  contents: write
+
+jobs:
+  analysis:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Naive baselines (the floor)
+        run: python nfl_baselines.py --min-season 2016
+
+      - name: Fit parameters on the training window
+        run: python nfl_fit.py --train ${{ inputs.train_seasons }}
+
+      - name: Backtest on the full window
+        run: python nfl_backtest.py --seasons ${{ inputs.test_seasons }}
+
+      - name: Commit regenerated artifacts
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/
+          git diff --staged --quiet && echo "no change" && exit 0
+          git commit -m "analysis: regenerate baselines, fit, backtest"
+          git push
