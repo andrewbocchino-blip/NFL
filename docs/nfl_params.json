@@ -1,0 +1,19 @@
+{
+  "PARAM_FIT_WINDOW": "2018-2023 train",
+  "HOME_FIELD": 1.68,
+  "EPA_TO_POINTS": 15.38,
+  "PROJ_SHRINK": 1.0,
+  "train_seasons": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023
+  ],
+  "n_train": 1164,
+  "window": 10,
+  "prior_weight": 0.0,
+  "resid_slope": 0.0942,
+  "resid_t": 1.57
+}
