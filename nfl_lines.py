@@ -287,7 +287,14 @@ def consensus(rows: list[dict], min_books: int = 4) -> dict:
         except (ValueError, TypeError):
             continue
         for o, p in zip(outs, nv):
-            fair.setdefault((gid, mkt, o["outcome"]), []).append(
+            # KEY INCLUDES POINT. Falcons +3.0 and Falcons +3.5 are DIFFERENT
+            # BETS and must never share a consensus. Pooling them values the
+            # half point as if it were a mispriced book, and on a spread
+            # straddling 3 — where 14.8% of NFL margins land — that invents
+            # several points of EV out of nothing. This screen's whole claim
+            # is that it needs no predictive skill; comparing across numbers
+            # smuggles in a key-number model and breaks that claim.
+            fair.setdefault((gid, mkt, o["outcome"], o["point"]), []).append(
                 {"book": book, "fair": p, "price": o["price"], "point": o["point"]})
 
     out = {}
@@ -307,7 +314,7 @@ def screen(rows: list[dict], min_ev: float = 0.02, min_books: int = 4) -> list[d
     """
     cons = consensus(rows, min_books=min_books)
     hits = []
-    for (gid, mkt, outcome), c in cons.items():
+    for (gid, mkt, outcome, point), c in cons.items():
         for e in c["entries"]:
             ev = ev_at(e["price"], c["consensus"])
             if ev >= min_ev:
@@ -339,7 +346,7 @@ def grade_clv(rows: list[dict], hits_log: str = HITS_PATH) -> dict:
     beat = n = 0
     deltas = []
     for h in hits:
-        c = close.get((h["game_id"], h["market"], h["outcome"]))
+        c = close.get((h["game_id"], h["market"], h["outcome"], h.get("point")))
         if not c:
             continue
         n += 1
@@ -413,6 +420,24 @@ def selftest() -> int:
     for h in hits:
         print(f"        {h['book']} {h['outcome']} {h['price']:+.0f} vs fair "
               f"{h['fair_price']:+.0f}  EV {h['ev']:+.2%} ({h['n_books']} books)")
+
+    print("screen must NOT pool different spreads:")
+    mixed = []
+    for bk, pt, fav, dog in [("a", 3.0, -115, -105), ("b", 3.0, -115, -105),
+                             ("c", 3.0, -115, -105), ("d", 3.0, -115, -105),
+                             ("e", 3.5, -105, -115), ("f", 3.5, -105, -115),
+                             ("g", 3.5, -105, -115), ("h", 3.5, -105, -115)]:
+        for name, price, p in (("Dog", dog, pt), ("Fav", fav, -pt)):
+            mixed.append({"captured_at": "2026-01-01T00:00:00Z", "game_id": "g2",
+                          "commence_time": "", "home_team": "Fav", "away_team": "Dog",
+                          "book": bk, "book_update": "", "market": "spreads",
+                          "outcome": name, "point": p, "price": price})
+    h_mixed = screen(mixed, min_ev=0.02)
+    check("no phantom EV from mixing +3.0 and +3.5", len(h_mixed) == 0)
+    if h_mixed:
+        for h in h_mixed:
+            print(f"        LEAK: {h['book']} {h['outcome']} @ {h['point']:+.1f} "
+                  f"EV {h['ev']:+.2%}")
 
     print()
     if fails:
