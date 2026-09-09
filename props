@@ -1,0 +1,71 @@
+name: capture-props
+
+# SEPARATE from capture-odds because the cost profile is completely
+# different. Game lines are one bulk call. Props bill per event per market
+# per region: 16 games x 5 markets = ~80 credits per sweep.
+#
+#   this schedule (2x/day Thu-Sun)  ~= 5,800 credits/season   FITS
+#   every 3h Tue-Sun                ~= 45,000 credits/season  DOES NOT
+#
+# nfl_props.py also enforces MAX_CREDITS_PER_RUN as a hard stop, so a
+# schedule change cannot silently drain the plan.
+
+on:
+  schedule:
+    - cron: '0 14,22 * * 4,5,6,0'
+  workflow_dispatch:
+    inputs:
+      markets:
+        description: 'Prop markets (space separated)'
+        default: 'player_pass_yds player_rush_yds player_reception_yds player_receptions player_anytime_td'
+      max_events:
+        description: 'Cap events this run (blank = all)'
+        default: ''
+
+permissions:
+  contents: write
+
+concurrency:
+  group: capture-props
+  cancel-in-progress: false
+
+jobs:
+  props:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Verify prop math before spending credits
+        run: python nfl_props.py selftest
+
+      - name: Show what this sweep will cost
+        env:
+          ODDS_PROXY: ${{ secrets.ODDS_PROXY }}
+        run: python nfl_props.py budget
+
+      - name: Capture props
+        env:
+          ODDS_PROXY: ${{ secrets.ODDS_PROXY }}
+          MAX_CREDITS_PER_RUN: '120'
+        run: |
+          python nfl_props.py capture \
+            ${{ inputs.markets && format('--markets {0}', inputs.markets) || '' }} \
+            ${{ inputs.max_events && format('--max-events {0}', inputs.max_events) || '' }}
+
+      - name: Screen props (PAPER ONLY)
+        env:
+          ODDS_PROXY: ${{ secrets.ODDS_PROXY }}
+        run: python nfl_props.py screen --log || true
+
+      - name: Commit
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/
+          git diff --staged --quiet && echo "no movement to record" && exit 0
+          git commit -m "props: $(date -u +%Y-%m-%dT%H:%MZ)"
+          git pull --rebase --autostash
+          git push
