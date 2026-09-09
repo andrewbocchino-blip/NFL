@@ -42,11 +42,22 @@ jobs:
           ODDS_PROXY: ${{ secrets.ODDS_PROXY }}
         run: python nfl_lines.py screen --log || true
 
+      # Publishes docs/PICKS.md from prices already on disk. Costs no credits.
+      # Guarded: the capture above is the irreplaceable part, so a missing or
+      # broken board must never block the snapshot from being committed.
+      - name: Refresh board
+        run: |
+          if [ -f nfl_board.py ]; then
+            python nfl_board.py --days 8 || echo "board failed — snapshot still commits"
+          else
+            echo "nfl_board.py not present — skipping board"
+          fi
+
       - name: Commit
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/
+          git add data/ docs/
           git diff --staged --quiet && echo "no line movement to record" && exit 0
           git commit -m "capture: $(date -u +%Y-%m-%dT%H:%MZ)"
           git pull --rebase --autostash
