@@ -2,24 +2,31 @@ name: capture-props
 
 # SEPARATE from capture-odds because the cost profile is completely
 # different. Game lines are one bulk call. Props bill per event per market
-# per region: 16 games x 5 markets = ~80 credits per sweep.
+# per region.
 #
-#   this schedule (2x/day Thu-Sun)  ~= 5,800 credits/season   FITS
-#   every 3h Tue-Sun                ~= 45,000 credits/season  DOES NOT
+# MEASURED 2026-09-10: the events endpoint returns the FULL SEASON — 187
+# events, not the 16 in the current week. Unfiltered that is 187 x 5 = 935
+# credits per sweep and ~134,000 across a season against a 20,000 plan.
+# --within-days is what makes props affordable; do not remove it.
 #
-# nfl_props.py also enforces MAX_CREDITS_PER_RUN as a hard stop, so a
-# schedule change cannot silently drain the plan.
+#   --within-days 7, 2x/day Thu-Sun   ~=  80/sweep,  5,800/season   FITS
+#   no filter                         ~= 935/sweep, 134,000/season  DOES NOT
+#
+# nfl_props.py also enforces MAX_CREDITS_PER_RUN as a hard stop.
 
 on:
   schedule:
     - cron: '0 14,22 * * 4,5,6,0'
   workflow_dispatch:
     inputs:
-      markets:
-        description: 'Prop markets (space separated)'
-        default: 'player_pass_yds player_rush_yds player_reception_yds player_receptions player_anytime_td'
+      within_days:
+        description: 'Only sweep games kicking off within N days'
+        default: '7'
+      game_id:
+        description: 'Single event id (cheapest possible run, ~5 credits)'
+        default: ''
       max_events:
-        description: 'Cap events this run (blank = all)'
+        description: 'Cap events this run (blank = all within window)'
         default: ''
 
 permissions:
@@ -44,7 +51,7 @@ jobs:
       - name: Show what this sweep will cost
         env:
           ODDS_PROXY: ${{ secrets.ODDS_PROXY }}
-        run: python nfl_props.py budget
+        run: python nfl_props.py budget --within-days ${{ inputs.within_days || '7' }}
 
       - name: Capture props
         env:
@@ -52,7 +59,8 @@ jobs:
           MAX_CREDITS_PER_RUN: '120'
         run: |
           python nfl_props.py capture \
-            ${{ inputs.markets && format('--markets {0}', inputs.markets) || '' }} \
+            --within-days ${{ inputs.within_days || '7' }} \
+            ${{ inputs.game_id && format('--game-id {0}', inputs.game_id) || '' }} \
             ${{ inputs.max_events && format('--max-events {0}', inputs.max_events) || '' }}
 
       - name: Screen props (PAPER ONLY)
