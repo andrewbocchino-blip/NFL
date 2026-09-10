@@ -110,12 +110,26 @@ def _get(path: str, params: dict | None = None):
         raise
 
 
-def fetch_events() -> list[dict]:
-    """Event ids for upcoming games. This call is free on The Odds API."""
+def fetch_events(within_days: float | None = None) -> list[dict]:
+    """Event ids for upcoming games. This call is free on The Odds API.
+
+    THE ENDPOINT RETURNS THE WHOLE SEASON. Measured 2026-09-10: 187 events,
+    not the 16 in the current week. Sweeping all of them costs
+    187 x 5 markets = 935 credits per run and ~134,000 across a season
+    against a 20,000 plan. `within_days` is therefore not optional in
+    practice — it is what makes props affordable at all.
+    """
     body, _ = _get(EVENTS_PATH.format(sport=SPORT))
     if not isinstance(body, list):
         raise SystemExit(f"expected a list of events, got {type(body).__name__}")
-    return body
+    if within_days is None:
+        return body
+    cutoff = time.strftime("%Y-%m-%dT%H:%M:%SZ",
+                           time.gmtime(time.time() + within_days * 86400))
+    kept = [e for e in body if (e.get("commence_time") or "") <= cutoff]
+    print(f"[nfl_props] {len(body)} events on the board -> {len(kept)} within "
+          f"{within_days:g}d", file=sys.stderr)
+    return kept
 
 
 def estimate_credits(n_events: int, markets: list[str], regions: str = "us") -> int:
@@ -123,10 +137,15 @@ def estimate_credits(n_events: int, markets: list[str], regions: str = "us") -> 
 
 
 def capture(markets: list[str] | None = None, regions: str = "us",
-            max_events: int | None = None, dry_run: bool = False) -> int:
+            max_events: int | None = None, dry_run: bool = False,
+            within_days: float | None = 7.0, game_id: str | None = None) -> int:
     """Per-event prop capture, change-only, with a hard credit ceiling."""
     markets = markets or DEFAULT_MARKETS
-    events = fetch_events()
+    events = fetch_events(within_days)
+    if game_id:
+        events = [e for e in events if e.get("id") == game_id]
+        if not events:
+            raise SystemExit(f"game_id {game_id} not on the events board")
     if max_events:
         events = events[:max_events]
     cost = estimate_credits(len(events), markets, regions)
@@ -439,6 +458,19 @@ def selftest() -> int:
         print(f"        {x['book']} {x['player']} {x['outcome']} {x['point']} "
               f"{x['price']:+.0f} vs fair {x['fair_price']:+.0f} EV {x['ev']:+.2%}")
 
+    print("event filter (the 187-vs-16 bug):")
+    import time as _t
+    soon = _t.strftime("%Y-%m-%dT%H:%M:%SZ", _t.gmtime(_t.time() + 3*86400))
+    far  = _t.strftime("%Y-%m-%dT%H:%M:%SZ", _t.gmtime(_t.time() + 90*86400))
+    fake = [{"id": "a", "commence_time": soon}, {"id": "b", "commence_time": far}]
+    cutoff = _t.strftime("%Y-%m-%dT%H:%M:%SZ", _t.gmtime(_t.time() + 7*86400))
+    kept = [e for e in fake if e["commence_time"] <= cutoff]
+    check("7-day filter drops far-future games", len(kept) == 1)
+    check("187 unfiltered would abort", estimate_credits(187, DEFAULT_MARKETS)
+          > MAX_CREDITS_PER_RUN)
+    check("16 filtered fits under ceiling", estimate_credits(16, DEFAULT_MARKETS)
+          <= MAX_CREDITS_PER_RUN)
+
     print("name bridging (Odds API -> pbp):")
     check("'Josh Allen' -> 'J.Allen'", _match("Josh Allen", {"J.Allen"}) == "J.Allen")
     check("unknown player returns None", _match("Nobody Here", {"J.Allen"}) is None)
@@ -460,6 +492,12 @@ def main():
     ap.add_argument("--min-ev", type=float, default=0.03)
     ap.add_argument("--min-books", type=int, default=3)
     ap.add_argument("--log", action="store_true")
+    ap.add_argument("--within-days", type=float, default=7.0,
+                    help="only sweep games kicking off within N days (default 7). "
+                         "The events endpoint returns the FULL SEASON; without "
+                         "this every run costs ~935 credits.")
+    ap.add_argument("--game-id", default=None,
+                    help="sweep a single event id — cheapest possible run")
     ap.add_argument("--season", type=int, default=2026)
     ap.add_argument("--week", type=int, default=1)
     args = ap.parse_args()
@@ -467,7 +505,7 @@ def main():
     if args.cmd == "selftest":
         sys.exit(selftest())
     if args.cmd == "budget":
-        ev = fetch_events()
+        ev = fetch_events(args.within_days)
         c = estimate_credits(len(ev), args.markets, args.regions)
         print(json.dumps({"events": len(ev), "markets": args.markets,
                           "credits_per_sweep": c,
@@ -475,7 +513,8 @@ def main():
                           "would_abort": c > MAX_CREDITS_PER_RUN}, indent=2))
         return
     if args.cmd == "capture":
-        capture(args.markets, args.regions, args.max_events)
+        capture(args.markets, args.regions, args.max_events,
+                within_days=args.within_days, game_id=args.game_id)
         return
     if args.cmd == "screen":
         rows = load()
