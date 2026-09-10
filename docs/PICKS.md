@@ -1,8 +1,8 @@
 # NFL Board
 
-Generated 2026-09-10T20:32:02Z. Prices locked as captured. **Paper only — nothing here is an authorized bet.**
+Generated 2026-09-10T22:57:46Z. Prices locked as captured. **Paper only — nothing here is an authorized bet.**
 
-16 games · 11 books · snapshot rows 8,126
+16 games · 11 books · snapshot rows 8,315
 
 > Ported from the MLB board format, including its discipline: boards lock the line they were read at, mark themselves paper-only, and carry a calibration record that is allowed to say the model does not work.
 
@@ -16,10 +16,8 @@ The only section here with demonstrated value, and it requires no model. `Spread
 | New England Patriots @ Seattle Seahawks | Moneyline | Seattle Seahawks | — | **bovada +130** | mybookieag -179 | 37.1¢ | 11 |
 | Cleveland Browns @ Jacksonville Jaguars | Moneyline | Cleveland Browns | — | **draftkings +360** | bovada +310 | 25.0¢ | 11 |
 | Arizona Cardinals @ Los Angeles Chargers | Moneyline | Arizona Cardinals | — | **betus +400** | mybookieag +350 | 25.0¢ | 11 |
-| Atlanta Falcons @ Pittsburgh Steelers | Moneyline | Atlanta Falcons | — | **betus +195** | betrivers +165 | 15.0¢ | 11 |
 | Washington Commanders @ Philadelphia Eagles | Moneyline | Washington Commanders | — | **fanduel +205** | betrivers +180 | 12.5¢ | 11 |
 | New Orleans Saints @ Detroit Lions | Moneyline | New Orleans Saints | — | **fanduel +265** | draftkings +245 | 10.0¢ | 11 |
-| Baltimore Ravens @ Indianapolis Colts | Spread | Baltimore Ravens | -3.5 | **lowvig +111** | draftkings -105 | 7.9¢ | 11 |
 | Baltimore Ravens @ Indianapolis Colts | Moneyline | Indianapolis Colts | — | **betmgm +155** | betrivers +140 | 7.5¢ | 11 |
 | Atlanta Falcons @ Pittsburgh Steelers | Spread | Atlanta Falcons | +3 | **lowvig +110** | betrivers -104 | 6.9¢ | 6 |
 | New England Patriots @ Seattle Seahawks | Spread | New England Patriots | +3 | **mybookieag +100** | betonlineag -116 | 6.9¢ | 9 |
@@ -27,16 +25,18 @@ The only section here with demonstrated value, and it requires no model. `Spread
 | Washington Commanders @ Philadelphia Eagles | Spread | Washington Commanders | +5 | **lowvig +100** | betus -115 | 6.5¢ | 8 |
 | New England Patriots @ Seattle Seahawks | Spread | Seattle Seahawks | -3 | **betonlineag -104** | mybookieag -120 | 6.4¢ | 9 |
 | New England Patriots @ Seattle Seahawks | Spread | Seattle Seahawks | -3.5 | **mybookieag +108** | betmgm -105 | 6.4¢ | 11 |
-| Dallas Cowboys @ New York Giants | Moneyline | New York Giants | — | **bovada +140** | mybookieag +128 | 6.0¢ | 11 |
-| Atlanta Falcons @ Pittsburgh Steelers | Total | Under | +41.5 | **lowvig -102** | fanduel -115 | 5.5¢ | 10 |
+| Buffalo Bills @ Houston Texans | Spread | Houston Texans | +1 | **lowvig +101** | williamhill_us -112 | 5.9¢ | 9 |
 | Tampa Bay Buccaneers @ Cincinnati Bengals | Moneyline | Tampa Bay Buccaneers | — | **bovada +175** | draftkings +164 | 5.5¢ | 11 |
 | Miami Dolphins @ Las Vegas Raiders | Moneyline | Miami Dolphins | — | **fanduel +146** | betrivers +135 | 5.5¢ | 11 |
+| Dallas Cowboys @ New York Giants | Moneyline | New York Giants | — | **bovada +140** | mybookieag +129 | 5.5¢ | 11 |
 | Cleveland Browns @ Jacksonville Jaguars | Total | Over | +39.5 | **lowvig -113** | williamhill_us -129 | 5.5¢ | 5 |
 | New England Patriots @ Seattle Seahawks | Spread | New England Patriots | +3.5 | **lowvig -114** | mybookieag -130 | 5.4¢ | 11 |
+| Baltimore Ravens @ Indianapolis Colts | Spread | Baltimore Ravens | -3.5 | **lowvig +106** | draftkings -105 | 5.4¢ | 11 |
 | Atlanta Falcons @ Pittsburgh Steelers | Spread | Pittsburgh Steelers | -3.5 | **lowvig +100** | draftkings -112 | 5.4¢ | 11 |
-| Buffalo Bills @ Houston Texans | Spread | Houston Texans | +1 | **lowvig +100** | williamhill_us -112 | 5.4¢ | 9 |
 | Chicago Bears @ Carolina Panthers | Spread | Chicago Bears | -3 | **lowvig -105** | draftkings -118 | 5.2¢ | 11 |
 | Cleveland Browns @ Jacksonville Jaguars | Total | Over | +40.5 | **draftkings -105** | williamhill_us -118 | 5.2¢ | 11 |
+| Cleveland Browns @ Jacksonville Jaguars | Total | Under | +40.5 | **lowvig -105** | williamhill_us -118 | 5.2¢ | 11 |
+| Arizona Cardinals @ Los Angeles Chargers | Spread | Arizona Cardinals | +9.5 | **draftkings -105** | betmgm -118 | 5.2¢ | 10 |
 
 > Sorted by price dispersion, not by opinion. A wide spread means the books disagree on price at an identical number — that is free money left on the table by betting the wrong book, and it is independent of whether any model works.
 
@@ -55,6 +55,7 @@ The only section here with demonstrated value, and it requires no model. `Spread
 | New England Patriots @ Seattle Seahawks | Moneyline | New England Patriots | — | mybookieag | **+145** | +113 | +15.00% | 11 |
 | Cleveland Browns @ Jacksonville Jaguars | Moneyline | Cleveland Browns | — | draftkings | **+360** | +339 | +4.73% | 11 |
 | New England Patriots @ Seattle Seahawks | Moneyline | Seattle Seahawks | — | fanduel | **-104** | -113 | +4.08% | 11 |
+| Cleveland Browns @ Jacksonville Jaguars | Moneyline | Cleveland Browns | — | fanduel | **+350** | +339 | +2.45% | 11 |
 
 > Consensus is keyed on the exact number. Pooling a +3.0 quote with a +3.5 quote values the half point as if it were a mispriced book — on a line straddling 3, where 14.8% of NFL margins land, that invents several points of EV out of nothing. That bug shipped once here and produced a phantom +6.63%; there is now a regression test against it.
 
