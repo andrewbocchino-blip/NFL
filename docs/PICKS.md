@@ -1,8 +1,8 @@
 # NFL Board
 
-Generated 2026-09-12T20:18:23Z. Prices locked as captured. **Paper only — nothing here is an authorized bet.**
+Generated 2026-09-12T22:52:36Z. Prices locked as captured. **Paper only — nothing here is an authorized bet.**
 
-17 games · 11 books · snapshot rows 9,503
+17 games · 11 books · snapshot rows 9,575
 
 > Ported from the MLB board format, including its discipline: boards lock the line they were read at, mark themselves paper-only, and carry a calibration record that is allowed to say the model does not work.
 
@@ -28,12 +28,12 @@ The only section here with demonstrated value, and it requires no model. `Spread
 | San Francisco 49ers @ Los Angeles Rams | Spread | Los Angeles Rams | +19.5 | **fanduel +198** | fanatics +150 | 24.0¢ | 3 |
 | Cleveland Browns @ Jacksonville Jaguars | Moneyline | Cleveland Browns | — | **fanduel +360** | bovada +315 | 22.5¢ | 11 |
 | San Francisco 49ers @ Los Angeles Rams | Total | Over | +34.5 | **draftkings +182** | fanatics +150 | 16.0¢ | 2 |
-| Atlanta Falcons @ Pittsburgh Steelers | Moneyline | Atlanta Falcons | — | **bovada +240** | betrivers +210 | 15.0¢ | 11 |
+| Atlanta Falcons @ Pittsburgh Steelers | Moneyline | Atlanta Falcons | — | **betmgm +240** | betrivers +210 | 15.0¢ | 11 |
 | Detroit Lions @ Buffalo Bills | Moneyline | Detroit Lions | — | **fanduel +164** | mybookieag +134 | 15.0¢ | 6 |
 | New Orleans Saints @ Detroit Lions | Moneyline | New Orleans Saints | — | **draftkings +270** | williamhill_us +250 | 10.0¢ | 11 |
 | Baltimore Ravens @ Indianapolis Colts | Spread | Baltimore Ravens | -3.5 | **lowvig +112** | betrivers -107 | 9.3¢ | 11 |
+| Green Bay Packers @ Minnesota Vikings | Spread | Green Bay Packers | +1 | **lowvig +110** | betrivers -109 | 9.1¢ | 4 |
 | Baltimore Ravens @ Indianapolis Colts | Moneyline | Indianapolis Colts | — | **bovada +150** | mybookieag +132 | 9.0¢ | 11 |
-| Green Bay Packers @ Minnesota Vikings | Spread | Green Bay Packers | +1 | **lowvig +108** | betrivers -109 | 8.1¢ | 4 |
 | Miami Dolphins @ Las Vegas Raiders | Moneyline | Miami Dolphins | — | **betonlineag +145** | betrivers +130 | 7.5¢ | 11 |
 | Detroit Lions @ Buffalo Bills | Spread | Detroit Lions | +3 | **lowvig +105** | mybookieag -110 | 7.0¢ | 8 |
 | Atlanta Falcons @ Pittsburgh Steelers | Spread | Atlanta Falcons | +3 | **lowvig +110** | betrivers -104 | 6.9¢ | 6 |
