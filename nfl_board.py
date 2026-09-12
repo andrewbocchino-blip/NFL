@@ -48,6 +48,7 @@ from collections import defaultdict
 import nfl_lines as L
 
 SNAP = "data/nfl_odds_snapshots.jsonl"
+PROPS = "data/nfl_props_snapshots.jsonl"
 OUT = "docs/PICKS.md"
 
 # Demonstrated skill of each estimator, from nfl_backtest.py. Every board
@@ -120,7 +121,14 @@ def build(rows, days: int, min_books: int, min_ev: float):
          "work.", ""]
 
     # ---- 1. LINE SHOP -----------------------------------------------------
-    o += ["## 1. Line shop — best price per game",
+    o += ["## Contents", "",
+          "1. [Line shop — game lines](#1-line-shop--best-price-per-game)",
+          "2. [Off-market screen — game lines](#2-off-market-screen--books-away-from-consensus)",
+          "3. [Projection divergence](#3-projection-divergence--model-vs-market)",
+          "4. [Player props](#4-player-props)",
+          "5. [Graduation criteria](#graduation-criteria-pre-registered)", "",
+          "---", "",
+          "## 1. Line shop — best price per game",
           "",
           "The only section here with demonstrated value, and it requires no "
           "model. `Spread` is the cents you give up by taking the worst posted "
@@ -200,6 +208,79 @@ def build(rows, days: int, min_books: int, min_ev: float):
           "",
           "_No projection rows: no estimator has cleared the bar in "
           "`README.md`._", ""]
+
+    # ---- 4. PROPS ---------------------------------------------------------
+    o += ["## 4. Player props", ""]
+    prop_rows = []
+    if os.path.exists(PROPS):
+        prop_rows = [json.loads(x) for x in open(PROPS) if x.strip()]
+    if not prop_rows:
+        o += ["_No props captured yet. Run the `capture-props` workflow._", "",
+              "> The events endpoint returns the FULL SEASON (187 events, not "
+              "the 16 this week), so props must be swept with `--within-days`. "
+              "Unfiltered costs ~935 credits a run.", ""]
+    else:
+        import nfl_props as NP
+        plive = [r for r in prop_rows
+                 if (r.get("commence_time") or "") < cutoff]
+        pgames = {r["game_id"] for r in plive}
+        o += [f"{len(plive):,} quotes · {len(pgames)} games · "
+              f"{len(set(r['book'] for r in plive))} books", ""]
+
+        # 4a. best price per prop
+        o += ["### 4a. Prop line shop — best price per player line", "",
+              "| Game | Market | Player | Side | Line | Best | Worst | Spread | Bk |",
+              "|---|---|---|---|---|---|---|---|---|"]
+        pg = defaultdict(list)
+        for r in plive:
+            pg[(r["game_id"], r["market"], r.get("player"), r["outcome"],
+                r.get("point"))].append(r)
+        shop = []
+        for k, lst in pg.items():
+            if len(lst) < 2:
+                continue
+            lst.sort(key=lambda e: -L.ev_at(e["price"], 0.5))
+            b, w = lst[0], lst[-1]
+            shop.append((k, b, w, (L.ev_at(b["price"], .5)
+                                   - L.ev_at(w["price"], .5)) * 100, len(lst)))
+        for (gid, mkt, player, side, pt), b, w, cents, nb in \
+                sorted(shop, key=lambda x: -x[3])[:30]:
+            away, home, _ = games.get(gid, ("?", "?", ""))
+            ptt = "—" if pt is None else f"{pt:g}"
+            o.append(f"| {away} @ {home} | {mkt.replace('player_','')} "
+                     f"| {str(player)[:20]} | {side} | {ptt} "
+                     f"| **{b['book']} {fmt_price(b['price'])}** "
+                     f"| {w['book']} {fmt_price(w['price'])} "
+                     f"| {cents:.1f}¢ | {nb} |")
+        if not shop:
+            o.append("| _no prop quoted by 2+ books yet_ | | | | | | | | |")
+        o += ["", "> Same logic as the game-line shop: identical bet, different "
+              "price. No model involved.", ""]
+
+        # 4b. off-market prop screen
+        phits = NP.screen(plive, min_ev=min_ev, min_books=3)
+        o += ["### 4b. Off-market props — books away from consensus", "",
+              "*Calibration record, NOT bets.* Graded by CLV and by real "
+              "outcomes settled from play-by-play.", ""]
+        if not phits:
+            o += ["_Nothing beyond the threshold._", ""]
+        else:
+            o += ["| Game | Market | Player | Side | Line | Book | Price | Fair "
+                  "| EV | Bk |", "|---|---|---|---|---|---|---|---|---|---|"]
+            for h in phits[:25]:
+                away, home, _ = games.get(h["game_id"], ("?", "?", ""))
+                ptt = "—" if h.get("point") is None else f"{h['point']:g}"
+                o.append(f"| {away} @ {home} "
+                         f"| {h['market'].replace('player_','')} "
+                         f"| {str(h['player'])[:20]} | {h['outcome']} | {ptt} "
+                         f"| {h['book']} | **{fmt_price(h['price'])}** "
+                         f"| {h['fair_price']:+.0f} | {h['ev']:+.2%} "
+                         f"| {h['n_books']} |")
+            o += ["",
+                  "> Ranked by EV against no-vig consensus at the SAME line. "
+                  "This is the closest thing here to a 'best bet' — it is a "
+                  "claim about one book's price, not a prediction about the "
+                  "player. It has no graded record yet.", ""]
 
     # ---- graduation -------------------------------------------------------
     o += ["## Graduation criteria (pre-registered)", "",
