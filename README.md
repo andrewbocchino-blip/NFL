@@ -1,4 +1,11 @@
-# NFL model — status
+# NFL
+
+### 📋 **[→ THE BOARD — game lines + player props](docs/PICKS.md)**
+
+Refreshed automatically on every `capture-odds` run. Line shopping, off-market
+screen, projection divergence and props, all on one page.
+
+---
 
 **No demonstrated edge. Nothing here is authorized for real money.**
 
