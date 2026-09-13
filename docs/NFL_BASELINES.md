@@ -2,25 +2,25 @@
 
 Everything below requires no model, no ratings and no projection. It is the floor. Any model result that does not clearly clear this floor is not a finding.
 
-Sample: 2016-2025, 2761 games with results. All records exclude pushes; ROI is at -110; CIs are 3,000-sample bootstraps.
+Sample: 2016-2025, 2763 games with results. All records exclude pushes; ROI is at -110; CIs are 3,000-sample bootstraps.
 
 ## Side and total baselines
 
 | Strategy | Record | Win% | ROI | 95% CI | n |
 |---|---|---|---|---|---|
-| Bet every UNDER | 1397-1341 | 51.0% | -2.6% | -6.1% to +1.0% | 2738 |
-| Bet every OVER | 1341-1397 | 49.0% | -6.5% | -10.0% to -3.0% | 2738 |
-| Bet every HOME ATS | 1328-1368 | 49.3% | -6.0% | -9.6% to -2.4% | 2696 |
-| Bet every AWAY ATS | 1368-1328 | 50.7% | -3.1% | -6.6% to +0.4% | 2696 |
-| Bet every UNDERDOG ATS | 1383-1309 | 51.4% | -1.9% | -5.4% to +1.6% | 2692 |
+| Bet every UNDER | 1399-1341 | 51.1% | -2.5% | -6.0% to +1.0% | 2740 |
+| Bet every OVER | 1341-1399 | 48.9% | -6.6% | -10.1% to -3.1% | 2740 |
+| Bet every HOME ATS | 1328-1369 | 49.2% | -6.0% | -9.6% to -2.4% | 2697 |
+| Bet every AWAY ATS | 1369-1328 | 50.8% | -3.1% | -6.6% to +0.4% | 2697 |
+| Bet every UNDERDOG ATS | 1384-1309 | 51.4% | -1.9% | -5.4% to +1.7% | 2693 |
 | Bet every HOME DOG ATS | 520-504 | 50.8% | -3.1% | -8.8% to +2.9% | 1024 |
-| Bet every FAVOURITE ATS | 1309-1383 | 48.6% | -7.2% | -10.7% to -3.6% | 2692 |
+| Bet every FAVOURITE ATS | 1309-1384 | 48.6% | -7.2% | -10.7% to -3.7% | 2693 |
 
 > Every one loses at -110. Note in particular that betting every under goes above 50% and still loses money — a win rate over 50% is not an edge, it is what the vig is for. Any headline ATS record from the model must be read against this column, not against 50%.
 
 ## The closing line itself
 
-- games: **2761**
+- games: **2763**
 - closing-spread RMSE: **12.70** points
 - home cover rate: **48.1%** · push rate 2.4%
 
@@ -28,7 +28,7 @@ Sample: 2016-2025, 2761 games with results. All records exclude pushes; ROI is a
 
 ## Moneyline base rate
 
-- favourites win **66.4%** of games (n=2747, ties and pick'em excluded)
+- favourites win **66.4%** of games (n=2749, ties and pick'em excluded)
 
 > Public NFL models advertising ~64% moneyline accuracy are reporting this number. It requires no model. Any moneyline claim must be scored against **66.4%**, never against 50%.
 

@@ -4,7 +4,7 @@ Walk-forward and leak-free: each week's projection uses only plays from PRIOR we
 
 Parameters: `2018-2023 train / 2024-2025 held out` · HOME_FIELD 1.68 · EPA_TO_POINTS 15.38 · window 10wk · min_week 6 · prior-season weight 0.0
 
-Sign convention check passed: RMSE(result − spread_line) = **12.79** (expected ~12.7; near 18 would mean spread_line had flipped and every edge below was inverted).
+Sign convention check passed: RMSE(result − spread_line) = **12.80** (expected ~12.7; near 18 would mean spread_line had flipped and every edge below was inverted).
 
 **Coverage caveat:** min_week=6, so weeks 1–5 are NOT tested here. The model cannot produce a Week 1 projection at all without prior-season carry-forward — there are no prior plays to rate teams on.
 
