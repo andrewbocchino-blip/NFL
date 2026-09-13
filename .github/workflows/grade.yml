@@ -1,0 +1,50 @@
+name: grade
+
+# Scores every published pick. Runs Tuesday, after Monday night settles.
+# Nothing in this repo graded itself until this existed — the board made
+# claims that were never checked, and the graduation criteria in README.md
+# were unmeasurable because the measurement did not exist.
+#
+# Costs no API credits: CLV is computed from prices already captured, and
+# props settle from nflverse play-by-play.
+
+on:
+  schedule:
+    - cron: '0 15 * * 2'
+  workflow_dispatch:
+    inputs:
+      season:
+        description: 'Season to grade'
+        default: '2026'
+      week:
+        description: 'Week to settle props for (blank = CLV only)'
+        default: ''
+
+permissions:
+  contents: write
+
+jobs:
+  grade:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt
+
+      - name: Grade published picks
+        run: |
+          python nfl_grade.py \
+            --season ${{ inputs.season || '2026' }} \
+            ${{ inputs.week && format('--week {0}', inputs.week) || '' }}
+
+      - name: Commit
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/ docs/
+          git diff --staged --quiet && echo "nothing new" && exit 0
+          git commit -m "grade: $(date -u +%Y-%m-%dT%H:%MZ)"
+          git pull --rebase --autostash
+          git push
