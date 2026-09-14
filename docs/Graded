@@ -1,0 +1,50 @@
+# Results
+
+Every pick `nfl_board.py` has published, scored against what happened. Rows are counted **once**, at first publication — the board republishes every capture, and grading each repeat would turn one call into dozens.
+
+Pick rows logged: **90** · unique bets: **28** · snapshot rows 9,575
+
+## Win / loss — settled game lines
+
+```json
+{
+  "graded": 3,
+  "record": "2-1",
+  "win_rate": 0.6667,
+  "roi": 0.2288,
+  "roi_ci_95": [
+    -1.0,
+    0.8929
+  ],
+  "verdict": "indistinguishable from luck \u2014 CI straddles zero"
+}
+```
+
+| Published | Game | Bet | Book | Price | Result | W/L | P/L |
+|---|---|---|---|---|---|---|---|
+| 2026-09-13 | Buffalo Bills @ Houston Texans | Buffalo Bills | FD | -112 | -5 | **W** | +0.89 |
+| 2026-09-13 | Chicago Bears @ Carolina Panthers | Carolina Panthers | FD | +150 | -22 | L | -1.00 |
+| 2026-09-13 | Green Bay Packers @ Minnesota Vikings | Minnesota Vikings | FD | -126 | +17 | **W** | +0.79 |
+
+> A winning week is not evidence. Resolving a 2% ROI needs ~17,689 bets; anything under a few hundred is noise whichever way it lands.
+
+## CLV — did published prices beat their close?
+
+```json
+{
+  "graded": 18,
+  "beat_close": 1,
+  "beat_rate": 0.0556,
+  "mean_clv_pts": -1.187,
+  "z_vs_50": -3.77,
+  "verdict": "LOSES to the close"
+}
+```
+
+> CLV is the primary scoreboard. Resolving a 2% ROI from win/loss needs ~17,689 bets; CLV converges in hundreds.
+
+## Graduation criteria (pre-registered)
+
+- **Screen → real money:** ≥800 graded prices with the beat-close rate 95% CI excluding 50%.
+- **Projection → published rows:** |t| > 2 on `(result−line) ~ (proj−line)` for a season the parameters were never fitted on. Current: spreads +0.007 (t=0.13, n=1,578), totals −0.107 (t=−2.77), Week-1 −0.046 (t=−0.17).
+- **A winning week is never a reason.**
