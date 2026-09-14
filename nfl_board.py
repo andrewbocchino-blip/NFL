@@ -24,6 +24,12 @@ import os
 import time
 
 import nfl_lines as L
+import nfl_model as MM2
+
+
+def outcome_is_plus(market, outcome):
+    """True when a HIGHER number is better for this side (dog spread, over)."""
+    return market == "totals" and outcome == "Over" or market == "spreads"
 
 SNAP = "data/nfl_odds_snapshots.jsonl"
 PROPS = "data/nfl_props_snapshots.jsonl"
@@ -53,22 +59,53 @@ def load(path):
     return [json.loads(x) for x in open(path) if x.strip()]
 
 
+def latest(rows):
+    """Most recent quote per book/market/outcome/point."""
+    out = {}
+    for r in rows:
+        k = (r["game_id"], r["market"], r["book"], r["outcome"], r.get("point"))
+        if k not in out or r["captured_at"] > out[k]["captured_at"]:
+            out[k] = r
+    return list(out.values())
+
+
 def fmt(p):
     return f"{p:+.0f}" if p is not None else "—"
 
 
-def build(days, top_n, min_ev):
+def build(days, top_n, min_ev, only=None):
     now = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
     cut = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime(time.time() + days * 86400))
-    stale = time.strftime("%Y-%m-%dT%H:%M:%SZ",
-                          time.gmtime(time.time() - STALE_HOURS * 3600))
-
+    # STALENESS CANNOT BE READ OFF captured_at.
+    # snapshot() writes a row only when a price MOVES, so captured_at is the
+    # last time a price CHANGED, not the last time it was SEEN. A book that
+    # has held DAL -3 at -108 for two days is quoting a live, stable price —
+    # often the sharpest kind — and a naive 36h cutoff throws it away while
+    # keeping whichever books happened to twitch recently.
+    # Measured 2026-09-13 on DAL @ NYG: the filter dropped ALL 36 DK/FD rows
+    # and kept only books that had moved. The board then reported "DK and FD
+    # have no quote on this game," which was false.
+    #
+    # The correct test is whether the CAPTURE RUN was recent, not the row.
+    # A price is live if it was written at or after the last time we swept
+    # that game at all.
     rows = load(SNAP)
-    # Upcoming only, and fresh only. A completed game's leftover quotes scatter
-    # as books drop the market at different times; that wreckage reads as edge.
-    live = [r for r in rows
-            if now < (r.get("commence_time") or "") < cut
-            and r["captured_at"] >= stale]
+    sweep_floor = time.strftime("%Y-%m-%dT%H:%M:%SZ",
+                                time.gmtime(time.time() - STALE_HOURS * 3600))
+
+    # Completed games still get dropped — their leftover quotes scatter as
+    # books exit the market at different times, and that wreckage reads as
+    # edge. Keep the LATEST quote per book/market/outcome/point for every
+    # game. Whether that quote is current is a property of the game still
+    # being on the board, not of when the price last moved.
+    upcoming = [r for r in rows if now < (r.get("commence_time") or "") < cut]
+    # --game filter: match on any substring of either team name
+    if only:
+        k = only.lower()
+        upcoming = [r for r in upcoming
+                    if k in (r.get("away_team", "") + " " +
+                             r.get("home_team", "")).lower()]
+    live = latest(upcoming)
     games = {r["game_id"]: (r["away_team"], r["home_team"], r["commence_time"])
              for r in live}
 
@@ -104,7 +141,12 @@ def build(days, top_n, min_ev):
     oneway_picks = []
 
     # ---- game lines -------------------------------------------------------
-    cons = L.consensus(live, min_books=5)
+    # 4, not 5. Spreads and totals fragment across numbers, so requiring five
+    # books at an IDENTICAL number leaves only 2 spread and 2 total buckets on
+    # a full slate — the ranking becomes moneyline-only for a mechanical
+    # reason rather than because spreads lack value. Four keeps 8 spread and 4
+    # total buckets while still needing genuine agreement.
+    cons = L.consensus(live, min_books=4)
     for (gid, mkt, outcome, point), c in cons.items():
         for e in c["entries"]:
             if e["book"] not in BOOKS:
@@ -118,8 +160,26 @@ def build(days, top_n, min_ev):
             ev = L.ev_at(e["price"], c["consensus"])
             if ev > MAX_EV_SANITY:
                 continue
+            # NUMBER EDGE: on spreads and totals, getting a different number
+            # than the consensus is worth real money independent of price.
+            # Valued from the empirical push rate conditional on that line.
+            num_edge = 0.0
+            if mkt in ("spreads", "totals") and point is not None:
+                cons_pts = sorted(x.get("point") for x in live
+                                  if x["game_id"] == gid and x["market"] == mkt
+                                  and x["outcome"] == outcome
+                                  and x.get("point") is not None)
+                if cons_pts:
+                    cn = cons_pts[len(cons_pts) // 2]
+                    step = point - cn if outcome_is_plus(mkt, outcome) else cn - point
+                    lo, hi = sorted((cn, point))
+                    crossed = [k for k in range(int(lo), int(hi) + 1)
+                               if lo <= k <= hi]
+                    val = sum(MM2.half_point_value(k) for k in crossed)
+                    num_edge = val if step > 0 else -val if step < 0 else 0.0
             picks.append({
-                "ev": L.ev_at(e["price"], c["consensus"]),
+                "ev": ev, "num_edge": num_edge, "total": ev + num_edge,
+                "hit": c["consensus"],
                 "game": gid, "kind": MKT.get(mkt, mkt),
                 "bet": outcome + ("" if point is None else f" {point:+g}"),
                 "book": BOOKS[e["book"]], "price": e["price"],
@@ -127,13 +187,16 @@ def build(days, top_n, min_ev):
                 "nb": c["n_books"]})
 
     # ---- props ------------------------------------------------------------
-    # Props get the SAME two filters as game lines. Omitting the staleness
-    # bound was the identical mistake that produced the +22% NE/SEA rows:
-    # 7,463 of 20,859 prop quotes were older than 36h and were being compared
-    # against current ones as if both were live.
-    prop_rows = [r for r in load(PROPS)
+    # Props: same reasoning as game lines. captured_at is when a price last
+    # MOVED, not when it was last seen, so a hard row-level cutoff would drop
+    # every stable quote. Restrict to games still being swept instead.
+    _praw = load(PROPS)
+    _pswept = {r["game_id"] for r in _praw if r["captured_at"] >= sweep_floor}
+    _gids = {r["game_id"] for r in upcoming}
+    prop_rows = [r for r in _praw
                  if now < (r.get("commence_time") or "") < cut
-                 and r["captured_at"] >= stale]
+                 and r["game_id"] in _pswept
+                 and (not only or r["game_id"] in _gids)]
     n_props = 0
     if prop_rows:
         import nfl_props as NP
@@ -157,14 +220,29 @@ def build(days, top_n, min_ev):
                 n_props += 1
                 lbl = mkt.replace("player_", "").replace("_", " ")
                 picks.append({
-                    "ev": L.ev_at(e["price"], c["consensus"]),
+                    "ev": ev, "num_edge": 0.0, "total": ev,
+                    "hit": c["consensus"],
                     "game": gid, "kind": lbl,
                     "bet": f"{player} {side}" + ("" if point is None else f" {point:g}"),
                     "book": BOOKS[e["book"]], "price": e["price"],
                     "fair": L.prob_to_american(c["consensus"]),
                     "nb": c["n_books"]})
 
-    picks.sort(key=lambda p: -p["ev"])
+    picks.sort(key=lambda p: -p.get("total", p["ev"]))
+    # One side per market. Both sides of a bet can never BOTH be value — if
+    # the board ever lists DAL -3 and NYG +3 as separate picks, the consensus
+    # it measured them against is broken. Keep the better side, drop the other.
+    _seen, _dedup = set(), []
+    for p in picks:
+        key = (p["game"], p["kind"],
+               p["bet"].rsplit(" ", 1)[0]
+               if p["bet"].split()[-1].lstrip("+-").replace(".", "").isdigit()
+               else p["bet"])
+        if key in _seen:
+            continue
+        _seen.add(key)
+        _dedup.append(p)
+    picks = _dedup
     best = picks[:top_n]
 
     # Every published pick is appended to a log with the price it was read at.
@@ -181,7 +259,9 @@ def build(days, top_n, min_ev):
                 "price": _p["price"], "fair": round(_p["fair"], 1),
                 "ev": round(_p["ev"], 5)}) + "\n")
 
-    o = [f"# NFL — Top {top_n} Bets (DraftKings & FanDuel)", "",
+    title = (f"# {list(games.values())[0][0]} @ {list(games.values())[0][1]}"
+             if only and games else f"# NFL — Top {top_n} Bets (DraftKings & FanDuel)")
+    o = [title, "",
          f"Updated {now} · {len(games)} upcoming games · "
          f"{len(picks):,} DK/FD prices ranked", "",
          "**Paper only.** EV is measured against the no-vig consensus of all "
@@ -191,14 +271,18 @@ def build(days, top_n, min_ev):
     if not best:
         o += ["_No DK or FD prices on the board right now._", ""]
     else:
-        o += ["| # | Game | Bet | Type | Book | Price | Fair | EV |",
-              "|---|---|---|---|---|---|---|---|"]
+        gcol = "" if only else " Game |"
+        gsep = "" if only else "---|"
+        o += [f"| # |{gcol} Bet | Type | Book | Price | Hit% | Edge |",
+              f"|---|{gsep}---|---|---|---|---|---|"]
         for i, p in enumerate(best, 1):
             a, h, _ = games.get(p["game"], ("?", "?", ""))
-            flag = " ✅" if p["ev"] >= min_ev else ""
-            o.append(f"| {i} | {a} @ {h} | **{p['bet']}** | {p['kind']} "
-                     f"| {p['book']} | **{fmt(p['price'])}** | {fmt(p['fair'])} "
-                     f"| {p['ev']:+.2%}{flag} |")
+            tot = p.get("total", p["ev"])
+            flag = " ✅" if tot >= min_ev else ""
+            gc = "" if only else f" {a} @ {h} |"
+            o.append(f"| {i} |{gc} **{p['bet']}** | {p['kind']} "
+                     f"| {p['book']} | **{fmt(p['price'])}** "
+                     f"| {p.get('hit', 0):.0%} | **{tot*100:+.1f}¢**{flag} |")
         n_pos = sum(1 for p in best if p["ev"] >= min_ev)
         o += ["", f"✅ = clears +{min_ev:.0%} EV · {n_pos} of {len(best)} qualify",
               ""]
@@ -228,6 +312,26 @@ def build(days, top_n, min_ev):
               "65.5/67.5/70.5, so most of their quotes never get a peer to "
               "measure against — which is why integer markets dominate the "
               "ranking regardless of where value actually is.", ""]
+
+    hi = sorted([p for p in picks if p.get("hit", 0) >= 0.60],
+                key=lambda p: -p["hit"])[:10]
+    if hi:
+        o += ["", "## Highest probability to hit", "",
+              "Ranked by consensus win probability, not by edge. These are the "
+              "likeliest outcomes on the board — a high hit rate is not an "
+              "edge, since the price already reflects it, but it is what you "
+              "want if you care about strike rate over EV.", "",
+              "| Bet | Game | Book | Price | Hit% | Total edge |",
+              "|---|---|---|---|---|---|"]
+        for p in hi:
+            a, h, _ = games.get(p["game"], ("?", "?", ""))
+            o.append(f"| **{p['bet']}** | {a} @ {h} | {p['book']} "
+                     f"| {fmt(p['price'])} | **{p['hit']:.0%}** "
+                     f"| {p.get('total', p['ev'])*100:+.1f}¢ |")
+        o += ["", "> Hit% is the no-vig consensus probability. A 75% shot at "
+              "−300 and a 50% shot at +100 are the same bet if both are fairly "
+              "priced; this table exists because strike rate matters to some "
+              "people independently of that.", ""]
 
     if oneway_picks:
         oneway_picks.sort(key=lambda x: -x[0])
@@ -353,24 +457,51 @@ def build(days, top_n, min_ev):
           "are price and number only.", ""]
 
     # ---- full DK vs FD board ---------------------------------------------
+    # ONE ROW PER MARKET, not one per side. Printing "DAL -3 at -108" and
+    # "NYG +3 at -112" as separate lines reads like two findings when it is
+    # one: the line is DAL -3 and the book charges ~2c more to back the dog.
+    # The only decision-relevant content is the number, the price on each
+    # side, and which book has the better of it.
     o += ["---", "", "## Every game — DK vs FD", "",
-          "| Game | Market | Side | DK | FD | Fair |",
+          "| Game | Market | Line | DK fav / dog | FD fav / dog | Better |",
           "|---|---|---|---|---|---|"]
-    seen = {}
+    # collapse the two sides of each market into a single row
+    pair = {}
     for (gid, mkt, outcome, point), c in cons.items():
         d = {BOOKS[e["book"]]: e["price"] for e in c["entries"]
              if e["book"] in BOOKS}
         if not d:
             continue
-        seen[(gid, mkt, outcome, point)] = (d, c["consensus"])
-    for (gid, mkt, outcome, point), (d, cp) in sorted(
-            seen.items(), key=lambda kv: (games.get(kv[0][0], ("", "", "zz"))[2],
-                                          kv[0][1], str(kv[0][2]))):
+        pair.setdefault((gid, mkt), {})[outcome] = (point, d, c["consensus"])
+    for (gid, mkt), sides in sorted(
+            pair.items(), key=lambda kv: (games.get(kv[0][0], ("", "", "zz"))[2],
+                                          kv[0][1])):
         a, h, _ = games.get(gid, ("?", "?", ""))
-        pt = "" if point is None else f" {point:+g}"
-        o.append(f"| {a} @ {h} | {MKT.get(mkt, mkt)} | {outcome}{pt} "
-                 f"| {fmt(d.get('DK'))} | {fmt(d.get('FD'))} "
-                 f"| {fmt(L.prob_to_american(cp))} |")
+        names = list(sides)
+        if len(names) < 2:
+            continue
+        # favourite = the side with the higher no-vig probability
+        fav = max(names, key=lambda nm: sides[nm][2])
+        dog = [nm for nm in names if nm != fav][0]
+        fpt, fd_, _ = sides[fav]
+        _, dd_, _ = sides[dog]
+        line = ("—" if fpt is None else
+                f"{fav.split()[-1]} {fpt:+g}" if mkt == "spreads"
+                else f"{fpt:g}")
+        def cell(bk):
+            f_, d_ = fd_.get(bk), dd_.get(bk)
+            return "—" if f_ is None and d_ is None else \
+                f"{fmt(f_)} / {fmt(d_)}"
+        # which book gives the better price, side by side
+        better = []
+        for nm, dd in ((fav, fd_), (dog, dd_)):
+            if "DK" in dd and "FD" in dd:
+                b = "DK" if L.ev_at(dd["DK"], .5) > L.ev_at(dd["FD"], .5) else "FD"
+                if dd["DK"] != dd["FD"]:
+                    better.append(f"{nm.split()[-1]}: {b}")
+        o.append(f"| {a} @ {h} | {MKT.get(mkt, mkt)} | {line} "
+                 f"| {cell('DK')} | {cell('FD')} "
+                 f"| {', '.join(better) if better else '='} |")
     o += ["", "_Fair = no-vig consensus across all books at that number._"]
     return "\n".join(o)
 
@@ -380,9 +511,11 @@ def main():
     ap.add_argument("--days", type=int, default=8)
     ap.add_argument("--top", type=int, default=15)
     ap.add_argument("--min-ev", type=float, default=0.01)
+    ap.add_argument("--game", default=None,
+                    help="filter to one game by team substring, e.g. Giants")
     ap.add_argument("--out", default=OUT)
     a = ap.parse_args()
-    md = build(a.days, a.top, a.min_ev)
+    md = build(a.days, a.top, a.min_ev, only=a.game)
     os.makedirs(os.path.dirname(a.out), exist_ok=True)
     open(a.out, "w").write(md)
     print(f"Wrote {a.out} ({len(md.splitlines())} lines)")
