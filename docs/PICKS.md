@@ -1,39 +1,39 @@
 # NFL — Top 15 Bets (DraftKings & FanDuel)
 
-Updated 2026-09-18T15:59:52Z · 16 upcoming games · 468 DK/FD prices ranked
+Updated 2026-09-18T20:33:56Z · 16 upcoming games · 558 DK/FD prices ranked
 
 **Paper only.** EV is measured against the no-vig consensus of all books at the same number — a claim that DK or FD is off-market, not a prediction of the result.
 
 | # | Game | Bet | Type | Book | Price | Hit% | Edge |
 |---|---|---|---|---|---|---|---|
-| 1 | Jacksonville Jaguars @ Denver Broncos | **Parker Washington Under 4.5** | receptions | FD | **-102** | 52% | **+3.0¢** ✅ |
-| 2 | New York Giants @ Los Angeles Rams | **New York Giants** | ML | DK | **+295** | 26% | **+2.2¢** ✅ |
-| 3 | Cincinnati Bengals @ Houston Texans | **Tee Higgins Under 3.5** | receptions | FD | **+140** | 42% | **+2.0¢** ✅ |
-| 4 | Indianapolis Colts @ Kansas City Chiefs | **Indianapolis Colts** | ML | FD | **+260** | 28% | **+1.4¢** ✅ |
-| 5 | Cincinnati Bengals @ Houston Texans | **Chase Brown Under 3.5** | receptions | DK | **-102** | 51% | **+0.8¢** |
-| 6 | Philadelphia Eagles @ Tennessee Titans | **Tony Pollard Over 1.5** | receptions | DK | **+110** | 48% | **+0.6¢** |
-| 7 | Green Bay Packers @ New York Jets | **MarShawn Lloyd Over 1.5** | receptions | DK | **+150** | 40% | **+0.4¢** |
-| 8 | Carolina Panthers @ Atlanta Falcons | **Atlanta Falcons** | ML | DK | **+136** | 43% | **+0.4¢** |
-| 9 | Green Bay Packers @ New York Jets | **New York Jets** | ML | DK | **+164** | 38% | **-0.0¢** |
-| 10 | Green Bay Packers @ New York Jets | **Chris Brooks Over 1.5** | receptions | DK | **+135** | 42% | **-0.2¢** |
-| 11 | Pittsburgh Steelers @ New England Patriots | **Pittsburgh Steelers** | ML | FD | **+205** | 33% | **-0.6¢** |
-| 12 | Green Bay Packers @ New York Jets | **Mason Taylor Under 2.5** | receptions | FD | **-112** | 52% | **-0.8¢** |
-| 13 | Seattle Seahawks @ Arizona Cardinals | **Arizona Cardinals** | ML | DK | **+180** | 35% | **-0.9¢** |
-| 14 | Atlanta Falcons @ Green Bay Packers | **Atlanta Falcons** | ML | DK | **+250** | 28% | **-1.1¢** |
-| 15 | Philadelphia Eagles @ Tennessee Titans | **Tyjae Spears Over 2.5** | receptions | DK | **-115** | 53% | **-1.2¢** |
+| 1 | New York Giants @ Los Angeles Rams | **New York Giants** | ML | DK | **+295** | 26% | **+1.4¢** ✅ |
+| 2 | Cincinnati Bengals @ Houston Texans | **Tee Higgins Under 3.5** | receptions | FD | **+140** | 42% | **+1.0¢** ✅ |
+| 3 | Cincinnati Bengals @ Houston Texans | **Chase Brown Under 3.5** | receptions | DK | **+103** | 50% | **+0.9¢** |
+| 4 | Green Bay Packers @ New York Jets | **MarShawn Lloyd Over 1.5** | receptions | DK | **+150** | 40% | **+0.4¢** |
+| 5 | Indianapolis Colts @ Kansas City Chiefs | **Indianapolis Colts** | ML | FD | **+260** | 28% | **+0.3¢** |
+| 6 | Green Bay Packers @ New York Jets | **New York Jets** | ML | DK | **+164** | 38% | **+0.3¢** |
+| 7 | Cincinnati Bengals @ Houston Texans | **Houston Texans** | ML | DK | **-135** | 57% | **+0.0¢** |
+| 8 | Minnesota Vikings @ Chicago Bears | **Jordan Addison Under 2.5** | receptions | FD | **+136** | 42% | **-0.1¢** |
+| 9 | Green Bay Packers @ New York Jets | **Chris Brooks Over 1.5** | receptions | DK | **+135** | 42% | **-0.2¢** |
+| 10 | Pittsburgh Steelers @ New England Patriots | **Pat Freiermuth Over 3.5** | receptions | FD | **+136** | 42% | **-0.8¢** |
+| 11 | Green Bay Packers @ New York Jets | **Mason Taylor Under 2.5** | receptions | FD | **-112** | 52% | **-0.8¢** |
+| 12 | Seattle Seahawks @ Arizona Cardinals | **Arizona Cardinals** | ML | DK | **+180** | 35% | **-0.9¢** |
+| 13 | Jacksonville Jaguars @ Denver Broncos | **Parker Washington Under 4.5** | receptions | FD | **-104** | 50% | **-1.1¢** |
+| 14 | Pittsburgh Steelers @ New England Patriots | **New England Patriots** | ML | DK | **-218** | 68% | **-1.1¢** |
+| 15 | Minnesota Vikings @ Chicago Bears | **Jauan Jennings Under 1.5** | receptions | FD | **+120** | 45% | **-1.6¢** |
 
-✅ = clears +1% EV · 4 of 15 qualify
+✅ = clears +1% EV · 2 of 15 qualify
 
 
 ### Prop markets analyzed
 
 | Market | Quotes captured | Comparable lines | Note |
 |---|---|---|---|
-| anytime_td | 4,467 | 0 | integer scale — books cluster on the same number |
-| reception_yds | 1,908 | 284 | fragments across numbers; many lines quoted by 1–2 books |
-| receptions | 1,613 | 238 | integer scale — books cluster on the same number |
-| rush_yds | 1,015 | 158 | fragments across numbers; many lines quoted by 1–2 books |
-| pass_yds | 494 | 66 | fragments across numbers; many lines quoted by 1–2 books |
+| anytime_td | 5,832 | 0 | integer scale — books cluster on the same number |
+| reception_yds | 3,199 | 392 | fragments across numbers; many lines quoted by 1–2 books |
+| receptions | 2,326 | 270 | integer scale — books cluster on the same number |
+| rush_yds | 1,791 | 236 | fragments across numbers; many lines quoted by 1–2 books |
+| pass_yds | 972 | 102 | fragments across numbers; many lines quoted by 1–2 books |
 
 > A quote is only *comparable* when 3+ books post the same player at the same number. Yards markets fragment across 65.5/67.5/70.5, so most of their quotes never get a peer to measure against — which is why integer markets dominate the ranking regardless of where value actually is.
 
@@ -44,16 +44,16 @@ Ranked by consensus win probability, not by edge. These are the likeliest outcom
 
 | Bet | Game | Book | Price | Hit% | Total edge |
 |---|---|---|---|---|---|
-| **Los Angeles Rams** | New York Giants @ Los Angeles Rams | FD | -340 | **74%** | -4.1¢ |
-| **Philadelphia Eagles** | Philadelphia Eagles @ Tennessee Titans | DK | -310 | **74%** | -2.0¢ |
-| **Los Angeles Chargers** | Las Vegas Raiders @ Los Angeles Chargers | DK | -305 | **72%** | -4.3¢ |
-| **Kansas City Chiefs** | Indianapolis Colts @ Kansas City Chiefs | DK | -285 | **72%** | -3.0¢ |
+| **Los Angeles Rams** | New York Giants @ Los Angeles Rams | FD | -340 | **74%** | -3.8¢ |
+| **Los Angeles Chargers** | Las Vegas Raiders @ Los Angeles Chargers | DK | -310 | **72%** | -4.4¢ |
+| **Kansas City Chiefs** | Indianapolis Colts @ Kansas City Chiefs | DK | -290 | **72%** | -3.0¢ |
 | **Green Bay Packers** | Atlanta Falcons @ Green Bay Packers | FD | -275 | **72%** | -2.2¢ |
-| **New England Patriots** | Pittsburgh Steelers @ New England Patriots | DK | -218 | **67%** | -1.7¢ |
+| **New England Patriots** | Pittsburgh Steelers @ New England Patriots | DK | -218 | **68%** | -1.1¢ |
+| **Chicago Bears** | Minnesota Vikings @ Chicago Bears | DK | -205 | **66%** | -2.0¢ |
+| **Adam Trautman Under 1.5** | Jacksonville Jaguars @ Denver Broncos | DK | -214 | **65%** | -4.4¢ |
 | **Dallas Cowboys** | Washington Commanders @ Dallas Cowboys | FD | -205 | **65%** | -3.2¢ |
 | **Seattle Seahawks** | Seattle Seahawks @ Arizona Cardinals | FD | -210 | **65%** | -4.6¢ |
-| **Adam Trautman Under 1.5** | Jacksonville Jaguars @ Denver Broncos | DK | -214 | **64%** | -5.4¢ |
-| **Tyquan Thornton Under 1.5** | Indianapolis Colts @ Kansas City Chiefs | DK | -198 | **63%** | -5.5¢ |
+| **Tyquan Thornton Under 1.5** | Indianapolis Colts @ Kansas City Chiefs | DK | -198 | **63%** | -5.7¢ |
 
 > Hit% is the no-vig consensus probability. A 75% shot at −300 and a 50% shot at +100 are the same bet if both are fairly priced; this table exists because strike rate matters to some people independently of that.
 
@@ -62,14 +62,14 @@ Ranked by consensus win probability, not by edge. These are the likeliest outcom
 
 | Game | Consensus move (48h) |
 |---|---|
-| Minnesota Vikings @ Chicago Bears | 1.5 pts |
 | New Orleans Saints @ Baltimore Ravens | moneyline >30c |
-| Miami Dolphins @ San Francisco 49ers | moneyline >30c |
 | Cleveland Browns @ Tampa Bay Buccaneers | moneyline >30c |
+| Miami Dolphins @ San Francisco 49ers | moneyline >30c |
+| Philadelphia Eagles @ Tennessee Titans | moneyline >30c |
 
 > Excluded from the ranking. A book that lags a repricing market looks generous until it moves against you. The screen reads prices only — it cannot see the news causing the move.
 
-> 846 DK/FD prop prices included in the ranking above.
+> 1,172 DK/FD prop prices included in the ranking above.
 
 ---
 
@@ -90,12 +90,12 @@ Books scatter across numbers, so a spread board cannot be read on price alone. C
 
 | Game | Side | DK | FD | Books split across | Key # |
 |---|---|---|---|---|---|
-| Carolina Panthers @ Atlanta Falcons | Atlanta Falcons | +2.5 +102 | +2.5 -110 | +2/+2.5 | — |
-| Carolina Panthers @ Atlanta Falcons | Carolina Panthers | -2.5 -122 | -2.5 -110 | -2.5/-2 | — |
-| New Orleans Saints @ Baltimore Ravens | Baltimore Ravens | -8.5 -105 | -8.5 -105 | -9/-8.5/-8/-7.5 | — |
-| New Orleans Saints @ Baltimore Ravens | New Orleans Saints | +8.5 -115 | +8.5 -115 | +7.5/+8/+8.5/+9 | — |
-| Minnesota Vikings @ Chicago Bears | Chicago Bears | -4.5 -108 | -4.5 -110 | -4.5/-4 | — |
-| Minnesota Vikings @ Chicago Bears | Minnesota Vikings | +4.5 -112 | +4.5 -110 | +4/+4.5 | — |
+| Carolina Panthers @ Atlanta Falcons | Atlanta Falcons | +2.5 +100 | +2.5 -105 | +2/+2.5/+3 | — |
+| Carolina Panthers @ Atlanta Falcons | Carolina Panthers | -2.5 -120 | -2.5 -115 | -3/-2.5/-2 | — |
+| New Orleans Saints @ Baltimore Ravens | Baltimore Ravens | -8.5 -108 | -8.5 -105 | -9/-8.5/-8 | — |
+| New Orleans Saints @ Baltimore Ravens | New Orleans Saints | +8.5 -112 | +8.5 -115 | +8/+8.5/+9 | — |
+| Minnesota Vikings @ Chicago Bears | Chicago Bears | -4.5 -110 | -4.5 -110 | -4.5 | — |
+| Minnesota Vikings @ Chicago Bears | Minnesota Vikings | +4.5 -110 | +4.5 -110 | +4.5 | — |
 | Cincinnati Bengals @ Houston Texans | Cincinnati Bengals | +3 -118 | +3 -120 | +2/+2.5/+3 | — |
 | Cincinnati Bengals @ Houston Texans | Houston Texans | -3 -102 | -3 -102 | -3/-2.5/-2 | — |
 | Cleveland Browns @ Tampa Bay Buccaneers | Cleveland Browns | +8.5 -112 | +8.5 -122 | +8/+8.5/+9 | — |
@@ -133,8 +133,8 @@ Books scatter across numbers, so a spread board cannot be read on price alone. C
 | Carolina Panthers @ Atlanta Falcons | Under | 42.5 -110 | 44.5 -115 | 42.5/43/43.5/44/44.5 |
 | New Orleans Saints @ Baltimore Ravens | Over | 47.5 -108 | 47.5 -106 | 46/46.5/47/47.5 |
 | New Orleans Saints @ Baltimore Ravens | Under | 47.5 -112 | 47.5 -114 | 46/46.5/47/47.5 |
-| Minnesota Vikings @ Chicago Bears | Over | 47.5 -115 | 47.5 -120 | 47.5/48/48.5 |
-| Minnesota Vikings @ Chicago Bears | Under | 47.5 -105 | 47.5 -102 | 47.5/48/48.5 |
+| Minnesota Vikings @ Chicago Bears | Over | 47.5 -115 | 47.5 -115 | 47.5/48/48.5 |
+| Minnesota Vikings @ Chicago Bears | Under | 47.5 -105 | 47.5 -105 | 47.5/48/48.5 |
 | Cincinnati Bengals @ Houston Texans | Over | 45.5 -110 | 45.5 -114 | 45.5/46/46.5 |
 | Cincinnati Bengals @ Houston Texans | Under | 45.5 -110 | 45.5 -106 | 45.5/46/46.5 |
 | Cleveland Browns @ Tampa Bay Buccaneers | Over | 41.5 -110 | 41.5 -102 | 40.5/41/41.5 |
@@ -147,14 +147,14 @@ Books scatter across numbers, so a spread board cannot be read on price alone. C
 | Philadelphia Eagles @ Tennessee Titans | Under | 39.5 -110 | 39.5 -110 | 39/39.5/40 |
 | Jacksonville Jaguars @ Denver Broncos | Over | 45.5 -108 | 45.5 -105 | 44.5/45/45.5 |
 | Jacksonville Jaguars @ Denver Broncos | Under | 45.5 -112 | 45.5 -115 | 44.5/45/45.5 |
-| Las Vegas Raiders @ Los Angeles Chargers | Over | 43.5 -105 | 43.5 -110 | 42.5/43/43.5 |
-| Las Vegas Raiders @ Los Angeles Chargers | Under | 43.5 -115 | 43.5 -110 | 42.5/43/43.5 |
+| Las Vegas Raiders @ Los Angeles Chargers | Over | 43.5 -110 | 43.5 -110 | 42.5/43/43.5 |
+| Las Vegas Raiders @ Los Angeles Chargers | Under | 43.5 -110 | 43.5 -110 | 42.5/43/43.5 |
 | Seattle Seahawks @ Arizona Cardinals | Over | 40.5 -115 | 41.5 -102 | 40.5/41/41.5 |
 | Seattle Seahawks @ Arizona Cardinals | Under | 40.5 -105 | 41.5 -120 | 40.5/41/41.5 |
-| Washington Commanders @ Dallas Cowboys | Over | 50.5 -112 | 50.5 -110 | 50/50.5 |
-| Washington Commanders @ Dallas Cowboys | Under | 50.5 -108 | 50.5 -110 | 50/50.5 |
-| Miami Dolphins @ San Francisco 49ers | Over | 44.5 -115 | 45.5 -106 | 44.5/45/45.5 |
-| Miami Dolphins @ San Francisco 49ers | Under | 44.5 -105 | 45.5 -114 | 44.5/45/45.5 |
+| Washington Commanders @ Dallas Cowboys | Over | 50.5 -112 | 50.5 -110 | 50/50.5/51 |
+| Washington Commanders @ Dallas Cowboys | Under | 50.5 -108 | 50.5 -110 | 50/50.5/51 |
+| Miami Dolphins @ San Francisco 49ers | Over | 44.5 -115 | 45.5 -102 | 44.5/45/45.5 |
+| Miami Dolphins @ San Francisco 49ers | Under | 44.5 -105 | 45.5 -120 | 44.5/45/45.5 |
 | Indianapolis Colts @ Kansas City Chiefs | Over | 46.5 -110 | 47.5 -105 | 46/46.5/47/47.5 |
 | Indianapolis Colts @ Kansas City Chiefs | Under | 46.5 -110 | 47.5 -115 | 46/46.5/47/47.5 |
 | New York Giants @ Los Angeles Rams | Over | 47.5 -115 | 48.5 -102 | 47.5/48/48.5 |
@@ -170,22 +170,22 @@ Books scatter across numbers, so a spread board cannot be read on price alone. C
 
 | Game | Market | Line | DK fav / dog | FD fav / dog | Better |
 |---|---|---|---|---|---|
-| Carolina Panthers @ Atlanta Falcons | ML | — | -162 / +136 | -142 / +120 | Panthers: FD, Falcons: DK |
+| Carolina Panthers @ Atlanta Falcons | ML | — | -148 / +124 | -148 / +126 | Falcons: FD |
 | New Orleans Saints @ Baltimore Ravens | ML | — | -395 / +310 | -430 / +340 | Ravens: DK, Saints: FD |
-| Minnesota Vikings @ Chicago Bears | ML | — | -205 / +170 | -220 / +184 | Bears: DK, Vikings: FD |
-| Cincinnati Bengals @ Houston Texans | ML | — | -142 / +120 | -136 / +118 | Texans: FD, Bengals: DK |
-| Cleveland Browns @ Tampa Bay Buccaneers | ML | — | -455 / +350 | -460 / +360 | Buccaneers: DK, Browns: FD |
+| Minnesota Vikings @ Chicago Bears | ML | — | -205 / +170 | -225 / +188 | Bears: DK, Vikings: FD |
+| Cincinnati Bengals @ Houston Texans | ML | — | -135 / +114 | -136 / +118 | Texans: DK, Bengals: FD |
+| Cleveland Browns @ Tampa Bay Buccaneers | ML | — | -455 / +350 | -450 / +350 | Buccaneers: FD |
 | Green Bay Packers @ New York Jets | ML | — | -198 / +164 | -194 / +162 | Packers: FD, Jets: DK |
 | Pittsburgh Steelers @ New England Patriots | ML | — | -218 / +180 | -250 / +205 | Patriots: DK, Steelers: FD |
 | Philadelphia Eagles @ Tennessee Titans | ML | — | -310 / +250 | -350 / +280 | Eagles: DK, Titans: FD |
 | Jacksonville Jaguars @ Denver Broncos | ML | — | -148 / +124 | -148 / +126 | Jaguars: FD |
-| Las Vegas Raiders @ Los Angeles Chargers | ML | — | -305 / +245 | -310 / +250 | Chargers: DK, Raiders: FD |
+| Las Vegas Raiders @ Los Angeles Chargers | ML | — | -310 / +250 | -310 / +250 | = |
 | Seattle Seahawks @ Arizona Cardinals | ML | — | -218 / +180 | -210 / +176 | Seahawks: FD, Cardinals: DK |
 | Washington Commanders @ Dallas Cowboys | ML | — | -218 / +180 | -205 / +172 | Cowboys: FD, Commanders: DK |
 | Miami Dolphins @ San Francisco 49ers | ML | — | -900 / +600 | -950 / +640 | 49ers: DK, Dolphins: FD |
-| Indianapolis Colts @ Kansas City Chiefs | ML | — | -285 / +230 | -320 / +260 | Chiefs: DK, Colts: FD |
-| Indianapolis Colts @ Kansas City Chiefs | Spread | Colts +6.5 | -105 / -115 | — | = |
+| Indianapolis Colts @ Kansas City Chiefs | ML | — | -290 / +235 | -320 / +260 | Chiefs: DK, Colts: FD |
+| Indianapolis Colts @ Kansas City Chiefs | Spread | Chiefs -6.5 | -115 / -105 | — | = |
 | New York Giants @ Los Angeles Rams | ML | — | -375 / +295 | -340 / +275 | Rams: FD, Giants: DK |
-| Atlanta Falcons @ Green Bay Packers | ML | — | -310 / +250 | -275 / +225 | Packers: FD, Falcons: DK |
+| Atlanta Falcons @ Green Bay Packers | ML | — | -298 / +240 | -275 / +225 | Packers: FD, Falcons: DK |
 
 _Fair = no-vig consensus across all books at that number._
