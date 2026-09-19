@@ -1,39 +1,39 @@
 # NFL — Top 15 Bets (DraftKings & FanDuel)
 
-Updated 2026-09-18T23:05:36Z · 16 upcoming games · 572 DK/FD prices ranked
+Updated 2026-09-19T03:39:33Z · 16 upcoming games · 684 DK/FD prices ranked
 
 **Paper only.** EV is measured against the no-vig consensus of all books at the same number — a claim that DK or FD is off-market, not a prediction of the result.
 
 | # | Game | Bet | Type | Book | Price | Hit% | Edge |
 |---|---|---|---|---|---|---|---|
-| 1 | New Orleans Saints @ Baltimore Ravens | **Chris Olave Under 5.5** | receptions | FD | **+118** | 47% | **+1.4¢** ✅ |
-| 2 | Cincinnati Bengals @ Houston Texans | **Tee Higgins Under 3.5** | receptions | FD | **+140** | 42% | **+1.0¢** ✅ |
-| 3 | Cincinnati Bengals @ Houston Texans | **Chase Brown Under 3.5** | receptions | DK | **+103** | 50% | **+0.9¢** |
-| 4 | Cleveland Browns @ Tampa Bay Buccaneers | **Cleveland Browns** | ML | DK | **+350** | 22% | **+0.6¢** |
-| 5 | Indianapolis Colts @ Kansas City Chiefs | **Indianapolis Colts** | ML | FD | **+260** | 28% | **+0.3¢** |
-| 6 | Cincinnati Bengals @ Houston Texans | **Houston Texans** | ML | DK | **-135** | 57% | **+0.0¢** |
-| 7 | Minnesota Vikings @ Chicago Bears | **Jordan Addison Under 2.5** | receptions | FD | **+136** | 42% | **-0.1¢** |
-| 8 | New Orleans Saints @ Baltimore Ravens | **New Orleans Saints** | ML | FD | **+340** | 23% | **-0.2¢** |
-| 9 | New Orleans Saints @ Baltimore Ravens | **Alvin Kamara Over 17.5** | rush yds | FD | **-102** | 50% | **-0.6¢** |
-| 10 | Pittsburgh Steelers @ New England Patriots | **Pat Freiermuth Over 3.5** | receptions | FD | **+136** | 42% | **-0.8¢** |
-| 11 | Seattle Seahawks @ Arizona Cardinals | **Arizona Cardinals** | ML | DK | **+180** | 35% | **-0.9¢** |
-| 12 | Jacksonville Jaguars @ Denver Broncos | **Parker Washington Under 4.5** | receptions | FD | **-104** | 50% | **-1.1¢** |
-| 13 | Cleveland Browns @ Tampa Bay Buccaneers | **Bucky Irving Under 2.5** | receptions | DK | **-132** | 56% | **-1.1¢** |
-| 14 | Pittsburgh Steelers @ New England Patriots | **New England Patriots** | ML | DK | **-218** | 68% | **-1.1¢** |
-| 15 | New York Giants @ Los Angeles Rams | **New York Giants** | ML | DK | **+285** | 26% | **-1.2¢** |
+| 1 | Green Bay Packers @ New York Jets | **MarShawn Lloyd Over 1.5** | receptions | DK | **+162** | 40% | **+5.3¢** ✅ |
+| 2 | Green Bay Packers @ New York Jets | **New York Jets** | ML | DK | **+170** | 38% | **+2.6¢** ✅ |
+| 3 | Seattle Seahawks @ Arizona Cardinals | **Trey McBride Over 6.5** | receptions | FD | **+102** | 50% | **+1.8¢** ✅ |
+| 4 | Minnesota Vikings @ Chicago Bears | **T.J. Hockenson Under 3.5** | receptions | FD | **+100** | 51% | **+1.3¢** ✅ |
+| 5 | Cleveland Browns @ Tampa Bay Buccaneers | **Cleveland Browns** | ML | DK | **+350** | 22% | **+0.6¢** |
+| 6 | Pittsburgh Steelers @ New England Patriots | **Germie Bernard Over 1.5** | receptions | FD | **+116** | 47% | **+0.6¢** |
+| 7 | Cincinnati Bengals @ Houston Texans | **Chase Brown Under 3.5** | receptions | DK | **-101** | 51% | **+0.5¢** |
+| 8 | Minnesota Vikings @ Chicago Bears | **Josh Oliver Over 1.5** | receptions | DK | **+113** | 47% | **+0.5¢** |
+| 9 | Green Bay Packers @ New York Jets | **Mason Taylor Under 2.5** | receptions | FD | **-112** | 53% | **+0.4¢** |
+| 10 | Indianapolis Colts @ Kansas City Chiefs | **Indianapolis Colts** | ML | FD | **+260** | 28% | **+0.3¢** |
+| 11 | Cleveland Browns @ Tampa Bay Buccaneers | **Bucky Irving Under 2.5** | receptions | DK | **-121** | 55% | **+0.1¢** |
+| 12 | Cincinnati Bengals @ Houston Texans | **Houston Texans** | ML | DK | **-135** | 57% | **+0.0¢** |
+| 13 | Minnesota Vikings @ Chicago Bears | **Jordan Addison Under 2.5** | receptions | FD | **+136** | 42% | **-0.1¢** |
+| 14 | Minnesota Vikings @ Chicago Bears | **Kalif Raymond Over 2.5** | receptions | FD | **+130** | 43% | **-0.3¢** |
+| 15 | New Orleans Saints @ Baltimore Ravens | **New Orleans Saints** | ML | FD | **+340** | 23% | **-0.4¢** |
 
-✅ = clears +1% EV · 2 of 15 qualify
+✅ = clears +1% EV · 4 of 15 qualify
 
 
 ### Prop markets analyzed
 
 | Market | Quotes captured | Comparable lines | Note |
 |---|---|---|---|
-| anytime_td | 5,832 | 0 | integer scale — books cluster on the same number |
-| reception_yds | 3,199 | 392 | fragments across numbers; many lines quoted by 1–2 books |
-| receptions | 2,326 | 270 | integer scale — books cluster on the same number |
-| rush_yds | 1,791 | 236 | fragments across numbers; many lines quoted by 1–2 books |
-| pass_yds | 972 | 102 | fragments across numbers; many lines quoted by 1–2 books |
+| anytime_td | 7,382 | 0 | integer scale — books cluster on the same number |
+| reception_yds | 4,744 | 508 | fragments across numbers; many lines quoted by 1–2 books |
+| receptions | 3,201 | 312 | integer scale — books cluster on the same number |
+| rush_yds | 2,589 | 278 | fragments across numbers; many lines quoted by 1–2 books |
+| pass_yds | 1,494 | 130 | fragments across numbers; many lines quoted by 1–2 books |
 
 > A quote is only *comparable* when 3+ books post the same player at the same number. Yards markets fragment across 65.5/67.5/70.5, so most of their quotes never get a peer to measure against — which is why integer markets dominate the ranking regardless of where value actually is.
 
@@ -45,15 +45,15 @@ Ranked by consensus win probability, not by edge. These are the likeliest outcom
 | Bet | Game | Book | Price | Hit% | Total edge |
 |---|---|---|---|---|---|
 | **Tampa Bay Buccaneers** | Cleveland Browns @ Tampa Bay Buccaneers | FD | -450 | **78%** | -5.1¢ |
-| **Baltimore Ravens** | New Orleans Saints @ Baltimore Ravens | DK | -410 | **77%** | -3.8¢ |
-| **Los Angeles Rams** | New York Giants @ Los Angeles Rams | FD | -340 | **74%** | -3.8¢ |
-| **Los Angeles Chargers** | Las Vegas Raiders @ Los Angeles Chargers | DK | -310 | **72%** | -4.4¢ |
+| **Baltimore Ravens** | New Orleans Saints @ Baltimore Ravens | DK | -395 | **77%** | -3.1¢ |
 | **Kansas City Chiefs** | Indianapolis Colts @ Kansas City Chiefs | DK | -290 | **72%** | -3.0¢ |
+| **Los Angeles Chargers** | Las Vegas Raiders @ Los Angeles Chargers | DK | -298 | **72%** | -3.9¢ |
 | **Green Bay Packers** | Atlanta Falcons @ Green Bay Packers | FD | -275 | **72%** | -2.2¢ |
 | **New England Patriots** | Pittsburgh Steelers @ New England Patriots | DK | -218 | **68%** | -1.1¢ |
 | **Chicago Bears** | Minnesota Vikings @ Chicago Bears | DK | -205 | **66%** | -2.0¢ |
-| **Adam Trautman Under 1.5** | Jacksonville Jaguars @ Denver Broncos | DK | -214 | **65%** | -4.4¢ |
 | **Dallas Cowboys** | Washington Commanders @ Dallas Cowboys | FD | -205 | **65%** | -3.2¢ |
+| **Seattle Seahawks** | Seattle Seahawks @ Arizona Cardinals | FD | -210 | **65%** | -4.6¢ |
+| **Adam Trautman Under 1.5** | Jacksonville Jaguars @ Denver Broncos | DK | -214 | **65%** | -5.4¢ |
 
 > Hit% is the no-vig consensus probability. A 75% shot at −300 and a 50% shot at +100 are the same bet if both are fairly priced; this table exists because strike rate matters to some people independently of that.
 
@@ -62,13 +62,13 @@ Ranked by consensus win probability, not by edge. These are the likeliest outcom
 
 | Game | Consensus move (48h) |
 |---|---|
-| Green Bay Packers @ New York Jets | moneyline >30c |
 | Miami Dolphins @ San Francisco 49ers | moneyline >30c |
+| New York Giants @ Los Angeles Rams | moneyline >30c |
 | Philadelphia Eagles @ Tennessee Titans | moneyline >30c |
 
 > Excluded from the ranking. A book that lags a repricing market looks generous until it moves against you. The screen reads prices only — it cannot see the news causing the move.
 
-> 1,220 DK/FD prop prices included in the ranking above.
+> 1,594 DK/FD prop prices included in the ranking above.
 
 ---
 
@@ -170,21 +170,21 @@ Books scatter across numbers, so a spread board cannot be read on price alone. C
 | Game | Market | Line | DK fav / dog | FD fav / dog | Better |
 |---|---|---|---|---|---|
 | Carolina Panthers @ Atlanta Falcons | ML | — | -148 / +124 | -148 / +126 | Falcons: FD |
-| New Orleans Saints @ Baltimore Ravens | ML | — | -410 / +320 | -430 / +340 | Ravens: DK, Saints: FD |
+| New Orleans Saints @ Baltimore Ravens | ML | — | -395 / +310 | -430 / +340 | Ravens: DK, Saints: FD |
 | Minnesota Vikings @ Chicago Bears | ML | — | -205 / +170 | -225 / +188 | Bears: DK, Vikings: FD |
 | Cincinnati Bengals @ Houston Texans | ML | — | -135 / +114 | -136 / +118 | Texans: DK, Bengals: FD |
 | Cleveland Browns @ Tampa Bay Buccaneers | ML | — | -455 / +350 | -450 / +350 | Buccaneers: FD |
-| Green Bay Packers @ New York Jets | ML | — | -205 / +170 | -194 / +162 | Packers: FD, Jets: DK |
+| Green Bay Packers @ New York Jets | ML | — | -205 / +170 | -190 / +160 | Packers: FD, Jets: DK |
 | Pittsburgh Steelers @ New England Patriots | ML | — | -218 / +180 | -250 / +205 | Patriots: DK, Steelers: FD |
 | Philadelphia Eagles @ Tennessee Titans | ML | — | -325 / +260 | -350 / +280 | Eagles: DK, Titans: FD |
 | Jacksonville Jaguars @ Denver Broncos | ML | — | -148 / +124 | -148 / +126 | Jaguars: FD |
-| Las Vegas Raiders @ Los Angeles Chargers | ML | — | -310 / +250 | -310 / +250 | = |
+| Las Vegas Raiders @ Los Angeles Chargers | ML | — | -298 / +240 | -310 / +250 | Chargers: DK, Raiders: FD |
 | Seattle Seahawks @ Arizona Cardinals | ML | — | -218 / +180 | -210 / +176 | Seahawks: FD, Cardinals: DK |
 | Washington Commanders @ Dallas Cowboys | ML | — | -218 / +180 | -205 / +172 | Cowboys: FD, Commanders: DK |
 | Miami Dolphins @ San Francisco 49ers | ML | — | -900 / +600 | -950 / +640 | 49ers: DK, Dolphins: FD |
 | Indianapolis Colts @ Kansas City Chiefs | ML | — | -290 / +235 | -320 / +260 | Chiefs: DK, Colts: FD |
 | Indianapolis Colts @ Kansas City Chiefs | Spread | Colts +6.5 | -105 / -115 | — | = |
-| New York Giants @ Los Angeles Rams | ML | — | -360 / +285 | -340 / +275 | Rams: FD, Giants: DK |
+| New York Giants @ Los Angeles Rams | ML | — | -355 / +280 | -340 / +275 | Rams: FD, Giants: DK |
 | Atlanta Falcons @ Green Bay Packers | ML | — | -298 / +240 | -275 / +225 | Packers: FD, Falcons: DK |
 
 _Fair = no-vig consensus across all books at that number._
