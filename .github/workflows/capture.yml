@@ -2,12 +2,17 @@ name: capture-odds
 
 # The time-critical job. nflverse ships CLOSING lines only, so the opener
 # record cannot be backfilled — every missed window is lost permanently.
-# This is the one workflow that must be running before Week 1 lines post.
+# This is the one workflow that must keep running.
 
 on:
   schedule:
-    # every 3h Tue-Sun, plus tighter cadence around Sunday kickoff (UTC)
-    - cron: '0 */3 * * 2,3,4,5,6'
+    # Every 3h, ALL SEVEN DAYS. The old schedule ran Tue-Sat plus a narrow
+    # Sunday kickoff window, which left an 18-hour hole from Saturday
+    # evening to Sunday morning and skipped Monday entirely — so Monday
+    # night games were never captured, and Sunday injury news landed in the
+    # gap. Costs ~30 extra credits a week.
+    - cron: '0 */3 * * *'
+    # tighter cadence through the Sunday kickoff window (UTC)
     - cron: '0,30 15,16,17 * * 0'
   workflow_dispatch:
 
@@ -28,6 +33,9 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: Install deps
+        run: pip install -r requirements.txt
+
       - name: Verify odds math before spending credits
         run: python nfl_lines.py selftest
 
@@ -42,15 +50,16 @@ jobs:
           ODDS_PROXY: ${{ secrets.ODDS_PROXY }}
         run: python nfl_lines.py screen --log || true
 
-      # Publishes docs/PICKS.md from prices already on disk. Costs no credits.
+      # Publishes docs/PICKS.md from prices already on disk. No API credits.
       # Guarded: the capture above is the irreplaceable part, so a missing or
       # broken board must never block the snapshot from being committed.
       - name: Refresh board
         run: |
-          if [ -f nfl_board.py ]; then
-            python nfl_board.py --days 8 || echo "board failed — snapshot still commits"
+          if [ -f nfl_picks.py ]; then
+            python nfl_picks.py --days 7 --top 15 --out docs/PICKS.md \
+              || echo "board failed — snapshot still commits"
           else
-            echo "nfl_board.py not present — skipping board"
+            echo "nfl_picks.py not present — skipping board"
           fi
 
       - name: Commit
