@@ -1,90 +1,98 @@
 # NFL Locked Picks
 
-Picks frozen at the line they were taken at. **Both books shown; bold = better price.** One row per bet. Paper only.
+Picks frozen at the price they were read at. **Both books shown; bold = better price.** Paper only.
 
-_Score = value in cents + 10x(hit% - 50%). It rewards a price that is off the market AND likely to land. It is a ranking device, not a probability._
+16 games · 1810 DK/FD prices · lines 4h old · props 3h old
 
-> ⚠️ **Prices are 60h old** (lines 60h, props 53h). A starter announcement or scratch since capture is not in these numbers. Verify before betting.
+| Column | Means |
+|---|---|
+| **Hit%** | no-vig consensus across all books |
+| **Value** | EV of the DK/FD price vs that consensus, in cents |
+| **Model** | our own estimate, independent of price (props only) |
 
 ## 2026-10-04
 
-| Verdict | Score | Game | Market | Pick | Hit% | Books (best in bold) |
+| Verdict | Score | Game | Market | Pick | Hit% | Books (best bold) |
 |---|---|---|---|---|---|---|
-| STALE | — | _prices are 60h old — no PLAY can be issued. Run capture-odds, then regenerate._ | | | | |
+| PASS | — | _no DK/FD price clears the bar on this board_ | | | | |
+| LEAN | 3.1 | NE @ BUF | ML | Buffalo Bills | 75% | **DK -290** / FD -340 |
+| LEAN | 2.1 | LA @ PHI | receptions | Darius Cooper Over 1.5 | 55% | DK -137 / **FD -120** |
+| LEAN | 0.9 | DAL @ HOU | receptions | CeeDee Lamb Over 5.5 | 57% | DK -152 / **FD -130** |
 
-#### Model Divergence — our number vs **no-vig** market (model says 60%+)
+#### Model Divergence — our number vs **no-vig** market
 
-*Divergence means our number disagrees with the market — it does NOT mean the market is wrong. When we disagree the more likely explanation is that our number is worse. Model is calibrated 60-80% on 55,641 walk-forward player-games (60-70 -> 66.8%, 70-80 -> 75.6%); it is capped at 80% because above that it reads 73-75%.*
+*Divergence means our number disagrees with the market — it does NOT mean the market is wrong. When we disagree the more likely explanation is that our number is worse. Model is calibrated 60-80% (walk-forward n=66,527: 60-70 reads 62.9%, 70-80 reads 77.5%) and capped at 80%.*
 
-| Player | Market | Pick | Line | **Model** | No-vig | Diverg. | Price | Books | Result |
-|---|---|---|---|---|---|---|---|---|---|
-| _no prop where the model reaches 60% on 4+ games of 2026 data_ | | | | | | | | | |
-
-*Divergence board calibration (all time): 0-0 (no settled rows yet). Calibration is not edge — the book is also well calibrated, so a gap is a hypothesis to grade, not a signal.*
-
-#### Value Board — DK/FD vs **no-vig** market (calibration record, NOT bets)
-
-*Value means one book is priced away from the other ten. It does NOT mean the market is wrong. Until this board beats its baseline, read a large number as a warning about our consensus, not an opportunity.*
-
-| Game | Market | Pick | Line | Hit% | Value | Books | Result |
+| Player | Market | Line | **Model** | No-vig | Diverg. | Books | Result |
 |---|---|---|---|---|---|---|---|
-| NE @ BUF | ML | **Buffalo Bills** | — | 74% | -0.5¢ | **DK -290** / FD -340 | pending |
-| MIA @ MIN | ML | **Minnesota Vikings** | — | 84% | -2.0¢ | **DK -600** / FD -650 | pending |
-| TB @ DAL | ML | **Dallas Cowboys** | — | 82% | -2.2¢ | **DK -520** / FD -520 | pending |
-| TEN @ BAL | ML | **Baltimore Ravens** | — | 85% | -2.7¢ | **DK -700** / FD -770 | pending |
-| LAC @ SEA | ML | **Seattle Seahawks** | — | 76% | -3.8¢ | DK -380 / **FD -370** | pending |
+| _no prop with 6+ current-season games reaches 60%_ | | | | | | | |
 
-*Value board calibration (all time): 0-0 (no settled rows yet)*
+*Requires 6 current-season games. Below that the model's mean is dominated by last season while the market prices this one, which produced a uniform Under bias in week 4.*
 
-#### Probability Board — every bet at 70%+ to hit (5 game lines, 0 props)
-
-*The 70-80% bucket is the best-calibrated range on this board: predicted 74.7%, actual 76.2% over 8,796 team-games.*
+#### Value Board — DK/FD furthest off the market
 
 | Game | Market | Pick | Hit% | Value | Books | Result |
 |---|---|---|---|---|---|---|
-| TEN @ BAL | ML | **Baltimore Ravens** | 85% | -2.7¢ | **DK -700** / FD -770 | pending |
-| MIA @ MIN | ML | **Minnesota Vikings** | 84% | -2.0¢ | **DK -600** / FD -650 | pending |
-| TB @ DAL | ML | **Dallas Cowboys** | 82% | -2.2¢ | **DK -520** / FD -520 | pending |
-| LAC @ SEA | ML | **Seattle Seahawks** | 76% | -3.8¢ | DK -380 / **FD -370** | pending |
-| NE @ BUF | ML | **Buffalo Bills** | 74% | -0.5¢ | **DK -290** / FD -340 | pending |
+| LA @ PHI | receptions | **Darius Cooper Over 1.5** | 55% | +1.6¢ | DK -137 / **FD -120** | pending |
+| NE @ BUF | ML | **Buffalo Bills** | 75% | +0.6¢ | **DK -290** / FD -340 | pending |
+| DAL @ HOU | receptions | **CeeDee Lamb Over 5.5** | 57% | +0.2¢ | DK -152 / **FD -130** | pending |
+| MIA @ MIN | ML | **Minnesota Vikings** | 83% | -0.7¢ | DK -535 / **FD -520** | pending |
+| KC @ LV | receptions | **Cody White Under 1.5** | 66% | -1.4¢ | DK -228 / **FD -200** | pending |
+| MIA @ MIN | receptions | **Ollie Gordon II Under 1.5** | 63% | -1.5¢ | **DK -175** / FD -210 | pending |
+| NYJ @ CHI | receptions | **Cole Kmet Under 1.5** | 62% | -1.6¢ | DK -199 / **FD -174** | pending |
+| TEN @ BAL | receptions | **Chris Moore Over 0.5** | 56% | -1.7¢ | **DK -131** / FD -148 | pending |
+| ARI @ NYG | receptions | **Malik Nabers Over 4.5** | 55% | -2.0¢ | DK -142 / **FD -130** | pending |
+| KC @ LV | receptions | **Rashee Rice Over 4.5** | 55% | -2.0¢ | DK -143 / **FD -130** | pending |
+| TB @ DAL | ML | **Dallas Cowboys** | 82% | -2.1¢ | DK -535 / **FD -520** | pending |
+| TEN @ BAL | ML | **Baltimore Ravens** | 85% | -2.5¢ | **DK -700** / FD -770 | pending |
 
-*A high hit rate is not an edge — the price already reflects it. This board exists to test whether consensus probability is calibrated.*
+*Value means one book is priced away from the others. Negative is their hold — normal on a settled market.*
 
-#### Matchup Board — opponent strength vs the side (calibration record, NOT bets)
+#### Probability Board — every bet at 70%+ to hit
 
-*Current-season play-by-play only. Prior-season defence explains 2-5% of current-season early-week defence, so it is excluded. The book already knows the opponent's ranking — this column answers 'who are they playing', not 'where is the edge'.*
+*The 70-80% range is the best-calibrated band on the board: predicted 74.7%, actual 76.2% over 8,796 team-games.*
 
-| Game | Pick | Market | Opponent D | Tilt | Hit% | Value | Result |
-|---|---|---|---|---|---|---|---|
-| ARI @ NYG | **Cam Skattebo Over 2.5** | receptions | vs ARI pass D soft +10% | +10% | 51% | +0.3¢ | pending |
-| LA @ PHI | **Dontayvion Wicks Under 3.5** | receptions | vs LA pass D tough -5% | +5% | 60% | +3.2¢ | pending |
-| LAC @ SEA | **Tre Harris Under 2.5** | receptions | vs SEA pass D tough -10% | +10% | 42% | -2.0¢ | pending |
-| LA @ PHI | **Makai Lemon Under 2.5** | receptions | vs LA pass D tough -5% | +5% | 43% | +2.6¢ | pending |
-| DET @ CAR | **Sione Vaki Over 9.5** | rush yds | vs CAR rush D soft +13% | +13% | 51% | -5.2¢ | pending |
-| DET @ CAR | **Jared Goff Over 1.5** | rush yds | vs CAR rush D soft +13% | +13% | 49% | -5.3¢ | pending |
-| ATL @ NO | **Kendre Miller Under 24.5** | rush yds | vs ATL rush D tough -11% | +11% | 50% | -5.4¢ | pending |
-| ATL @ NO | **Tyler Shough Under 16.5** | rush yds | vs ATL rush D tough -11% | +11% | 50% | -5.4¢ | pending |
-| ATL @ NO | **Alvin Kamara Under 38.5** | rush yds | vs ATL rush D tough -11% | +11% | 51% | -5.4¢ | pending |
-| NYJ @ CHI | **Kenyon Sadiq Over 4.5** | receptions | vs CHI pass D soft +8% | +8% | 44% | -2.5¢ | pending |
-| ARI @ NYG | **Malachi Fields Over 23.5** | reception yds | vs ARI pass D soft +10% | +10% | 50% | -4.5¢ | pending |
-| ARI @ NYG | **Cam Skattebo Over 17.5** | reception yds | vs ARI pass D soft +10% | +10% | 50% | -4.5¢ | pending |
+| Game | Market | Pick | **Hit%** | Value | Books | Result |
+|---|---|---|---|---|---|---|
+| TEN @ BAL | ML | **Baltimore Ravens** | **85%** | -2.5¢ | **DK -700** / FD -770 | pending |
+| MIA @ MIN | ML | **Minnesota Vikings** | **83%** | -0.7¢ | DK -535 / **FD -520** | pending |
+| TB @ DAL | ML | **Dallas Cowboys** | **82%** | -2.1¢ | DK -535 / **FD -520** | pending |
+| LAC @ SEA | ML | **Seattle Seahawks** | **76%** | -3.6¢ | DK -375 / **FD -370** | pending |
+| NE @ BUF | ML | **Buffalo Bills** | **75%** | +0.6¢ | **DK -290** / FD -340 | pending |
+
+#### Matchup Board — opponent strength (current season only)
+
+*3 games of 2026 data, shrunk by sample size. Prior-season defence explains 2-5% of current-season defence, so it is excluded. The book already knows the ranking — this answers 'who are they playing'.*
+
+| Game | Pick | Opponent D | Tilt | Hit% | Value | Books |
+|---|---|---|---|---|---|---|
+| ARI @ NYG | **Malik Nabers Over 4.5** | vs ARI pass D soft +10% | +10% | 55% | -2.0¢ | DK -142 / **FD -130** |
+| DET @ CAR | **Sione Vaki Over 11.5** | vs CAR rush D soft +13% | +13% | 49% | -4.3¢ | **DK -107** / FD -113 |
+| LAC @ SEA | **Oronde Gadsden II Under 2.5** | vs SEA pass D tough -10% | +10% | 44% | -2.0¢ | **DK +122** / FD +112 |
+| LAC @ SEA | **Tre Harris Under 2.5** | vs SEA pass D tough -10% | +10% | 42% | -2.0¢ | DK +119 / **FD +132** |
+| DET @ CAR | **Sione Vaki Over 9.5** | vs CAR rush D soft +13% | +13% | 51% | -4.6¢ | DK -117 / **FD -114** |
+| LA @ PHI | **Makai Lemon Under 2.5** | vs LA pass D tough -5% | +5% | 43% | +2.6¢ | DK +118 / **FD +136** |
+| ARI @ NYG | **Cam Skattebo Over 2.5** | vs ARI pass D soft +10% | +10% | 51% | -2.7¢ | **DK -112** / FD -122 |
+| DET @ CAR | **Jared Goff Over 1.5** | vs CAR rush D soft +13% | +13% | 48% | -5.4¢ | **DK -103** / FD -113 |
+| DET @ CAR | **Jahmyr Gibbs Over 97.5** | vs CAR rush D soft +13% | +13% | 50% | -5.8¢ | **DK -113** |
+| DET @ CAR | **Jahmyr Gibbs Over 96.5** | vs CAR rush D soft +13% | +13% | 50% | -5.8¢ | **DK -113** |
+| ARI @ NYG | **Theo Johnson Over 8.5** | vs ARI pass D soft +10% | +10% | 50% | -3.7¢ | **DK -108** / FD -113 |
+| ARI @ NYG | **Malachi Fields Over 1.5** | vs ARI pass D soft +10% | +10% | 61% | -4.1¢ | DK -180 / **FD -172** |
 
 <details>
-<summary><b>How each number was built (click to expand)</b></summary>
+<summary><b>How each number was built</b></summary>
 
-- **Dontayvion Wicks Under 3.5** (receptions, LA @ PHI): market: no-vig consensus 59.8% across 5 books -> fair -149 · price: FD -138 implies 58.0% -> value +3.2c · matchup: vs LA pass D tough -5% (tilt +5%, 3g of 2026 data, shrunk toward league average) · usage: 10 targets (18% of team), aDOT 14.8, 147 yds on the season · ⚠️ prices are 60h old — a scratch or starter change since capture is not in them · ⚠️ matchup is 3 games of data — the factor is shrunk heavily and should move almost nothing · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77, matchup improves accuracy 0.04 yds on a 27-yd error
-- **Makai Lemon Under 2.5** (receptions, LA @ PHI): market: no-vig consensus 43.5% across 4 books -> fair +130 · price: FD +136 implies 42.4% -> value +2.6c · matchup: vs LA pass D tough -5% (tilt +5%, 3g of 2026 data, shrunk toward league average) · usage: 5 targets (9% of team), aDOT 2.6, 9 yds on the season · ⚠️ prices are 60h old — a scratch or starter change since capture is not in them · ⚠️ thin consensus — only 4 books at this number · ⚠️ matchup is 3 games of data — the factor is shrunk heavily and should move almost nothing · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77, matchup improves accuracy 0.04 yds on a 27-yd error
-- **Buffalo Bills** (ML, NE @ BUF): calibration: raw de-vig 72.7% -> 74.0% (favourite-longshot bias, measured on 8,796 team-games) · market: no-vig consensus 74.0% across 11 books -> fair -284 · price: DK -290 implies 74.4% -> value -0.5c · ⚠️ prices are 60h old — a scratch or starter change since capture is not in them · ⚠️ negative value — this is the book's hold, not an edge · ⚠️ heavy favourite — high hit rate is priced in, not an edge · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77, matchup improves accuracy 0.04 yds on a 27-yd error
-- **Brenton Strange Over 3.5** (receptions, JAX @ CIN): market: no-vig consensus 48.0% across 5 books -> fair +108 · price: FD +112 implies 47.2% -> value +1.7c · matchup: vs CIN pass D soft +3% (tilt +3%, 3g of 2026 data, shrunk toward league average) · usage: 10 targets (13% of team), aDOT 8.3, 72 yds on the season · ⚠️ prices are 60h old — a scratch or starter change since capture is not in them · ⚠️ matchup is 3 games of data — the factor is shrunk heavily and should move almost nothing · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77, matchup improves accuracy 0.04 yds on a 27-yd error
-- **Minnesota Vikings** (ML, MIA @ MIN): calibration: raw de-vig 82.7% -> 84.0% (favourite-longshot bias, measured on 8,796 team-games) · market: no-vig consensus 84.0% across 11 books -> fair -524 · price: DK -600 implies 85.7% -> value -2.0c · ⚠️ prices are 60h old — a scratch or starter change since capture is not in them · ⚠️ negative value — this is the book's hold, not an edge · ⚠️ heavy favourite — high hit rate is priced in, not an edge · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77, matchup improves accuracy 0.04 yds on a 27-yd error
-- **Dallas Cowboys** (ML, TB @ DAL): calibration: raw de-vig 80.7% -> 82.0% (favourite-longshot bias, measured on 8,796 team-games) · market: no-vig consensus 82.0% across 5 books -> fair -457 · price: DK -520 implies 83.9% -> value -2.2c · ⚠️ prices are 60h old — a scratch or starter change since capture is not in them · ⚠️ negative value — this is the book's hold, not an edge · ⚠️ heavy favourite — high hit rate is priced in, not an edge · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77, matchup improves accuracy 0.04 yds on a 27-yd error
-- **Travis Kelce Over 4.5** (receptions, KC @ LV): market: no-vig consensus 45.4% across 5 books -> fair +120 · price: DK +123 implies 44.8% -> value +1.3c · matchup: vs LV pass D avg (tilt +1%, 3g of 2026 data, shrunk toward league average) · usage: 18 targets (20% of team), aDOT 6.6, 231 yds on the season · ⚠️ prices are 60h old — a scratch or starter change since capture is not in them · ⚠️ matchup is 3 games of data — the factor is shrunk heavily and should move almost nothing · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77, matchup improves accuracy 0.04 yds on a 27-yd error
-- **Baltimore Ravens** (ML, TEN @ BAL): calibration: raw de-vig 83.8% -> 85.1% (favourite-longshot bias, measured on 8,796 team-games) · market: no-vig consensus 85.1% across 11 books -> fair -572 · price: DK -700 implies 87.5% -> value -2.7c · ⚠️ prices are 60h old — a scratch or starter change since capture is not in them · ⚠️ negative value — this is the book's hold, not an edge · ⚠️ heavy favourite — high hit rate is priced in, not an edge · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77, matchup improves accuracy 0.04 yds on a 27-yd error
-- **Darren Waller Under 2.5** (receptions, DET @ CAR): market: no-vig consensus 45.2% across 4 books -> fair +121 · price: FD +124 implies 44.6% -> value +1.2c · matchup: vs DET pass D avg (tilt -1%, 3g of 2026 data, shrunk toward league average) · usage: 13 targets (12% of team), aDOT 6.9, 112 yds on the season · ⚠️ prices are 60h old — a scratch or starter change since capture is not in them · ⚠️ thin consensus — only 4 books at this number · ⚠️ matchup is 3 games of data — the factor is shrunk heavily and should move almost nothing · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77, matchup improves accuracy 0.04 yds on a 27-yd error
-- **TreVeyon Henderson Under 1.5** (receptions, NE @ BUF): market: no-vig consensus 59.5% across 5 books -> fair -147 · price: DK -148 implies 59.7% -> value -0.4c · matchup: vs BUF pass D avg (tilt -1%, 3g of 2026 data, shrunk toward league average) · usage: 1 targets (1% of team), aDOT 4.0, 6 yds on the season · ⚠️ prices are 60h old — a scratch or starter change since capture is not in them · ⚠️ matchup is 3 games of data — the factor is shrunk heavily and should move almost nothing · ⚠️ negative value — this is the book's hold, not an edge · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77, matchup improves accuracy 0.04 yds on a 27-yd error
-- **Carnell Tate Under 4.5** (receptions, TEN @ BAL): market: no-vig consensus 55.0% across 4 books -> fair -122 · price: FD -122 implies 55.0% -> value +0.0c · matchup: vs BAL pass D tough -4% (tilt +4%, 3g of 2026 data, shrunk toward league average) · usage: 20 targets (25% of team), aDOT 10.9, 123 yds on the season · ⚠️ prices are 60h old — a scratch or starter change since capture is not in them · ⚠️ thin consensus — only 4 books at this number · ⚠️ matchup is 3 games of data — the factor is shrunk heavily and should move almost nothing · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77, matchup improves accuracy 0.04 yds on a 27-yd error
-- **Cam Skattebo Over 2.5** (receptions, ARI @ NYG): market: no-vig consensus 50.6% across 5 books -> fair -103 · price: FD -102 implies 50.5% -> value +0.3c · matchup: vs ARI pass D soft +10% (tilt +10%, 3g of 2026 data, shrunk toward league average) · usage: 8 targets (10% of team), aDOT 3.8, 59 yds on the season · ⚠️ prices are 60h old — a scratch or starter change since capture is not in them · ⚠️ matchup is 3 games of data — the factor is shrunk heavily and should move almost nothing · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77, matchup improves accuracy 0.04 yds on a 27-yd error
+- **Zach Ertz Under 1.5** (receptions, LA @ PHI): market: 50.2% across 4 books -> fair -101 · price: FD +172 -> value +36.4¢ · ⚠️ thin consensus, 4 books · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **Malik Washington Under 3.5** (receptions, MIA @ MIN): market: 43.5% across 6 books -> fair +130 · price: FD +146 -> value +7.1¢ · matchup: vs MIN pass D soft +8% · usage: 23 targets (27% of team), aDOT 12.0 · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **Carolina Panthers** (ML, DET @ CAR): calibration: raw de-vig 36.5% -> 37.6% (favourite-longshot bias, 8,796 games) · market: 37.6% across 11 books -> fair +166 · price: FD +180 -> value +5.3¢ · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **Buffalo Bills** (ML, NE @ BUF): calibration: raw de-vig 73.5% -> 74.8% (favourite-longshot bias, 8,796 games) · market: 74.8% across 11 books -> fair -297 · price: DK -290 -> value +0.6¢ · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **Minnesota Vikings** (ML, MIA @ MIN): calibration: raw de-vig 82.0% -> 83.3% (favourite-longshot bias, 8,796 games) · market: 83.3% across 11 books -> fair -497 · price: FD -520 -> value -0.7¢ · ⚠️ negative value — this is the book's hold · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **Darius Cooper Over 1.5** (receptions, LA @ PHI): market: 55.4% across 5 books -> fair -124 · price: FD -120 -> value +1.6¢ · matchup: vs LA pass D tough -5% · usage: 3 targets (5% of team), aDOT 8.3 · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **Makai Lemon Under 2.5** (receptions, LA @ PHI): market: 43.5% across 4 books -> fair +130 · price: FD +136 -> value +2.6¢ · matchup: vs LA pass D tough -5% · usage: 5 targets (9% of team), aDOT 2.6 · ⚠️ thin consensus, 4 books · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **Dallas Cowboys** (ML, TB @ DAL): calibration: raw de-vig 80.8% -> 82.1% (favourite-longshot bias, 8,796 games) · market: 82.1% across 5 books -> fair -458 · price: FD -520 -> value -2.1¢ · ⚠️ negative value — this is the book's hold · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **Baltimore Ravens** (ML, TEN @ BAL): calibration: raw de-vig 84.0% -> 85.3% (favourite-longshot bias, 8,796 games) · market: 85.3% across 11 books -> fair -580 · price: DK -700 -> value -2.5¢ · ⚠️ negative value — this is the book's hold · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **CeeDee Lamb Over 5.5** (receptions, DAL @ HOU): market: 56.7% across 5 books -> fair -131 · price: FD -130 -> value +0.2¢ · matchup: vs HOU pass D soft +3% · usage: 26 targets (25% of team), aDOT 12.4 · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **Tampa Bay Buccaneers +3.5** (Spread, GB @ TB): market: 52.2% across 11 books -> fair -109 · price: DK -108 -> value +0.5¢ · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **Washington Commanders** (ML, IND @ WAS): calibration: raw de-vig 35.3% -> 36.4% (favourite-longshot bias, 8,796 games) · market: 36.4% across 11 books -> fair +174 · price: FD +180 -> value +2.1¢ · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
 
 </details>
-
-_Matchup factors from 2026 play-by-play, 3 games per team, shrunk toward league average by sample size. Prior-season defence explains 2-5% of current-season early-week defence, so it is not used._
