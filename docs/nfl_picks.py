@@ -42,6 +42,7 @@ import nfl_lines as L
 SNAP = "data/nfl_odds_snapshots.jsonl"
 PROPS = "data/nfl_props_snapshots.jsonl"
 PICKLOG = "data/nfl_board_picks.jsonl"
+GRADEDLOG = "data/nfl_graded.jsonl"
 BOOKS = {"draftkings": "DK", "fanduel": "FD"}
 MKT = {"spreads": "Spread", "totals": "Total", "h2h": "ML"}
 
@@ -370,6 +371,73 @@ def main_line_only(rows):
     return keep
 
 
+# CONFIDENCE — how much the Hit% and Value on a row can be trusted.
+#
+# Every input is measured, not chosen. The old "Score" was
+# value + 10 x (hit - 50%), where the 10 was a weight I picked; it ranked
+# rows but said nothing about whether the numbers behind them were sound.
+#
+#   books      how many books priced this exact number. Fewer books, less
+#              reliable consensus.
+#   agreement  standard deviation of the de-vigged probability across those
+#              books. Measured on this board: median 0.0044, 75th pct
+#              0.0088, 90th pct 0.0127. Spreads and totals cluster at 0.0;
+#              moneylines are the loose ones at 0.0089.
+#   band       |predicted - actual| for this probability bucket, from 8,796
+#              team-games: 0.2 points at 40-60%, 1.1-1.5 at the extremes.
+#              A 50-60% row is better understood than an 85% row.
+#   movement   48h consensus move. Measured on this slate: median 0.5 pts,
+#              max 1.5. A moving market means the snapshot is already behind.
+#   freshness  price age. Beyond 8h no PLAY is issued at all.
+#   sample     props only: current-season games behind the model.
+#
+# Reported A/B/C/D so it reads as a reliability grade, never as a
+# probability. It says how well we know the number — NOT that the bet wins.
+CAL_ERR = [(0.00, 0.20, 1.5), (0.20, 0.30, 1.3), (0.30, 0.40, 1.1),
+           (0.40, 0.60, 0.2), (0.60, 0.70, 1.1), (0.70, 0.80, 1.4),
+           (0.80, 1.01, 1.1)]
+
+
+def band_error(prob):
+    for lo, hi, e in CAL_ERR:
+        if lo <= prob < hi:
+            return e
+    return 1.5
+
+
+def confidence(p, stale_h, move_pts=0.0):
+    """Return (grade, points, [reasons]). 100 is a perfectly known number."""
+    pts, why = 100.0, []
+    nb = p.get("nb", 0)
+    if nb < 4:
+        pts -= 25; why.append(f"only {nb} books")
+    elif nb < 7:
+        pts -= 10; why.append(f"{nb} books")
+    sd = p.get("book_sd")
+    if sd is not None:
+        if sd > 0.0127:
+            pts -= 20; why.append(f"books disagree (sd {sd:.3f}, >90th pct)")
+        elif sd > 0.0088:
+            pts -= 10; why.append(f"books loose (sd {sd:.3f})")
+    be = band_error(p["prob"])
+    pts -= be * 8
+    if be >= 1.3:
+        why.append(f"{p['prob']:.0%} band is off by {be:.1f} pts historically")
+    if move_pts >= 1.5:
+        pts -= 25; why.append(f"line moved {move_pts:.1f} pts in 48h")
+    elif move_pts >= 0.5:
+        pts -= 8; why.append(f"line moved {move_pts:.1f} pts")
+    if stale_h > 8:
+        pts -= 30; why.append(f"prices {stale_h:.0f}h old")
+    elif stale_h > 4:
+        pts -= 10; why.append(f"prices {stale_h:.0f}h old")
+    if p.get("model_p") is not None and p.get("model_n", 0) < 8:
+        pts -= 10; why.append(f"model on {p['model_n']} games")
+    pts = max(0.0, min(100.0, pts))
+    grade = "A" if pts >= 85 else "B" if pts >= 70 else "C" if pts >= 55 else "D"
+    return grade, pts, why
+
+
 def verdict(p, stale_h):
     # A PLAY claims DK/FD are off the market RIGHT NOW. On stale prices that
     # claim cannot be supported, so the board refuses rather than warns.
@@ -400,6 +468,19 @@ def build(days, only, season):
     if not G:
         return None
     games = {r["game_id"]: (r["away_team"], r["home_team"]) for r in G}
+    # 48h consensus movement per game/market, for the confidence grade
+    hist, moves = defaultdict(list), {}
+    mcut = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime(time.time() - 48 * 3600))
+    for r in load(SNAP):
+        if r.get("game_id") in games and r["captured_at"] > mcut \
+                and r.get("point") is not None:
+            hist[(r["game_id"], r["market"], r["outcome"])].append(
+                (r["captured_at"], r["point"]))
+    for (gid, mkt, _o), v in hist.items():
+        v.sort()
+        if len(v) > 1:
+            moves[(gid, mkt)] = max(moves.get((gid, mkt), 0.0),
+                                    abs(v[-1][1] - v[0][1]))
     age_g = max((r["captured_at"] for r in G), default="")
     age_p = max((r["captured_at"] for r in P), default="")
 
@@ -415,6 +496,8 @@ def build(days, only, season):
         a, h = games[gid]
         cp = calibrate(c["consensus"])
         bet = out + ("" if pt is None else f" {pt:+g}")
+        fairs = [e["fair"] for e in c["entries"]]
+        sd = statistics.stdev(fairs) if len(fairs) > 2 else None
         for e in c["entries"]:
             if e["book"] not in BOOKS:
                 continue
@@ -423,6 +506,7 @@ def build(days, only, season):
                               bet=bet, kind=MKT.get(mkt, mkt), book=BOOKS[e["book"]],
                               price=e["price"], prob=cp, raw_prob=c["consensus"],
                               ev=L.ev_at(e["price"], cp), nb=c["n_books"],
+                              book_sd=sd, move=moves.get((gid, mkt), 0.0),
                               model_p=None, diverg=None, mnote="", opp=None,
                               model_n=0))
 
@@ -467,7 +551,9 @@ def build(days, only, season):
                               diverg=(mp - c["consensus"]) if mp else None,
                               model_ev=(mp * pay - (1 - mp)) if mp else None,
                               mnote=note, mtilt=tilt, opp=opp,
-                              usage=usage.get(pid)))
+                              book_sd=(statistics.stdev([x["fair"] for x in c["entries"]])
+                                       if len(c["entries"]) > 2 else None),
+                              move=0.0, usage=usage.get(pid)))
 
     best = {}
     for p in picks:
@@ -527,9 +613,11 @@ def render(res, top, title, out_path):
     hist = load_history(out_path)
 
     for p in picks:
-        p["score"] = p["ev"] * 100 + 10 * (p["prob"] - 0.5)
+        g, pts, why = confidence(p, stale, p.get("move", 0.0))
+        p["conf"], p["conf_pts"], p["conf_why"] = g, pts, why
         p["verdict"] = verdict(p, stale)
-    ranked = sorted(picks, key=lambda p: -p["score"])
+    # rank by value, then by how well the number is known
+    ranked = sorted(picks, key=lambda p: (-p["ev"], -p["conf_pts"]))
 
     o = [f"# {title}", "",
          "Picks frozen at the price they were read at. **Both books shown; "
@@ -540,6 +628,9 @@ def render(res, top, title, out_path):
          "| **Hit%** | no-vig consensus across all books |",
          "| **Value** | EV of the DK/FD price vs that consensus, in cents |",
          "| **Model** | our own estimate, independent of price (props only) |",
+         "| **Conf** | A-D: how well we know these numbers — book agreement, "
+         "sample size, historical calibration of that band, line movement, "
+         "price age. **Not** the chance of winning. |",
          ""]
     if stale > STALE_PLAY_HOURS:
         o += [f"> ⚠️ **Prices are {stale:.0f}h old — no PLAY can be issued.** "
@@ -550,19 +641,21 @@ def render(res, top, title, out_path):
     plays = [p for p in ranked if p["verdict"] == "PLAY"][:top]
     leans = [] if stale > STALE_PLAY_HOURS else \
         [p for p in ranked if p["verdict"] == "LEAN"][:6]
-    o += ["| Verdict | Score | Game | Market | Pick | Hit% | Books (best bold) |",
-          "|---|---|---|---|---|---|---|"]
+    o += ["| Verdict | Conf | Game | Market | Pick | Hit% | Value | Books (best bold) |",
+          "|---|---|---|---|---|---|---|---|"]
     if stale > STALE_PLAY_HOURS:
-        o.append("| STALE | — | _prices too old to issue a play_ | | | | |")
+        o.append("| STALE | — | _prices too old to issue a play_ | | | | | |")
     elif plays:
         for p in plays:
-            o.append(f"| **PLAY** | {p['score']:.1f} | {p['game']} | {p['kind']} "
-                     f"| {p['bet']} | {p['prob']:.0%} | {book_cell(p, all_prices)} |")
+            o.append(f"| **PLAY** | **{p['conf']}** | {p['game']} | {p['kind']} "
+                     f"| {p['bet']} | {p['prob']:.0%} | {p['ev']*100:+.1f}¢ "
+                     f"| {book_cell(p, all_prices)} |")
     else:
-        o.append("| PASS | — | _no DK/FD price clears the bar on this board_ | | | | |")
+        o.append("| PASS | — | _no DK/FD price clears the bar on this board_ | | | | | |")
     for p in leans:
-        o.append(f"| LEAN | {p['score']:.1f} | {p['game']} | {p['kind']} "
-                 f"| {p['bet']} | {p['prob']:.0%} | {book_cell(p, all_prices)} |")
+        o.append(f"| LEAN | {p['conf']} | {p['game']} | {p['kind']} "
+                 f"| {p['bet']} | {p['prob']:.0%} | {p['ev']*100:+.1f}¢ "
+                 f"| {book_cell(p, all_prices)} |")
     o.append("")
 
     # 2. model divergence
@@ -644,6 +737,7 @@ def render(res, top, title, out_path):
         if abs(p.get("raw_prob", p["prob"]) - p["prob"]) > 0.001:
             bits.append(f"calibration: raw de-vig {p['raw_prob']:.1%} -> "
                         f"{p['prob']:.1%} (favourite-longshot bias, 8,796 games)")
+        bits.append(f"confidence {p['conf']} ({p['conf_pts']:.0f}/100)")
         bits.append(f"market: {p['prob']:.1%} across {p['nb']} books -> fair "
                     f"{fmt(L.prob_to_american(p['prob']))}")
         bits.append(f"price: {p['book']} {fmt(p['price'])} -> "
@@ -664,6 +758,8 @@ def render(res, top, title, out_path):
             w.append(f"thin consensus, {p['nb']} books")
         if p["ev"] < 0:
             w.append("negative value — this is the book's hold")
+        if p.get("conf_why"):
+            w.extend(p["conf_why"])
         w.append("no demonstrated projection edge: spreads t=+0.13, "
                  "totals t=-2.77")
         o.append(f"- **{p['bet']}** ({p['kind']}, {p['game']}): "
@@ -685,6 +781,211 @@ def render(res, top, title, out_path):
     return o
 
 
+
+# --------------------------------------------------------------------------
+# grading -> docs/GRADED.md
+# --------------------------------------------------------------------------
+
+def _fnum(x):
+    try:
+        return float(x)
+    except (TypeError, ValueError):
+        return None
+
+
+def fetch_games(season):
+    import csv, io
+    u = ("https://raw.githubusercontent.com/nflverse/nfldata/master/data/"
+         "games.csv")
+    req = urllib.request.Request(u, headers={"User-Agent": "Mozilla/5.0"})
+    txt = urllib.request.urlopen(req, timeout=120).read().decode("utf8")
+    return [r for r in csv.DictReader(io.StringIO(txt))
+            if str(r.get("season")) == str(season)]
+
+
+def first_publication(picks):
+    """One row per distinct bet, at the earliest time it appeared.
+
+    The board republishes every three hours; grading repeats would turn one
+    call into dozens and inflate any record.
+    """
+    out = {}
+    for p in sorted(picks, key=lambda x: x.get("published_at", "")):
+        out.setdefault((p.get("game_id"), p.get("market"), p.get("bet"),
+                        p.get("book")), p)
+    return list(out.values())
+
+
+def payout(price):
+    return (100 / abs(price)) if price < 0 else (price / 100)
+
+
+def boot_ci(pls, iters=2000, seed=1):
+    import random
+    if not pls:
+        return None
+    n = len(pls)
+    rnd = random.Random(seed)
+    b = sorted(sum(pls[rnd.randrange(n)] for _ in range(n)) / n
+               for _ in range(iters))
+    return b[int(iters * .025)], b[int(iters * .975) - 1]
+
+
+def grade_clv(picks, snap):
+    """Did the price beat where the market LATER settled?
+
+    Only captures strictly AFTER a pick's timestamp count. Scoring a pick
+    against the consensus that existed when it was published measures a
+    price against itself plus vig — that bug once reported a 5.6% beat rate
+    where a correct forward test on the same data gave 79.5%.
+    """
+    beat = n = skipped = 0
+    deltas = []
+    for p in first_publication(picks):
+        later = [r for r in snap if r["captured_at"] > p.get("published_at", "")]
+        if not later:
+            skipped += 1
+            continue
+        match = None
+        for (gid, mkt, out, pt), c in L.consensus(later, min_books=3).items():
+            lbl = out + ("" if pt is None else f" {pt:+g}")
+            if gid == p.get("game_id") and lbl == p.get("bet"):
+                match = c
+                break
+        if match is None:
+            skipped += 1
+            continue
+        try:
+            taken = L.american_to_prob(p["price"])
+        except (ValueError, TypeError):
+            continue
+        d = match["consensus"] - taken
+        deltas.append(d)
+        beat += d > 0
+        n += 1
+    if not n:
+        return {"graded": 0, "skipped": skipped,
+                "note": "no pick has a later capture to measure against yet"}
+    rate = beat / n
+    se = math.sqrt(0.25 / n)
+    return {"graded": n, "skipped_no_forward_window": skipped,
+            "beat_close": beat, "beat_rate": round(rate, 4),
+            "mean_clv_pts": round(statistics.mean(deltas) * 100, 3),
+            "z_vs_50": round((rate - .5) / se, 2),
+            "verdict": ("no demonstrated CLV — a valueless screen sits at 50%"
+                        if abs(rate - .5) < 2 * se else
+                        "beats the close" if rate > .5 else "LOSES to the close")}
+
+
+def grade_results(picks, season):
+    try:
+        sched = fetch_games(season)
+    except Exception as exc:
+        return {"graded": 0, "note": f"schedule unavailable: {type(exc).__name__}"}, []
+    idx = {(g.get("away_team"), g.get("home_team")): g for g in sched}
+    graded = []
+    for p in first_publication(picks):
+        if p.get("market") not in ("ML", "Spread", "Total"):
+            continue
+        try:
+            away, home = [t.strip() for t in p.get("matchup", "").split("@")]
+        except ValueError:
+            continue
+        # The picks log contains BOTH formats: early rows wrote full names
+        # ("Atlanta Falcons @ New Orleans Saints"), later rows abbreviations
+        # ("ATL @ NO"). The schedule uses abbreviations, so normalise both.
+        g = idx.get((TEAM.get(away, away), TEAM.get(home, home)))
+        if not g:
+            continue
+        home = TEAM.get(home, home)
+        res, tot = _fnum(g.get("result")), _fnum(g.get("total"))
+        if res is None:
+            continue
+        bet, tok = p["bet"], p["bet"].rsplit(" ", 1)
+        num = _fnum(tok[1]) if len(tok) == 2 else None
+        won = None
+        if p["market"] == "ML":
+            if res == 0:
+                continue
+            won = (res > 0) == (TEAM.get(bet, bet) == home)
+        elif p["market"] == "Spread" and num is not None:
+            is_home = TEAM.get(tok[0], tok[0]) == home
+            line_home = num if is_home else -num     # nflverse: home-positive
+            if res == line_home:
+                continue
+            won = (res > line_home) == is_home
+        elif p["market"] == "Total" and num is not None and tot is not None:
+            if tot == num:
+                continue
+            won = (tot > num) == bet.lower().startswith("over")
+        if won is None:
+            continue
+        graded.append({**p, "result": res, "won": bool(won),
+                       "pl": payout(p["price"]) if won else -1.0})
+    if not graded:
+        return {"graded": 0, "note": "no published game-line pick has settled"}, []
+    pls = [x["pl"] for x in graded]
+    n, wins = len(pls), sum(x["won"] for x in graded)
+    ci = boot_ci(pls)
+    return {"graded": n, "record": f"{wins}-{n-wins}",
+            "win_rate": round(wins / n, 4), "roi": round(sum(pls) / n, 4),
+            "roi_ci_95": [round(ci[0], 4), round(ci[1], 4)] if ci else None,
+            "verdict": ("indistinguishable from luck — CI straddles zero"
+                        if ci and ci[0] <= 0 <= ci[1] else
+                        "positive at 95%" if ci and ci[0] > 0
+                        else "negative at 95%")}, graded
+
+
+def write_graded(season, out_path="docs/GRADED.md"):
+    picks, snap = load(PICKLOG), load(SNAP)
+    now = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+    os.makedirs(os.path.dirname(out_path) or ".", exist_ok=True)
+    if not picks:
+        open(out_path, "w").write(
+            "# Results\n\n_Generated " + now + "._\n\nNo picks published "
+            "yet — `data/nfl_board_picks.jsonl` is empty. It fills the first "
+            "time the board runs.\n")
+        return 0
+    clv = grade_clv(picks, snap)
+    res, rows = grade_results(picks, season)
+    uniq = len(first_publication(picks))
+    o = ["# Results", "",
+         f"Generated {now}. Every pick the board has published, scored "
+         f"against what happened. Each bet counted **once**, at first "
+         f"publication.", "",
+         f"Pick rows logged: **{len(picks):,}** · unique bets: **{uniq:,}**", "",
+         "## CLV — did the price beat where the market settled?", "",
+         "```json", json.dumps(clv, indent=2), "```", "",
+         "> CLV is the primary scoreboard: resolving a 2% ROI from win/loss "
+         "needs ~17,700 bets, while CLV converges in hundreds. Only captures "
+         "taken AFTER a pick was published are used.", "",
+         "## Win / loss — settled game lines", "",
+         "```json", json.dumps(res, indent=2), "```", ""]
+    if rows:
+        o += ["| Published | Game | Bet | Book | Price | Result | W/L | P/L |",
+              "|---|---|---|---|---|---|---|---|"]
+        for g in sorted(rows, key=lambda x: x.get("published_at", "")):
+            o.append(f"| {g.get('published_at','')[:10]} | {g.get('matchup','')} "
+                     f"| {g['bet']} | {g.get('book','')} | {g['price']:+.0f} "
+                     f"| {g['result']:+.0f} | {'**W**' if g['won'] else 'L'} "
+                     f"| {g['pl']:+.2f} |")
+        o.append("")
+        os.makedirs("data", exist_ok=True)
+        with open(GRADEDLOG, "w") as f:
+            for g in rows:
+                f.write(json.dumps(g) + "\n")
+    o += ["## Graduation criteria (pre-registered)", "",
+          "- **Screen to real money:** at least 800 graded prices with the "
+          "beat-close rate 95% CI excluding 50%.",
+          "- **Projection to published rows:** |t| > 2 on "
+          "`(result-line) ~ (proj-line)` on a season the parameters were "
+          "never fitted on. Current: spreads +0.007 (t=0.13, n=1,578), "
+          "totals -0.107 (t=-2.77).",
+          "- **A winning week is never a reason.**"]
+    open(out_path, "w").write("\n".join(o))
+    return len(rows)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--days", type=float, default=7)
@@ -693,6 +994,8 @@ def main():
     ap.add_argument("--season", type=int, default=SEASON)
     ap.add_argument("--title", default="NFL Locked Picks")
     ap.add_argument("--out", default="docs/PICKS.md")
+    ap.add_argument("--graded-out", default="docs/GRADED.md")
+    ap.add_argument("--no-grade", action="store_true")
     a = ap.parse_args()
 
     res = build(a.days, a.game, a.season)
@@ -704,6 +1007,12 @@ def main():
     os.makedirs(os.path.dirname(a.out) or ".", exist_ok=True)
     open(a.out, "w").write("\n".join(o))
     print(f"Wrote {a.out} — {len(res[0])} DK/FD prices ranked")
+    if not a.no_grade:
+        try:
+            n = write_graded(a.season, a.graded_out)
+            print(f"Wrote {a.graded_out} — {n} settled rows")
+        except Exception as exc:
+            print(f"grading skipped: {type(exc).__name__}: {exc}")
 
 
 if __name__ == "__main__":
