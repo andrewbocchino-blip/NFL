@@ -1,18 +1,18 @@
 # Results
 
-Generated 2026-10-05T13:00:08Z. Every pick the board has published, scored against what happened. Each bet counted **once**, at first publication.
+Generated 2026-10-07T18:40:22Z. Every pick the board has published, scored against what happened. Each bet counted **once**, at first publication.
 
-Pick rows logged: **684** · unique bets: **204**
+Pick rows logged: **675** · unique bets: **207**
 
 ## CLV — did the price beat where the market settled?
 
 ```json
 {
   "graded": 87,
-  "skipped_no_forward_window": 117,
+  "skipped_no_forward_window": 120,
   "beat_close": 36,
   "beat_rate": 0.4138,
-  "mean_clv_pts": -2.277,
+  "mean_clv_pts": -2.26,
   "z_vs_50": -1.61,
   "verdict": "no demonstrated CLV \u2014 a valueless screen sits at 50%"
 }
@@ -24,13 +24,13 @@ Pick rows logged: **684** · unique bets: **204**
 
 ```json
 {
-  "graded": 97,
-  "record": "39-58",
-  "win_rate": 0.4021,
-  "roi": -0.1591,
+  "graded": 99,
+  "record": "40-59",
+  "win_rate": 0.404,
+  "roi": -0.1528,
   "roi_ci_95": [
-    -0.3913,
-    0.0868
+    -0.3759,
+    0.0981
   ],
   "verdict": "indistinguishable from luck \u2014 CI straddles zero"
 }
@@ -115,6 +115,7 @@ Pick rows logged: **684** · unique bets: **204**
 | 2026-09-29 | Green Bay Packers @ Tampa Bay Buccaneers | Green Bay Packers | FD | -180 | -3 | **W** | +0.56 |
 | 2026-09-29 | Indianapolis Colts @ Washington Commanders | Washington Commanders | FD | +162 | -17 | L | -1.00 |
 | 2026-09-29 | Dallas Cowboys @ Houston Texans | Houston Texans | FD | -136 | -4 | L | -1.00 |
+| 2026-09-29 | Atlanta Falcons @ New Orleans Saints | Atlanta Falcons | DK | +130 | -21 | **W** | +1.30 |
 | 2026-09-29 | Pittsburgh Steelers @ Cleveland Browns | Pittsburgh Steelers -2.5 | FD | -112 | +3 | L | -1.00 |
 | 2026-09-29 | Dallas Cowboys @ Houston Texans | Houston Texans -2.5 | FD | -110 | -4 | L | -1.00 |
 | 2026-09-29 | Pittsburgh Steelers @ Cleveland Browns | Pittsburgh Steelers | FD | -144 | +3 | L | -1.00 |
@@ -128,6 +129,7 @@ Pick rows logged: **684** · unique bets: **204**
 | 2026-09-30 | New England Patriots @ Buffalo Bills | Buffalo Bills | DK | -298 | -3 | L | -1.00 |
 | 2026-09-30 | Denver Broncos @ San Francisco 49ers | Denver Broncos | FD | +130 | +10 | L | -1.00 |
 | 2026-09-30 | Dallas Cowboys @ Houston Texans | Houston Texans | DK | -142 | -4 | L | -1.00 |
+| 2026-09-30 | Atlanta Falcons @ New Orleans Saints | New Orleans Saints | FD | -144 | -21 | L | -1.00 |
 | 2026-09-30 | Green Bay Packers @ Tampa Bay Buccaneers | Green Bay Packers | DK | -175 | -3 | **W** | +0.57 |
 | 2026-09-30 | Los Angeles Rams @ Philadelphia Eagles | Los Angeles Rams | DK | -162 | -4 | **W** | +0.62 |
 | 2026-10-01 | Kansas City Chiefs @ Las Vegas Raiders | Las Vegas Raiders | FD | +184 | -3 | L | -1.00 |
