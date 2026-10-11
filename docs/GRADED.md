@@ -1,19 +1,19 @@
 # Results
 
-Generated 2026-10-11T12:23:26Z. Every pick the board has published, scored against what happened. Each bet counted **once**, at first publication.
+Generated 2026-10-11T19:21:32Z. Every pick the board has published, scored against what happened. Each bet counted **once**, at first publication.
 
-Pick rows logged: **855** · unique bets: **260**
+Pick rows logged: **870** · unique bets: **268**
 
 ## CLV — did the price beat where the market settled?
 
 ```json
 {
   "graded": 107,
-  "skipped_no_forward_window": 153,
-  "beat_close": 37,
-  "beat_rate": 0.3458,
-  "mean_clv_pts": -2.089,
-  "z_vs_50": -3.19,
+  "skipped_no_forward_window": 161,
+  "beat_close": 39,
+  "beat_rate": 0.3645,
+  "mean_clv_pts": -2.2,
+  "z_vs_50": -2.8,
   "verdict": "LOSES to the close"
 }
 ```
@@ -24,13 +24,13 @@ Pick rows logged: **855** · unique bets: **260**
 
 ```json
 {
-  "graded": 99,
-  "record": "40-59",
-  "win_rate": 0.404,
-  "roi": -0.1528,
+  "graded": 100,
+  "record": "41-59",
+  "win_rate": 0.41,
+  "roi": -0.1484,
   "roi_ci_95": [
-    -0.3759,
-    0.0981
+    -0.3755,
+    0.1016
   ],
   "verdict": "indistinguishable from luck \u2014 CI straddles zero"
 }
@@ -137,6 +137,7 @@ Pick rows logged: **855** · unique bets: **260**
 | 2026-10-01 | Jacksonville Jaguars @ Cincinnati Bengals | Cincinnati Bengals | DK | -142 | -5 | L | -1.00 |
 | 2026-10-02 | Miami Dolphins @ Minnesota Vikings | Miami Dolphins | FD | +480 | +5 | L | -1.00 |
 | 2026-10-03 | New York Jets @ Chicago Bears | Chicago Bears | FD | -180 | +11 | **W** | +0.56 |
+| 2026-10-08 | PHI @ JAX | Jacksonville Jaguars | DK | -345 | +2 | **W** | +0.29 |
 
 ## Graduation criteria (pre-registered)
 
