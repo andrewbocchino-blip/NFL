@@ -1,19 +1,19 @@
 # Results
 
-Generated 2026-10-12T10:28:10Z. Every pick the board has published, scored against what happened. Each bet counted **once**, at first publication.
+Generated 2026-10-12T21:05:23Z. Every pick the board has published, scored against what happened. Each bet counted **once**, at first publication.
 
-Pick rows logged: **915** · unique bets: **283**
+Pick rows logged: **930** · unique bets: **288**
 
 ## CLV — did the price beat where the market settled?
 
 ```json
 {
-  "graded": 120,
-  "skipped_no_forward_window": 163,
+  "graded": 124,
+  "skipped_no_forward_window": 164,
   "beat_close": 43,
-  "beat_rate": 0.3583,
-  "mean_clv_pts": -2.057,
-  "z_vs_50": -3.1,
+  "beat_rate": 0.3468,
+  "mean_clv_pts": -2.042,
+  "z_vs_50": -3.41,
   "verdict": "LOSES to the close"
 }
 ```
