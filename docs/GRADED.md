@@ -1,19 +1,19 @@
 # Results
 
-Generated 2026-10-11T19:24:38Z. Every pick the board has published, scored against what happened. Each bet counted **once**, at first publication.
+Generated 2026-10-12T00:19:22Z. Every pick the board has published, scored against what happened. Each bet counted **once**, at first publication.
 
-Pick rows logged: **885** · unique bets: **268**
+Pick rows logged: **900** · unique bets: **279**
 
 ## CLV — did the price beat where the market settled?
 
 ```json
 {
-  "graded": 107,
-  "skipped_no_forward_window": 161,
-  "beat_close": 38,
-  "beat_rate": 0.3551,
-  "mean_clv_pts": -2.219,
-  "z_vs_50": -3.0,
+  "graded": 112,
+  "skipped_no_forward_window": 167,
+  "beat_close": 39,
+  "beat_rate": 0.3482,
+  "mean_clv_pts": -2.181,
+  "z_vs_50": -3.21,
   "verdict": "LOSES to the close"
 }
 ```
@@ -24,13 +24,13 @@ Pick rows logged: **885** · unique bets: **268**
 
 ```json
 {
-  "graded": 100,
-  "record": "41-59",
-  "win_rate": 0.41,
-  "roi": -0.1484,
+  "graded": 124,
+  "record": "52-72",
+  "win_rate": 0.4194,
+  "roi": -0.1476,
   "roi_ci_95": [
-    -0.3755,
-    0.1016
+    -0.3392,
+    0.071
   ],
   "verdict": "indistinguishable from luck \u2014 CI straddles zero"
 }
@@ -137,7 +137,31 @@ Pick rows logged: **885** · unique bets: **268**
 | 2026-10-01 | Jacksonville Jaguars @ Cincinnati Bengals | Cincinnati Bengals | DK | -142 | -5 | L | -1.00 |
 | 2026-10-02 | Miami Dolphins @ Minnesota Vikings | Miami Dolphins | FD | +480 | +5 | L | -1.00 |
 | 2026-10-03 | New York Jets @ Chicago Bears | Chicago Bears | FD | -180 | +11 | **W** | +0.56 |
+| 2026-10-03 | Cincinnati Bengals @ Miami Dolphins | Miami Dolphins | FD | +410 | -7 | L | -1.00 |
+| 2026-10-03 | Minnesota Vikings @ New Orleans Saints | New Orleans Saints | DK | +120 | -10 | L | -1.00 |
+| 2026-10-07 | LV @ NE | Las Vegas Raiders | DK | +164 | +28 | L | -1.00 |
+| 2026-10-07 | HOU @ TEN | Houston Texans -7 | DK | -105 | -23 | **W** | +0.95 |
+| 2026-10-07 | DEN @ LAC | Los Angeles Chargers +3.5 | DK | -110 | -6 | L | -1.00 |
+| 2026-10-07 | DEN @ LAC | Los Angeles Chargers | DK | +154 | -6 | L | -1.00 |
+| 2026-10-07 | IND @ PIT | Over +44.5 | FD | -102 | +12 | **W** | +0.98 |
+| 2026-10-07 | DET @ ARI | Arizona Cardinals | DK | +205 | -24 | L | -1.00 |
+| 2026-10-07 | CLE @ NYJ | Under +39.5 | DK | -102 | +5 | **W** | +0.98 |
+| 2026-10-07 | CIN @ MIA | Miami Dolphins +7 | DK | -108 | -7 | L | -1.00 |
+| 2026-10-07 | IND @ PIT | Pittsburgh Steelers | FD | -134 | +12 | **W** | +0.75 |
+| 2026-10-07 | CIN @ MIA | Cincinnati Bengals | FD | -310 | -7 | **W** | +0.32 |
+| 2026-10-07 | NYG @ WAS | Under +43.5 | FD | -104 | +0 | L | -1.00 |
+| 2026-10-07 | HOU @ TEN | Houston Texans | FD | -360 | -23 | **W** | +0.28 |
+| 2026-10-08 | IND @ PIT | Indianapolis Colts +2.5 | DK | -102 | +12 | L | -1.00 |
+| 2026-10-08 | LV @ NE | Las Vegas Raiders | FD | +166 | +28 | L | -1.00 |
+| 2026-10-08 | SF @ SEA | San Francisco 49ers | FD | +146 | -3 | **W** | +1.46 |
 | 2026-10-08 | PHI @ JAX | Jacksonville Jaguars | DK | -345 | +2 | **W** | +0.29 |
+| 2026-10-08 | CHI @ GB | Under +45.5 | DK | -102 | +24 | **W** | +0.98 |
+| 2026-10-08 | MIN @ NO | Minnesota Vikings | FD | -132 | -10 | **W** | +0.76 |
+| 2026-10-08 | CIN @ MIA | Miami Dolphins +7 | FD | -108 | -7 | L | -1.00 |
+| 2026-10-08 | MIN @ NO | New Orleans Saints +1.5 | DK | -102 | -10 | L | -1.00 |
+| 2026-10-09 | CHI @ GB | Green Bay Packers | DK | +110 | +24 | **W** | +1.10 |
+| 2026-10-09 | IND @ PIT | Over +44.5 | DK | -102 | +12 | **W** | +0.98 |
+| 2026-10-11 | DEN @ LAC | Los Angeles Chargers | FD | +172 | -6 | L | -1.00 |
 
 ## Graduation criteria (pre-registered)
 
