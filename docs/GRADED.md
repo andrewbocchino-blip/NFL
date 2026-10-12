@@ -1,19 +1,19 @@
 # Results
 
-Generated 2026-10-12T00:19:22Z. Every pick the board has published, scored against what happened. Each bet counted **once**, at first publication.
+Generated 2026-10-12T10:28:10Z. Every pick the board has published, scored against what happened. Each bet counted **once**, at first publication.
 
-Pick rows logged: **900** · unique bets: **279**
+Pick rows logged: **915** · unique bets: **283**
 
 ## CLV — did the price beat where the market settled?
 
 ```json
 {
-  "graded": 112,
-  "skipped_no_forward_window": 167,
-  "beat_close": 39,
-  "beat_rate": 0.3482,
-  "mean_clv_pts": -2.181,
-  "z_vs_50": -3.21,
+  "graded": 120,
+  "skipped_no_forward_window": 163,
+  "beat_close": 43,
+  "beat_rate": 0.3583,
+  "mean_clv_pts": -2.057,
+  "z_vs_50": -3.1,
   "verdict": "LOSES to the close"
 }
 ```
@@ -24,13 +24,13 @@ Pick rows logged: **900** · unique bets: **279**
 
 ```json
 {
-  "graded": 124,
-  "record": "52-72",
-  "win_rate": 0.4194,
-  "roi": -0.1476,
+  "graded": 125,
+  "record": "53-72",
+  "win_rate": 0.424,
+  "roi": -0.1344,
   "roi_ci_95": [
-    -0.3392,
-    0.071
+    -0.3312,
+    0.0708
   ],
   "verdict": "indistinguishable from luck \u2014 CI straddles zero"
 }
@@ -161,6 +161,7 @@ Pick rows logged: **900** · unique bets: **279**
 | 2026-10-08 | MIN @ NO | New Orleans Saints +1.5 | DK | -102 | -10 | L | -1.00 |
 | 2026-10-09 | CHI @ GB | Green Bay Packers | DK | +110 | +24 | **W** | +1.10 |
 | 2026-10-09 | IND @ PIT | Over +44.5 | DK | -102 | +12 | **W** | +0.98 |
+| 2026-10-10 | BAL @ ATL | Baltimore Ravens | DK | +150 | -7 | **W** | +1.50 |
 | 2026-10-11 | DEN @ LAC | Los Angeles Chargers | FD | +172 | -6 | L | -1.00 |
 
 ## Graduation criteria (pre-registered)
