@@ -1,19 +1,19 @@
 # Results
 
-Generated 2026-10-15T16:36:16Z. Every pick the board has published, scored against what happened. Each bet counted **once**, at first publication.
+Generated 2026-10-16T03:50:02Z. Every pick the board has published, scored against what happened. Each bet counted **once**, at first publication.
 
-Pick rows logged: **1,080** · unique bets: **310**
+Pick rows logged: **1,095** · unique bets: **320**
 
 ## CLV — did the price beat where the market settled?
 
 ```json
 {
-  "graded": 139,
-  "skipped_no_forward_window": 171,
+  "graded": 138,
+  "skipped_no_forward_window": 182,
   "beat_close": 48,
-  "beat_rate": 0.3453,
-  "mean_clv_pts": -1.815,
-  "z_vs_50": -3.65,
+  "beat_rate": 0.3478,
+  "mean_clv_pts": -1.69,
+  "z_vs_50": -3.58,
   "verdict": "LOSES to the close"
 }
 ```
@@ -24,13 +24,13 @@ Pick rows logged: **1,080** · unique bets: **310**
 
 ```json
 {
-  "graded": 128,
-  "record": "55-73",
-  "win_rate": 0.4297,
-  "roi": -0.1158,
+  "graded": 132,
+  "record": "57-75",
+  "win_rate": 0.4318,
+  "roi": -0.1112,
   "roi_ci_95": [
-    -0.3034,
-    0.0765
+    -0.3002,
+    0.0813
   ],
   "verdict": "indistinguishable from luck \u2014 CI straddles zero"
 }
@@ -163,9 +163,13 @@ Pick rows logged: **1,080** · unique bets: **310**
 | 2026-10-08 | MIN @ NO | New Orleans Saints +1.5 | DK | -102 | -10 | L | -1.00 |
 | 2026-10-09 | CHI @ GB | Green Bay Packers | DK | +110 | +24 | **W** | +1.10 |
 | 2026-10-09 | IND @ PIT | Over +44.5 | DK | -102 | +12 | **W** | +0.98 |
+| 2026-10-10 | SEA @ DEN | Seattle Seahawks | DK | -122 | +3 | L | -1.00 |
 | 2026-10-10 | BAL @ ATL | Baltimore Ravens | DK | +150 | -7 | **W** | +1.50 |
 | 2026-10-11 | DEN @ LAC | Los Angeles Chargers | FD | +172 | -6 | L | -1.00 |
+| 2026-10-11 | SEA @ DEN | Denver Broncos | FD | +118 | +3 | **W** | +1.18 |
 | 2026-10-12 | BUF @ LA | Buffalo Bills | DK | +150 | -3 | **W** | +1.50 |
+| 2026-10-13 | SEA @ DEN | Under +42.5 | FD | -104 | +3 | **W** | +0.96 |
+| 2026-10-15 | SEA @ DEN | Seattle Seahawks | FD | -138 | +3 | L | -1.00 |
 
 ## Graduation criteria (pre-registered)
 
