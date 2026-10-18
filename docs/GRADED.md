@@ -1,18 +1,18 @@
 # Results
 
-Generated 2026-10-18T17:51:19Z. Every pick the board has published, scored against what happened. Each bet counted **once**, at first publication.
+Generated 2026-10-18T20:20:13Z. Every pick the board has published, scored against what happened. Each bet counted **once**, at first publication.
 
-Pick rows logged: **1,290** · unique bets: **365**
+Pick rows logged: **1,305** · unique bets: **366**
 
 ## CLV — did the price beat where the market settled?
 
 ```json
 {
   "graded": 140,
-  "skipped_no_forward_window": 225,
+  "skipped_no_forward_window": 226,
   "beat_close": 51,
   "beat_rate": 0.3643,
-  "mean_clv_pts": -2.026,
+  "mean_clv_pts": -2.4,
   "z_vs_50": -3.21,
   "verdict": "LOSES to the close"
 }
@@ -24,13 +24,13 @@ Pick rows logged: **1,290** · unique bets: **365**
 
 ```json
 {
-  "graded": 135,
-  "record": "58-77",
-  "win_rate": 0.4296,
-  "roi": -0.1141,
+  "graded": 140,
+  "record": "60-80",
+  "win_rate": 0.4286,
+  "roi": -0.1071,
   "roi_ci_95": [
-    -0.2983,
-    0.0748
+    -0.2927,
+    0.0769
   ],
   "verdict": "indistinguishable from luck \u2014 CI straddles zero"
 }
@@ -166,11 +166,16 @@ Pick rows logged: **1,290** · unique bets: **365**
 | 2026-10-10 | SEA @ DEN | Seattle Seahawks | DK | -122 | +3 | L | -1.00 |
 | 2026-10-10 | BAL @ ATL | Baltimore Ravens | DK | +150 | -7 | **W** | +1.50 |
 | 2026-10-11 | DEN @ LAC | Los Angeles Chargers | FD | +172 | -6 | L | -1.00 |
+| 2026-10-11 | BAL @ CLE | Cleveland Browns | FD | +160 | +3 | **W** | +1.60 |
 | 2026-10-11 | SEA @ DEN | Denver Broncos | FD | +118 | +3 | **W** | +1.18 |
+| 2026-10-11 | TEN @ IND | Indianapolis Colts | DK | -290 | -6 | L | -1.00 |
+| 2026-10-12 | BAL @ CLE | Cleveland Browns | DK | +180 | +3 | **W** | +1.80 |
 | 2026-10-12 | BUF @ LA | Buffalo Bills | DK | +150 | -3 | **W** | +1.50 |
+| 2026-10-12 | TEN @ IND | Under +43.5 | DK | -102 | -6 | L | -1.00 |
 | 2026-10-12 | HOU @ JAX | Under +42.5 | DK | -102 | -3 | L | -1.00 |
 | 2026-10-12 | HOU @ JAX | Jacksonville Jaguars | FD | -138 | -3 | L | -1.00 |
 | 2026-10-13 | SEA @ DEN | Under +42.5 | FD | -104 | +3 | **W** | +0.96 |
+| 2026-10-13 | BAL @ CLE | Over +41.5 | FD | -102 | +3 | L | -1.00 |
 | 2026-10-15 | SEA @ DEN | Seattle Seahawks | FD | -138 | +3 | L | -1.00 |
 | 2026-10-17 | HOU @ JAX | Houston Texans | FD | +128 | -3 | **W** | +1.28 |
 
