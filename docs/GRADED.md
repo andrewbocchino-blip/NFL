@@ -1,19 +1,19 @@
 # Results
 
-Generated 2026-10-18T15:36:49Z. Every pick the board has published, scored against what happened. Each bet counted **once**, at first publication.
+Generated 2026-10-18T17:51:19Z. Every pick the board has published, scored against what happened. Each bet counted **once**, at first publication.
 
-Pick rows logged: **1,275** · unique bets: **353**
+Pick rows logged: **1,290** · unique bets: **365**
 
 ## CLV — did the price beat where the market settled?
 
 ```json
 {
   "graded": 140,
-  "skipped_no_forward_window": 213,
-  "beat_close": 53,
-  "beat_rate": 0.3786,
-  "mean_clv_pts": -1.652,
-  "z_vs_50": -2.87,
+  "skipped_no_forward_window": 225,
+  "beat_close": 51,
+  "beat_rate": 0.3643,
+  "mean_clv_pts": -2.026,
+  "z_vs_50": -3.21,
   "verdict": "LOSES to the close"
 }
 ```
@@ -24,13 +24,13 @@ Pick rows logged: **1,275** · unique bets: **353**
 
 ```json
 {
-  "graded": 132,
-  "record": "57-75",
-  "win_rate": 0.4318,
-  "roi": -0.1112,
+  "graded": 135,
+  "record": "58-77",
+  "win_rate": 0.4296,
+  "roi": -0.1141,
   "roi_ci_95": [
-    -0.3002,
-    0.0813
+    -0.2983,
+    0.0748
   ],
   "verdict": "indistinguishable from luck \u2014 CI straddles zero"
 }
@@ -168,8 +168,11 @@ Pick rows logged: **1,275** · unique bets: **353**
 | 2026-10-11 | DEN @ LAC | Los Angeles Chargers | FD | +172 | -6 | L | -1.00 |
 | 2026-10-11 | SEA @ DEN | Denver Broncos | FD | +118 | +3 | **W** | +1.18 |
 | 2026-10-12 | BUF @ LA | Buffalo Bills | DK | +150 | -3 | **W** | +1.50 |
+| 2026-10-12 | HOU @ JAX | Under +42.5 | DK | -102 | -3 | L | -1.00 |
+| 2026-10-12 | HOU @ JAX | Jacksonville Jaguars | FD | -138 | -3 | L | -1.00 |
 | 2026-10-13 | SEA @ DEN | Under +42.5 | FD | -104 | +3 | **W** | +0.96 |
 | 2026-10-15 | SEA @ DEN | Seattle Seahawks | FD | -138 | +3 | L | -1.00 |
+| 2026-10-17 | HOU @ JAX | Houston Texans | FD | +128 | -3 | **W** | +1.28 |
 
 ## Graduation criteria (pre-registered)
 
