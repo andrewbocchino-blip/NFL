@@ -1,19 +1,19 @@
 # Results
 
-Generated 2026-10-20T00:09:42Z. Every pick the board has published, scored against what happened. Each bet counted **once**, at first publication.
+Generated 2026-10-20T08:19:13Z. Every pick the board has published, scored against what happened. Each bet counted **once**, at first publication.
 
-Pick rows logged: **1,380** · unique bets: **396**
+Pick rows logged: **1,395** · unique bets: **400**
 
 ## CLV — did the price beat where the market settled?
 
 ```json
 {
-  "graded": 164,
-  "skipped_no_forward_window": 232,
-  "beat_close": 58,
-  "beat_rate": 0.3537,
-  "mean_clv_pts": -2.309,
-  "z_vs_50": -3.75,
+  "graded": 165,
+  "skipped_no_forward_window": 235,
+  "beat_close": 59,
+  "beat_rate": 0.3576,
+  "mean_clv_pts": -2.294,
+  "z_vs_50": -3.66,
   "verdict": "LOSES to the close"
 }
 ```
@@ -24,13 +24,13 @@ Pick rows logged: **1,380** · unique bets: **396**
 
 ```json
 {
-  "graded": 176,
-  "record": "73-103",
-  "win_rate": 0.4148,
-  "roi": -0.1577,
+  "graded": 179,
+  "record": "75-104",
+  "win_rate": 0.419,
+  "roi": -0.1538,
   "roi_ci_95": [
-    -0.3182,
-    0.0016
+    -0.3131,
+    0.0083
   ],
   "verdict": "indistinguishable from luck \u2014 CI straddles zero"
 }
@@ -189,6 +189,8 @@ Pick rows logged: **1,380** · unique bets: **396**
 | 2026-10-12 | NYJ @ NE | New York Jets | FD | +300 | +7 | L | -1.00 |
 | 2026-10-12 | NO @ NYG | New Orleans Saints | FD | -112 | -7 | **W** | +0.89 |
 | 2026-10-12 | HOU @ JAX | Jacksonville Jaguars | FD | -138 | -3 | L | -1.00 |
+| 2026-10-13 | WAS @ SF | Washington Commanders | FD | +350 | +6 | L | -1.00 |
+| 2026-10-13 | WAS @ SF | Under +50.5 | DK | -102 | +6 | **W** | +0.98 |
 | 2026-10-13 | NYJ @ NE | New England Patriots -7 | FD | -105 | +7 | **W** | +0.95 |
 | 2026-10-13 | SEA @ DEN | Under +42.5 | FD | -104 | +3 | **W** | +0.96 |
 | 2026-10-13 | LAC @ KC | Under +43.5 | FD | -104 | +16 | **W** | +0.96 |
@@ -214,6 +216,7 @@ Pick rows logged: **1,380** · unique bets: **396**
 | 2026-10-17 | HOU @ JAX | Houston Texans | FD | +128 | -3 | **W** | +1.28 |
 | 2026-10-18 | PIT @ TB | Pittsburgh Steelers -2.5 | FD | +100 | -7 | **W** | +1.00 |
 | 2026-10-18 | CAR @ PHI | Philadelphia Eagles | FD | +148 | -11 | L | -1.00 |
+| 2026-10-19 | WAS @ SF | San Francisco 49ers | DK | -410 | +6 | **W** | +0.24 |
 
 ## Graduation criteria (pre-registered)
 
