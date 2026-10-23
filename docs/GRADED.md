@@ -1,19 +1,19 @@
 # Results
 
-Generated 2026-10-22T21:20:33Z. Every pick the board has published, scored against what happened. Each bet counted **once**, at first publication.
+Generated 2026-10-23T04:00:36Z. Every pick the board has published, scored against what happened. Each bet counted **once**, at first publication.
 
-Pick rows logged: **1,560** · unique bets: **425**
+Pick rows logged: **1,575** · unique bets: **431**
 
 ## CLV — did the price beat where the market settled?
 
 ```json
 {
-  "graded": 179,
-  "skipped_no_forward_window": 246,
+  "graded": 180,
+  "skipped_no_forward_window": 251,
   "beat_close": 64,
-  "beat_rate": 0.3575,
-  "mean_clv_pts": -2.083,
-  "z_vs_50": -3.81,
+  "beat_rate": 0.3556,
+  "mean_clv_pts": -2.068,
+  "z_vs_50": -3.88,
   "verdict": "LOSES to the close"
 }
 ```
@@ -24,13 +24,13 @@ Pick rows logged: **1,560** · unique bets: **425**
 
 ```json
 {
-  "graded": 179,
-  "record": "75-104",
-  "win_rate": 0.419,
-  "roi": -0.1538,
+  "graded": 184,
+  "record": "79-105",
+  "win_rate": 0.4293,
+  "roi": -0.1372,
   "roi_ci_95": [
-    -0.3131,
-    0.0083
+    -0.2936,
+    0.0226
   ],
   "verdict": "indistinguishable from luck \u2014 CI straddles zero"
 }
@@ -216,7 +216,12 @@ Pick rows logged: **1,560** · unique bets: **425**
 | 2026-10-17 | HOU @ JAX | Houston Texans | FD | +128 | -3 | **W** | +1.28 |
 | 2026-10-18 | PIT @ TB | Pittsburgh Steelers -2.5 | FD | +100 | -7 | **W** | +1.00 |
 | 2026-10-18 | CAR @ PHI | Philadelphia Eagles | FD | +148 | -11 | L | -1.00 |
+| 2026-10-19 | NE @ CHI | Chicago Bears -3 | FD | -104 | +6 | **W** | +0.96 |
+| 2026-10-19 | NE @ CHI | Chicago Bears | FD | -152 | +6 | **W** | +0.66 |
 | 2026-10-19 | WAS @ SF | San Francisco 49ers | DK | -410 | +6 | **W** | +0.24 |
+| 2026-10-20 | NE @ CHI | Chicago Bears | DK | -148 | +6 | **W** | +0.68 |
+| 2026-10-20 | NE @ CHI | Chicago Bears -3 | DK | -102 | +6 | **W** | +0.98 |
+| 2026-10-22 | NE @ CHI | Under +50.5 | DK | -102 | +6 | L | -1.00 |
 
 ## Graduation criteria (pre-registered)
 
