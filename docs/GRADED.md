@@ -1,19 +1,19 @@
 # Results
 
-Generated 2026-10-25T18:09:53Z. Every pick the board has published, scored against what happened. Each bet counted **once**, at first publication.
+Generated 2026-10-25T20:36:12Z. Every pick the board has published, scored against what happened. Each bet counted **once**, at first publication.
 
-Pick rows logged: **1,755** · unique bets: **458**
+Pick rows logged: **1,770** · unique bets: **469**
 
 ## CLV — did the price beat where the market settled?
 
 ```json
 {
-  "graded": 176,
-  "skipped_no_forward_window": 282,
-  "beat_close": 65,
-  "beat_rate": 0.3693,
-  "mean_clv_pts": -1.759,
-  "z_vs_50": -3.47,
+  "graded": 175,
+  "skipped_no_forward_window": 294,
+  "beat_close": 63,
+  "beat_rate": 0.36,
+  "mean_clv_pts": -1.901,
+  "z_vs_50": -3.7,
   "verdict": "LOSES to the close"
 }
 ```
@@ -24,13 +24,13 @@ Pick rows logged: **1,755** · unique bets: **458**
 
 ```json
 {
-  "graded": 189,
-  "record": "81-108",
-  "win_rate": 0.4286,
-  "roi": -0.1404,
+  "graded": 219,
+  "record": "98-121",
+  "win_rate": 0.4475,
+  "roi": -0.0862,
   "roi_ci_95": [
-    -0.2936,
-    0.0113
+    -0.2317,
+    0.0531
   ],
   "verdict": "indistinguishable from luck \u2014 CI straddles zero"
 }
@@ -217,16 +217,46 @@ Pick rows logged: **1,755** · unique bets: **458**
 | 2026-10-18 | PIT @ TB | Pittsburgh Steelers -2.5 | FD | +100 | -7 | **W** | +1.00 |
 | 2026-10-18 | CAR @ PHI | Philadelphia Eagles | FD | +148 | -11 | L | -1.00 |
 | 2026-10-18 | PIT @ NO | New Orleans Saints +1.5 | FD | -104 | -6 | L | -1.00 |
+| 2026-10-18 | IND @ MIN | Indianapolis Colts | DK | +215 | +6 | L | -1.00 |
+| 2026-10-18 | NYG @ HOU | Houston Texans | DK | -345 | -6 | L | -1.00 |
+| 2026-10-18 | TB @ CAR | Carolina Panthers | FD | -138 | -30 | L | -1.00 |
+| 2026-10-18 | MIA @ NYJ | Miami Dolphins | FD | +188 | -3 | **W** | +1.88 |
+| 2026-10-18 | TB @ CAR | Carolina Panthers -2.5 | FD | -110 | -30 | L | -1.00 |
+| 2026-10-18 | SF @ ATL | Atlanta Falcons | FD | +188 | +9 | **W** | +1.88 |
+| 2026-10-18 | CIN @ BAL | Cincinnati Bengals | DK | +150 | -22 | **W** | +1.50 |
+| 2026-10-18 | TB @ CAR | Tampa Bay Buccaneers | DK | +150 | -30 | **W** | +1.50 |
+| 2026-10-18 | CIN @ BAL | Baltimore Ravens -3.5 | DK | +100 | -22 | L | -1.00 |
 | 2026-10-18 | PIT @ NO | New Orleans Saints | DK | +120 | -6 | L | -1.00 |
 | 2026-10-19 | PIT @ NO | Pittsburgh Steelers | FD | -130 | -6 | **W** | +0.77 |
+| 2026-10-19 | CIN @ BAL | Cincinnati Bengals | FD | +138 | -22 | **W** | +1.38 |
+| 2026-10-19 | MIA @ NYJ | Under +39.5 | FD | -105 | -3 | L | -1.00 |
 | 2026-10-19 | NE @ CHI | Chicago Bears -3 | FD | -104 | +6 | **W** | +0.96 |
+| 2026-10-19 | CLE @ TEN | Cleveland Browns | FD | -120 | -3 | **W** | +0.83 |
+| 2026-10-19 | IND @ MIN | Indianapolis Colts | FD | +215 | +6 | L | -1.00 |
 | 2026-10-19 | PIT @ NO | Over +44.5 | DK | -102 | -6 | L | -1.00 |
+| 2026-10-19 | CLE @ TEN | Under +36.5 | FD | -102 | -3 | L | -1.00 |
 | 2026-10-19 | NE @ CHI | Chicago Bears | FD | -152 | +6 | **W** | +0.66 |
 | 2026-10-19 | WAS @ SF | San Francisco 49ers | DK | -410 | +6 | **W** | +0.24 |
+| 2026-10-19 | TB @ CAR | Tampa Bay Buccaneers | FD | +150 | -30 | **W** | +1.50 |
+| 2026-10-19 | NYG @ HOU | Over +43.5 | FD | -102 | -6 | **W** | +0.98 |
+| 2026-10-19 | TB @ CAR | Over +43.5 | FD | -105 | -30 | **W** | +0.95 |
 | 2026-10-20 | PIT @ NO | Pittsburgh Steelers -3 | FD | -105 | -6 | **W** | +0.95 |
+| 2026-10-20 | SF @ ATL | Atlanta Falcons | DK | +180 | +9 | **W** | +1.80 |
+| 2026-10-20 | IND @ MIN | Indianapolis Colts +5.5 | FD | -104 | +6 | L | -1.00 |
+| 2026-10-20 | IND @ MIN | Minnesota Vikings | FD | -260 | +6 | **W** | +0.38 |
+| 2026-10-20 | CIN @ BAL | Cincinnati Bengals +3 | FD | -110 | -22 | **W** | +0.91 |
 | 2026-10-20 | NE @ CHI | Chicago Bears | DK | -148 | +6 | **W** | +0.68 |
 | 2026-10-20 | NE @ CHI | Chicago Bears -3 | DK | -102 | +6 | **W** | +0.98 |
+| 2026-10-20 | SF @ ATL | Under +50.5 | FD | -106 | +9 | **W** | +0.94 |
+| 2026-10-20 | NYG @ HOU | New York Giants +9.5 | FD | +100 | -6 | L | -1.00 |
+| 2026-10-21 | CLE @ TEN | Tennessee Titans | DK | +110 | -3 | L | -1.00 |
+| 2026-10-21 | CIN @ BAL | Baltimore Ravens | DK | -142 | -22 | L | -1.00 |
+| 2026-10-21 | IND @ MIN | Minnesota Vikings | DK | -278 | +6 | **W** | +0.36 |
+| 2026-10-21 | MIA @ NYJ | Miami Dolphins +4.5 | FD | -104 | -3 | L | -1.00 |
+| 2026-10-21 | TB @ CAR | Tampa Bay Buccaneers +3 | DK | +100 | -30 | **W** | +1.00 |
+| 2026-10-22 | MIA @ NYJ | Miami Dolphins | DK | +195 | -3 | **W** | +1.95 |
 | 2026-10-22 | NE @ CHI | Under +50.5 | DK | -102 | +6 | L | -1.00 |
+| 2026-10-23 | TB @ CAR | Tampa Bay Buccaneers +3 | FD | -110 | -30 | **W** | +0.91 |
 
 ## Graduation criteria (pre-registered)
 
