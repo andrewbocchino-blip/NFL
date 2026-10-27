@@ -1,19 +1,19 @@
 # Results
 
-Generated 2026-10-27T00:17:06Z. Every pick the board has published, scored against what happened. Each bet counted **once**, at first publication.
+Generated 2026-10-27T08:46:38Z. Every pick the board has published, scored against what happened. Each bet counted **once**, at first publication.
 
-Pick rows logged: **1,845** · unique bets: **492**
+Pick rows logged: **1,860** · unique bets: **494**
 
 ## CLV — did the price beat where the market settled?
 
 ```json
 {
-  "graded": 196,
-  "skipped_no_forward_window": 296,
-  "beat_close": 69,
-  "beat_rate": 0.352,
-  "mean_clv_pts": -1.909,
-  "z_vs_50": -4.14,
+  "graded": 197,
+  "skipped_no_forward_window": 297,
+  "beat_close": 68,
+  "beat_rate": 0.3452,
+  "mean_clv_pts": -1.926,
+  "z_vs_50": -4.35,
   "verdict": "LOSES to the close"
 }
 ```
@@ -24,13 +24,13 @@ Pick rows logged: **1,845** · unique bets: **492**
 
 ```json
 {
-  "graded": 234,
-  "record": "103-131",
-  "win_rate": 0.4402,
-  "roi": -0.1061,
+  "graded": 237,
+  "record": "103-134",
+  "win_rate": 0.4346,
+  "roi": -0.1174,
   "roi_ci_95": [
-    -0.2457,
-    0.0354
+    -0.2563,
+    0.0228
   ],
   "verdict": "indistinguishable from luck \u2014 CI straddles zero"
 }
@@ -251,12 +251,14 @@ Pick rows logged: **1,845** · unique bets: **492**
 | 2026-10-20 | PIT @ NO | Pittsburgh Steelers -3 | FD | -105 | -6 | **W** | +0.95 |
 | 2026-10-20 | SF @ ATL | Atlanta Falcons | DK | +180 | +9 | **W** | +1.80 |
 | 2026-10-20 | IND @ MIN | Indianapolis Colts +5.5 | FD | -104 | +6 | L | -1.00 |
+| 2026-10-20 | DAL @ PHI | Philadelphia Eagles | FD | +188 | -17 | L | -1.00 |
 | 2026-10-20 | GB @ DET | Green Bay Packers | FD | +142 | +3 | L | -1.00 |
 | 2026-10-20 | IND @ MIN | Minnesota Vikings | FD | -260 | +6 | **W** | +0.38 |
 | 2026-10-20 | CIN @ BAL | Cincinnati Bengals +3 | FD | -110 | -22 | **W** | +0.91 |
 | 2026-10-20 | NE @ CHI | Chicago Bears | DK | -148 | +6 | **W** | +0.68 |
 | 2026-10-20 | NE @ CHI | Chicago Bears -3 | DK | -102 | +6 | **W** | +0.98 |
 | 2026-10-20 | GB @ DET | Green Bay Packers | DK | +140 | +3 | L | -1.00 |
+| 2026-10-20 | DAL @ PHI | Philadelphia Eagles | DK | +180 | -17 | L | -1.00 |
 | 2026-10-20 | SF @ ATL | Under +50.5 | FD | -106 | +9 | **W** | +0.94 |
 | 2026-10-20 | KC @ SEA | Kansas City Chiefs +2.5 | FD | +100 | +17 | L | -1.00 |
 | 2026-10-20 | NYG @ HOU | New York Giants +9.5 | FD | +100 | -6 | L | -1.00 |
@@ -271,6 +273,7 @@ Pick rows logged: **1,845** · unique bets: **492**
 | 2026-10-23 | TB @ CAR | Tampa Bay Buccaneers +3 | FD | -110 | -30 | **W** | +0.91 |
 | 2026-10-25 | DEN @ ARI | Over +43.5 | DK | +100 | -14 | **W** | +1.00 |
 | 2026-10-25 | KC @ SEA | Seattle Seahawks | FD | -146 | +17 | **W** | +0.68 |
+| 2026-10-25 | DAL @ PHI | Philadelphia Eagles +4.5 | FD | -105 | -17 | L | -1.00 |
 | 2026-10-25 | KC @ SEA | Kansas City Chiefs +3 | FD | -110 | +17 | L | -1.00 |
 
 ## Graduation criteria (pre-registered)
