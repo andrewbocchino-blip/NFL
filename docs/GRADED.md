@@ -1,19 +1,19 @@
 # Results
 
-Generated 2026-10-30T00:41:33Z. Every pick the board has published, scored against what happened. Each bet counted **once**, at first publication.
+Generated 2026-10-30T09:45:40Z. Every pick the board has published, scored against what happened. Each bet counted **once**, at first publication.
 
-Pick rows logged: **1,995** · unique bets: **525**
+Pick rows logged: **2,010** · unique bets: **532**
 
 ## CLV — did the price beat where the market settled?
 
 ```json
 {
   "graded": 208,
-  "skipped_no_forward_window": 317,
-  "beat_close": 68,
-  "beat_rate": 0.3269,
-  "mean_clv_pts": -1.939,
-  "z_vs_50": -4.99,
+  "skipped_no_forward_window": 324,
+  "beat_close": 67,
+  "beat_rate": 0.3221,
+  "mean_clv_pts": -1.948,
+  "z_vs_50": -5.13,
   "verdict": "LOSES to the close"
 }
 ```
@@ -24,13 +24,13 @@ Pick rows logged: **1,995** · unique bets: **525**
 
 ```json
 {
-  "graded": 237,
-  "record": "103-134",
-  "win_rate": 0.4346,
-  "roi": -0.1174,
+  "graded": 241,
+  "record": "103-138",
+  "win_rate": 0.4274,
+  "roi": -0.1321,
   "roi_ci_95": [
-    -0.2563,
-    0.0228
+    -0.2667,
+    0.0084
   ],
   "verdict": "indistinguishable from luck \u2014 CI straddles zero"
 }
@@ -275,6 +275,10 @@ Pick rows logged: **1,995** · unique bets: **525**
 | 2026-10-25 | KC @ SEA | Seattle Seahawks | FD | -146 | +17 | **W** | +0.68 |
 | 2026-10-25 | DAL @ PHI | Philadelphia Eagles +4.5 | FD | -105 | -17 | L | -1.00 |
 | 2026-10-25 | KC @ SEA | Kansas City Chiefs +3 | FD | -110 | +17 | L | -1.00 |
+| 2026-10-26 | CAR @ GB | Carolina Panthers | FD | +180 | +8 | L | -1.00 |
+| 2026-10-27 | CAR @ GB | Carolina Panthers +3.5 | FD | -105 | +8 | L | -1.00 |
+| 2026-10-28 | CAR @ GB | Over +47.5 | FD | -102 | +8 | L | -1.00 |
+| 2026-10-28 | CAR @ GB | Carolina Panthers | DK | +160 | +8 | L | -1.00 |
 
 ## Graduation criteria (pre-registered)
 
