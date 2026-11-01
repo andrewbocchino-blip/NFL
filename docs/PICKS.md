@@ -47,7 +47,7 @@ Picks frozen at the price they were read at. **Both books shown; bold = better p
 |---|---|---|---|---|---|---|
 | PHI @ WAS | receptions | **Saquon Barkley Under 2.5** | 61% | -0.6¢ | DK -181 / **FD -158** | pending |
 | LAC @ LA | ML | **Los Angeles Rams** | 73% | -1.2¢ | **DK -285** / FD -290 | pending |
-| NE @ MIA | ML | **New England Patriots** | 77% | -1.3¢ | **DK -345** / FD -370 | pending |
+| NE @ MIA | ML | **New England Patriots** | 77% | -1.2¢ | **DK -345** / FD -370 | pending |
 | DET @ MIA | ML | **Detroit Lions** | 79% | -1.3¢ | **DK -395** / FD -450 | pending |
 | KC @ DEN | receptions | **Kenneth Walker III Under 3.5** | 59% | -1.6¢ | **DK -150** / FD -188 | pending |
 | NYJ @ KC | ML | **Kansas City Chiefs** | 81% | -1.9¢ | **DK -485** / FD -520 | pending |
@@ -71,7 +71,7 @@ Picks frozen at the price they were read at. **Both books shown; bold = better p
 |---|---|---|---|---|---|---|
 | NYJ @ KC | ML | **Kansas City Chiefs** | **81%** | -1.9¢ | **DK -485** / FD -520 | pending |
 | DET @ MIA | ML | **Detroit Lions** | **79%** | -1.3¢ | **DK -395** / FD -450 | pending |
-| NE @ MIA | ML | **New England Patriots** | **77%** | -1.3¢ | **DK -345** / FD -370 | pending |
+| NE @ MIA | ML | **New England Patriots** | **77%** | -1.2¢ | **DK -345** / FD -370 | pending |
 | LAC @ LA | ML | **Los Angeles Rams** | **73%** | -1.2¢ | **DK -285** / FD -290 | pending |
 
 #### Matchup Board — opponent strength (current season only)
