@@ -1,19 +1,19 @@
 # Results
 
-Generated 2026-11-01T19:26:16Z. Every pick the board has published, scored against what happened. Each bet counted **once**, at first publication.
+Generated 2026-11-02T00:25:31Z. Every pick the board has published, scored against what happened. Each bet counted **once**, at first publication.
 
-Pick rows logged: **2,160** · unique bets: **570**
+Pick rows logged: **2,175** · unique bets: **578**
 
 ## CLV — did the price beat where the market settled?
 
 ```json
 {
-  "graded": 206,
-  "skipped_no_forward_window": 364,
-  "beat_close": 72,
-  "beat_rate": 0.3495,
-  "mean_clv_pts": -2.32,
-  "z_vs_50": -4.32,
+  "graded": 210,
+  "skipped_no_forward_window": 368,
+  "beat_close": 74,
+  "beat_rate": 0.3524,
+  "mean_clv_pts": -2.149,
+  "z_vs_50": -4.28,
   "verdict": "LOSES to the close"
 }
 ```
@@ -24,15 +24,15 @@ Pick rows logged: **2,160** · unique bets: **570**
 
 ```json
 {
-  "graded": 241,
-  "record": "103-138",
-  "win_rate": 0.4274,
-  "roi": -0.1321,
+  "graded": 279,
+  "record": "115-164",
+  "win_rate": 0.4122,
+  "roi": -0.1695,
   "roi_ci_95": [
-    -0.2667,
-    0.0084
+    -0.2852,
+    -0.0375
   ],
-  "verdict": "indistinguishable from luck \u2014 CI straddles zero"
+  "verdict": "negative at 95%"
 }
 ```
 
@@ -272,13 +272,51 @@ Pick rows logged: **2,160** · unique bets: **570**
 | 2026-10-22 | LA @ LV | Las Vegas Raiders | FD | +180 | -14 | L | -1.00 |
 | 2026-10-23 | TB @ CAR | Tampa Bay Buccaneers +3 | FD | -110 | -30 | **W** | +0.91 |
 | 2026-10-25 | DEN @ ARI | Over +43.5 | DK | +100 | -14 | **W** | +1.00 |
+| 2026-10-25 | CLE @ PIT | Cleveland Browns | FD | +176 | +21 | L | -1.00 |
+| 2026-10-25 | ARI @ DAL | Dallas Cowboys | DK | -285 | -3 | L | -1.00 |
+| 2026-10-25 | BAL @ BUF | Baltimore Ravens | DK | +150 | +26 | L | -1.00 |
+| 2026-10-25 | TEN @ CIN | Cincinnati Bengals | DK | -550 | +7 | **W** | +0.18 |
+| 2026-10-25 | IND @ JAX | Jacksonville Jaguars | DK | -375 | +35 | **W** | +0.27 |
+| 2026-10-25 | IND @ JAX | Jacksonville Jaguars -7.5 | FD | -104 | +35 | **W** | +0.96 |
 | 2026-10-25 | KC @ SEA | Seattle Seahawks | FD | -146 | +17 | **W** | +0.68 |
+| 2026-10-25 | ATL @ TB | Over +44.5 | FD | -105 | +16 | L | -1.00 |
 | 2026-10-25 | DAL @ PHI | Philadelphia Eagles +4.5 | FD | -105 | -17 | L | -1.00 |
+| 2026-10-25 | ARI @ DAL | Under +51.5 | FD | -105 | -3 | L | -1.00 |
+| 2026-10-25 | IND @ JAX | Indianapolis Colts | FD | +340 | +35 | L | -1.00 |
+| 2026-10-25 | LAC @ LA | Los Angeles Rams | DK | -310 | +15 | **W** | +0.32 |
 | 2026-10-25 | KC @ SEA | Kansas City Chiefs +3 | FD | -110 | +17 | L | -1.00 |
+| 2026-10-25 | ATL @ TB | Tampa Bay Buccaneers | FD | -116 | +16 | **W** | +0.86 |
+| 2026-10-26 | MIN @ DET | Detroit Lions -3 | DK | -102 | +4 | **W** | +0.98 |
 | 2026-10-26 | CAR @ GB | Carolina Panthers | FD | +180 | +8 | L | -1.00 |
+| 2026-10-26 | TEN @ CIN | Tennessee Titans | DK | +500 | +7 | L | -1.00 |
+| 2026-10-26 | ATL @ TB | Atlanta Falcons +1.5 | FD | -104 | +16 | L | -1.00 |
+| 2026-10-26 | ARI @ DAL | Dallas Cowboys -6.5 | FD | -104 | -3 | **W** | +0.96 |
+| 2026-10-26 | ATL @ TB | Atlanta Falcons | DK | +114 | +16 | L | -1.00 |
+| 2026-10-27 | TEN @ CIN | Tennessee Titans | FD | +480 | +7 | L | -1.00 |
+| 2026-10-27 | LV @ NYJ | Las Vegas Raiders | FD | -104 | -5 | **W** | +0.96 |
+| 2026-10-27 | IND @ JAX | Under +46.5 | FD | -105 | +35 | L | -1.00 |
+| 2026-10-27 | LV @ NYJ | Under +44.5 | DK | -105 | -5 | L | -1.00 |
+| 2026-10-27 | ATL @ TB | Over +45.5 | DK | -105 | +16 | L | -1.00 |
 | 2026-10-27 | CAR @ GB | Carolina Panthers +3.5 | FD | -105 | +8 | L | -1.00 |
+| 2026-10-27 | LAC @ LA | Los Angeles Chargers +6.5 | DK | -102 | +15 | L | -1.00 |
+| 2026-10-27 | TEN @ CIN | Under +46.5 | DK | -105 | +7 | L | -1.00 |
+| 2026-10-27 | TEN @ CIN | Cincinnati Bengals -10.5 | FD | -105 | +7 | **W** | +0.95 |
+| 2026-10-27 | CLE @ PIT | Cleveland Browns +3.5 | FD | -106 | +21 | L | -1.00 |
+| 2026-10-27 | MIN @ DET | Minnesota Vikings | FD | +146 | +4 | L | -1.00 |
+| 2026-10-27 | LV @ NYJ | New York Jets | FD | -120 | -5 | L | -1.00 |
+| 2026-10-27 | LV @ NYJ | Over +45.5 | DK | -105 | -5 | **W** | +0.95 |
+| 2026-10-28 | CLE @ PIT | Over +39.5 | FD | -105 | +21 | L | -1.00 |
+| 2026-10-28 | ATL @ TB | Over +45.5 | FD | -105 | +16 | L | -1.00 |
+| 2026-10-28 | LAC @ LA | Los Angeles Rams | FD | -295 | +15 | **W** | +0.34 |
+| 2026-10-28 | BAL @ BUF | Baltimore Ravens | FD | +146 | +26 | L | -1.00 |
 | 2026-10-28 | CAR @ GB | Over +47.5 | FD | -102 | +8 | L | -1.00 |
 | 2026-10-28 | CAR @ GB | Carolina Panthers | DK | +160 | +8 | L | -1.00 |
+| 2026-10-28 | CLE @ PIT | Cleveland Browns | DK | +160 | +21 | L | -1.00 |
+| 2026-10-28 | ARI @ DAL | Arizona Cardinals +6.5 | FD | +100 | -3 | L | -1.00 |
+| 2026-10-29 | IND @ JAX | Indianapolis Colts +9.5 | FD | -105 | +35 | L | -1.00 |
+| 2026-10-29 | TEN @ CIN | Under +46.5 | FD | -102 | +7 | L | -1.00 |
+| 2026-10-30 | ATL @ TB | Over +44.5 | DK | -102 | +16 | L | -1.00 |
+| 2026-10-30 | ARI @ DAL | Arizona Cardinals | FD | +280 | -3 | **W** | +2.80 |
 
 ## Graduation criteria (pre-registered)
 
