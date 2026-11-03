@@ -1,19 +1,19 @@
 # Results
 
-Generated 2026-11-02T21:32:29Z. Every pick the board has published, scored against what happened. Each bet counted **once**, at first publication.
+Generated 2026-11-03T05:55:03Z. Every pick the board has published, scored against what happened. Each bet counted **once**, at first publication.
 
-Pick rows logged: **2,205** · unique bets: **596**
+Pick rows logged: **2,220** · unique bets: **603**
 
 ## CLV — did the price beat where the market settled?
 
 ```json
 {
-  "graded": 224,
-  "skipped_no_forward_window": 372,
-  "beat_close": 77,
-  "beat_rate": 0.3438,
-  "mean_clv_pts": -2.098,
-  "z_vs_50": -4.68,
+  "graded": 227,
+  "skipped_no_forward_window": 376,
+  "beat_close": 78,
+  "beat_rate": 0.3436,
+  "mean_clv_pts": -2.106,
+  "z_vs_50": -4.71,
   "verdict": "LOSES to the close"
 }
 ```
@@ -24,13 +24,13 @@ Pick rows logged: **2,205** · unique bets: **596**
 
 ```json
 {
-  "graded": 293,
-  "record": "121-172",
-  "win_rate": 0.413,
-  "roi": -0.1754,
+  "graded": 294,
+  "record": "122-172",
+  "win_rate": 0.415,
+  "roi": -0.1698,
   "roi_ci_95": [
-    -0.2901,
-    -0.051
+    -0.2897,
+    -0.0433
   ],
   "verdict": "negative at 95%"
 }
@@ -305,6 +305,7 @@ Pick rows logged: **2,205** · unique bets: **596**
 | 2026-10-27 | IND @ JAX | Under +46.5 | FD | -105 | +35 | L | -1.00 |
 | 2026-10-27 | LV @ NYJ | Under +44.5 | DK | -105 | -5 | L | -1.00 |
 | 2026-10-27 | ATL @ TB | Over +45.5 | DK | -105 | +16 | L | -1.00 |
+| 2026-10-27 | CHI @ SEA | Chicago Bears | FD | +148 | -17 | **W** | +1.48 |
 | 2026-10-27 | CAR @ GB | Carolina Panthers +3.5 | FD | -105 | +8 | L | -1.00 |
 | 2026-10-27 | LAC @ LA | Los Angeles Chargers +6.5 | DK | -102 | +15 | L | -1.00 |
 | 2026-10-27 | KC @ DEN | Denver Broncos | DK | +105 | +4 | **W** | +1.05 |
