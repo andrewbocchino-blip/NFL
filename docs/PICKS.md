@@ -2,7 +2,7 @@
 
 Picks frozen at the price they were read at. **Both books shown; bold = better price.** Paper only.
 
-15 games · 90 DK/FD prices · lines 0h old · no props
+15 games · 88 DK/FD prices · lines 0h old · no props
 
 | Column | Means |
 |---|---|
@@ -31,21 +31,21 @@ Picks frozen at the price they were read at. **Both books shown; bold = better p
 
 | Game | Market | Pick | Hit% | Value | Books | Result |
 |---|---|---|---|---|---|---|
-| LV @ SF | ML | **San Francisco 49ers** | 81% | -2.8¢ | DK -535 / **FD -500** | pending |
-| JAX @ BAL | ML | **Jacksonville Jaguars** | 82% | -2.9¢ | **DK -535** / FD -550 | pending |
-| TB @ CHI | ML | **Chicago Bears** | 72% | -3.1¢ | DK -305 / **FD -290** | pending |
-| DET @ MIA | ML | **Detroit Lions** | 75% | -3.4¢ | DK -355 / **FD -340** | pending |
-| CLE @ NO | ML | **New Orleans Saints** | 60% | -3.4¢ | **DK -162** / FD -164 | pending |
-| ARI @ SEA | ML | **Seattle Seahawks** | 78% | -3.5¢ | DK -455 / **FD -420** | pending |
-| DEN @ CAR | ML | **Denver Broncos** | 57% | -3.6¢ | DK -155 / **FD -142** | pending |
-| NYG @ PHI | ML | **New York Giants** | 60% | -4.1¢ | **DK -166** / FD -166 | pending |
-| NYJ @ KC | ML | **Kansas City Chiefs** | 81% | -4.2¢ | DK -600 / **FD -560** | pending |
-| HOU @ LAC | ML | **Houston Texans** | 66% | -4.5¢ | **DK -225** / FD -235 | pending |
-| GB @ NE | ML | **New England Patriots** | 60% | -4.6¢ | DK -175 / **FD -168** | pending |
-| CIN @ ATL | ML | **Cincinnati Bengals** | 59% | -5.0¢ | DK -166 / **FD -164** | pending |
-| LA @ WAS | ML | **Los Angeles Rams** | 66% | -5.3¢ | **DK -225** / FD -225 | pending |
-| DAL @ IND | ML | **Dallas Cowboys** | 67% | -5.6¢ | **DK -245** / FD -260 | pending |
-| BUF @ MIN | ML | **Buffalo Bills** | 61% | -5.8¢ | **DK -180** / FD -184 | pending |
+| JAX @ BAL | ML | **Jacksonville Jaguars** | 82% | -1.9¢ | **DK -500** / FD -550 | pending |
+| DEN @ CAR | ML | **Denver Broncos** | 57% | -2.7¢ | DK -155 / **FD -142** | pending |
+| CLE @ NO | ML | **New Orleans Saints** | 60% | -3.1¢ | **DK -162** / FD -164 | pending |
+| LV @ SF | ML | **San Francisco 49ers** | 81% | -3.3¢ | DK -520 / **FD -500** | pending |
+| NYJ @ KC | ML | **Kansas City Chiefs** | 82% | -3.5¢ | DK -575 / **FD -550** | pending |
+| NYG @ PHI | ML | **New York Giants** | 60% | -3.6¢ | **DK -166** / FD -176 | pending |
+| TB @ CHI | ML | **Chicago Bears** | 72% | -3.7¢ | DK -298 / **FD -290** | pending |
+| ARI @ SEA | ML | **Seattle Seahawks** | 79% | -3.8¢ | DK -455 / **FD -450** | pending |
+| HOU @ LAC | ML | **Houston Texans** | 66% | -3.8¢ | **DK -218** / FD -230 | pending |
+| DAL @ IND | ML | **Dallas Cowboys** | 67% | -4.1¢ | **DK -230** / FD -260 | pending |
+| GB @ NE | ML | **New England Patriots** | 59% | -4.9¢ | **DK -166** / FD -166 | pending |
+| DET @ MIA | ML | **Detroit Lions** | 74% | -5.0¢ | **DK -355** / FD -355 | pending |
+| BUF @ MIN | ML | **Buffalo Bills** | 60% | -5.0¢ | **DK -170** / FD -176 | pending |
+| CIN @ ATL | ML | **Cincinnati Bengals** | 59% | -5.1¢ | **DK -166** / FD -166 | pending |
+| LA @ WAS | ML | **Los Angeles Rams** | 66% | -5.2¢ | **DK -225** / FD -230 | pending |
 
 *Value means one book is priced away from the others. Negative is their hold — normal on a settled market.*
 
@@ -55,12 +55,12 @@ Picks frozen at the price they were read at. **Both books shown; bold = better p
 
 | Game | Market | Pick | **Hit%** | Value | Books | Result |
 |---|---|---|---|---|---|---|
-| JAX @ BAL | ML | **Jacksonville Jaguars** | **82%** | -2.9¢ | **DK -535** / FD -550 | pending |
-| NYJ @ KC | ML | **Kansas City Chiefs** | **81%** | -4.2¢ | DK -600 / **FD -560** | pending |
-| LV @ SF | ML | **San Francisco 49ers** | **81%** | -2.8¢ | DK -535 / **FD -500** | pending |
-| ARI @ SEA | ML | **Seattle Seahawks** | **78%** | -3.5¢ | DK -455 / **FD -420** | pending |
-| DET @ MIA | ML | **Detroit Lions** | **75%** | -3.4¢ | DK -355 / **FD -340** | pending |
-| TB @ CHI | ML | **Chicago Bears** | **72%** | -3.1¢ | DK -305 / **FD -290** | pending |
+| JAX @ BAL | ML | **Jacksonville Jaguars** | **82%** | -1.9¢ | **DK -500** / FD -550 | pending |
+| NYJ @ KC | ML | **Kansas City Chiefs** | **82%** | -3.5¢ | DK -575 / **FD -550** | pending |
+| LV @ SF | ML | **San Francisco 49ers** | **81%** | -3.3¢ | DK -520 / **FD -500** | pending |
+| ARI @ SEA | ML | **Seattle Seahawks** | **79%** | -3.8¢ | DK -455 / **FD -450** | pending |
+| DET @ MIA | ML | **Detroit Lions** | **74%** | -5.0¢ | **DK -355** / FD -355 | pending |
+| TB @ CHI | ML | **Chicago Bears** | **72%** | -3.7¢ | DK -298 / **FD -290** | pending |
 
 #### Matchup Board — opponent strength (current season only)
 
@@ -73,21 +73,21 @@ Picks frozen at the price they were read at. **Both books shown; bold = better p
 <details>
 <summary><b>How each number was built</b></summary>
 
-- **Indianapolis Colts** (ML, DAL @ IND): calibration: raw de-vig 31.9% -> 33.0% (favourite-longshot bias, 8,796 games) · confidence A (91/100) · market: 33.0% across 11 books -> fair +203 · price: FD +215 -> value +3.8¢ · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
-- **Buffalo Bills -3** (Spread, BUF @ MIN): confidence B (70/100) · market: 52.1% across 10 books -> fair -109 · price: DK -102 -> value +3.2¢ · ⚠️ books disagree (sd 0.015, >90th pct) · ⚠️ line moved 0.5 pts · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
-- **New York Giants -3** (Spread, NYG @ PHI): confidence B (80/100) · market: 51.3% across 11 books -> fair -105 · price: DK -102 -> value +1.6¢ · ⚠️ books loose (sd 0.012) · ⚠️ line moved 0.5 pts · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
-- **Minnesota Vikings** (ML, BUF @ MIN): calibration: raw de-vig 38.4% -> 39.5% (favourite-longshot bias, 8,796 games) · confidence A (91/100) · market: 39.5% across 11 books -> fair +153 · price: FD +154 -> value +0.2¢ · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **Indianapolis Colts** (ML, DAL @ IND): calibration: raw de-vig 32.1% -> 33.2% (favourite-longshot bias, 8,796 games) · confidence A (91/100) · market: 33.2% across 11 books -> fair +201 · price: FD +215 -> value +4.5¢ · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **New York Giants -3** (Spread, NYG @ PHI): confidence B (80/100) · market: 51.7% across 11 books -> fair -107 · price: DK -102 -> value +2.5¢ · ⚠️ books loose (sd 0.011) · ⚠️ line moved 0.5 pts · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **Under +42.5** (Total, CLE @ NO): confidence A (98/100) · market: 50.0% across 11 books -> fair -100 · price: FD +100 -> value +0.0¢ · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
 - **New York Jets +9.5** (Spread, NYJ @ KC): confidence A (90/100) · market: 50.0% across 11 books -> fair -100 · price: FD +100 -> value +0.0¢ · ⚠️ line moved 0.5 pts · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
-- **Under +42.5** (Total, CLE @ NO): confidence A (90/100) · market: 50.0% across 11 books -> fair -100 · price: FD +100 -> value +0.0¢ · ⚠️ line moved 1.0 pts · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
 - **Baltimore Ravens +8.5** (Spread, JAX @ BAL): confidence B (80/100) · market: 50.0% across 10 books -> fair -100 · price: DK +100 -> value +0.0¢ · ⚠️ books loose (sd 0.012) · ⚠️ line moved 1.0 pts · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
-- **New York Jets** (ML, NYJ @ KC): calibration: raw de-vig 20.0% -> 18.5% (favourite-longshot bias, 8,796 games) · confidence B (78/100) · market: 18.5% across 11 books -> fair +441 · price: DK +440 -> value -0.1¢ · ⚠️ negative value — this is the book's hold · ⚠️ books loose (sd 0.011) · ⚠️ 18% band is off by 1.5 pts historically · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
-- **Carolina Panthers** (ML, DEN @ CAR): confidence A (98/100) · market: 43.4% across 11 books -> fair +130 · price: DK +130 -> value -0.1¢ · ⚠️ negative value — this is the book's hold · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
-- **Los Angeles Chargers** (ML, HOU @ LAC): calibration: raw de-vig 32.8% -> 33.9% (favourite-longshot bias, 8,796 games) · confidence A (91/100) · market: 33.9% across 11 books -> fair +195 · price: FD +194 -> value -0.3¢ · ⚠️ negative value — this is the book's hold · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
-- **Arizona Cardinals** (ML, ARI @ SEA): calibration: raw de-vig 23.4% -> 22.1% (favourite-longshot bias, 8,796 games) · confidence A (90/100) · market: 22.1% across 11 books -> fair +353 · price: DK +350 -> value -0.7¢ · ⚠️ negative value — this is the book's hold · ⚠️ 22% band is off by 1.3 pts historically · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
-- **Washington Commanders** (ML, LA @ WAS): calibration: raw de-vig 33.3% -> 34.4% (favourite-longshot bias, 8,796 games) · confidence A (91/100) · market: 34.4% across 11 books -> fair +190 · price: FD +188 -> value -0.9¢ · ⚠️ negative value — this is the book's hold · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **Minnesota Vikings** (ML, BUF @ MIN): calibration: raw de-vig 39.1% -> 40.2% (favourite-longshot bias, 8,796 games) · confidence A (98/100) · market: 40.2% across 11 books -> fair +149 · price: FD +148 -> value -0.4¢ · ⚠️ negative value — this is the book's hold · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **Washington Commanders** (ML, LA @ WAS): calibration: raw de-vig 33.2% -> 34.3% (favourite-longshot bias, 8,796 games) · confidence A (91/100) · market: 34.3% across 11 books -> fair +191 · price: FD +190 -> value -0.4¢ · ⚠️ negative value — this is the book's hold · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **Miami Dolphins** (ML, DET @ MIA): calibration: raw de-vig 27.1% -> 25.8% (favourite-longshot bias, 8,796 games) · confidence B (80/100) · market: 25.8% across 11 books -> fair +287 · price: FD +285 -> value -0.5¢ · ⚠️ negative value — this is the book's hold · ⚠️ books loose (sd 0.009) · ⚠️ 26% band is off by 1.3 pts historically · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
 - **Over +46.5** (Total, GB @ NE): confidence A (90/100) · market: 50.4% across 10 books -> fair -102 · price: FD -104 -> value -1.2¢ · ⚠️ negative value — this is the book's hold · ⚠️ line moved 1.0 pts · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
-- **Green Bay Packers** (ML, GB @ NE): calibration: raw de-vig 39.1% -> 40.2% (favourite-longshot bias, 8,796 games) · confidence A (98/100) · market: 40.2% across 11 books -> fair +149 · price: DK +145 -> value -1.6¢ · ⚠️ negative value — this is the book's hold · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
-- **Atlanta Falcons** (ML, CIN @ ATL): calibration: raw de-vig 39.9% -> 41.0% (favourite-longshot bias, 8,796 games) · confidence A (98/100) · market: 41.0% across 11 books -> fair +144 · price: DK +140 -> value -1.6¢ · ⚠️ negative value — this is the book's hold · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **Philadelphia Eagles** (ML, NYG @ PHI): calibration: raw de-vig 38.7% -> 39.8% (favourite-longshot bias, 8,796 games) · confidence A (91/100) · market: 39.8% across 11 books -> fair +151 · price: FD +148 -> value -1.2¢ · ⚠️ negative value — this is the book's hold · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **Los Angeles Chargers** (ML, HOU @ LAC): calibration: raw de-vig 33.0% -> 34.1% (favourite-longshot bias, 8,796 games) · confidence A (91/100) · market: 34.1% across 11 books -> fair +194 · price: FD +190 -> value -1.2¢ · ⚠️ negative value — this is the book's hold · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **Carolina Panthers** (ML, DEN @ CAR): confidence A (98/100) · market: 42.9% across 11 books -> fair +133 · price: DK +130 -> value -1.4¢ · ⚠️ negative value — this is the book's hold · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **Jacksonville Jaguars** (ML, JAX @ BAL): calibration: raw de-vig 80.5% -> 81.8% (favourite-longshot bias, 8,796 games) · confidence A (91/100) · market: 81.8% across 11 books -> fair -449 · price: DK -500 -> value -1.9¢ · ⚠️ negative value — this is the book's hold · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **Over +46.5** (Total, BUF @ MIN): confidence A (90/100) · market: 50.0% across 10 books -> fair -100 · price: FD -104 -> value -1.9¢ · ⚠️ negative value — this is the book's hold · ⚠️ line moved 0.5 pts · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **Atlanta Falcons** (ML, CIN @ ATL): calibration: raw de-vig 39.7% -> 40.8% (favourite-longshot bias, 8,796 games) · confidence A (98/100) · market: 40.8% across 11 books -> fair +145 · price: DK +140 -> value -2.2¢ · ⚠️ negative value — this is the book's hold · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
 
 </details>
 
