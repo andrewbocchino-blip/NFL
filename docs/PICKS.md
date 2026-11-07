@@ -2,7 +2,7 @@
 
 Picks frozen at the price they were read at. **Both books shown; bold = better price.** Paper only.
 
-15 games · 1376 DK/FD prices · lines 0h old · props 16h old
+15 games · 1546 DK/FD prices · lines 0h old · props 3h old
 
 | Column | Means |
 |---|---|
@@ -11,13 +11,11 @@ Picks frozen at the price they were read at. **Both books shown; bold = better p
 | **Model** | our own estimate, independent of price (props only) |
 | **Conf** | A-D: how well we know these numbers — book agreement, sample size, historical calibration of that band, line movement, price age. **Not** the chance of winning. |
 
-> ⚠️ **Prices are 16h old — no PLAY can be issued.** Run capture-odds, then regenerate.
-
 ## 2026-11-07
 
 | Verdict | Conf | Game | Market | Pick | Hit% | Value | Books (best bold) |
 |---|---|---|---|---|---|---|---|
-| STALE | — | _prices too old to issue a play_ | | | | | |
+| PASS | — | _no DK/FD price clears the bar on this board_ | | | | | |
 
 #### Model Divergence — our number vs **no-vig** market
 
@@ -25,21 +23,21 @@ Picks frozen at the price they were read at. **Both books shown; bold = better p
 
 | Player | Market | Line | **Model** | No-vig | Diverg. | Books | Result |
 |---|---|---|---|---|---|---|---|
-| Justin Jefferson Under 6.5 | receptions | — | **80%** (6g) | 49% | +30.5% | **DK -107** / FD -122 | pending |
+| Justin Jefferson Under 6.5 | receptions | — | **80%** (6g) | 49% | +30.2% | **DK -107** / FD -122 | pending |
 | J.K. Dobbins Over 25.5 | rush yds | — | **80%** (8g) | 50% | +30.0% | **DK -112** / FD -114 | pending |
 | Jauan Jennings Over 7.5 | reception yds | — | **80%** (6g) | 50% | +29.7% | **DK -108** / FD -114 | pending |
-| Jauan Jennings Over 8.5 | reception yds | — | **79%** (6g) | 50% | +28.8% | **DK -112** | pending |
+| Jauan Jennings Over 8.5 | reception yds | — | **79%** (6g) | 50% | +29.2% | **DK -110** | pending |
+| Efton Chism III Under 2.5 | receptions | — | **71%** (7g) | 42% | +29.1% | **DK +124** | pending |
 | Ollie Gordon II Under 70.5 | rush yds | — | **78%** (6g) | 50% | +28.1% | **DK -111** / FD -114 | pending |
-| Efton Chism III Under 2.5 | receptions | — | **71%** (7g) | 43% | +28.0% | **DK +118** | pending |
+| Ollie Gordon II Under 69.5 | rush yds | — | **77%** (6g) | 50% | +27.7% | **DK -111** | pending |
 | Justin Jefferson Under 80.5 | reception yds | — | **77%** (6g) | 50% | +26.8% | **DK -112** | pending |
-| Justin Jefferson Under 79.5 | reception yds | — | **76%** (6g) | 50% | +26.1% | **DK -110** | pending |
-| Austin Hooper Over 6.5 | reception yds | — | **76%** (6g) | 50% | +25.6% | **DK -110** / FD -114 | pending |
-| Jordan Addison Under 3.5 | receptions | — | **75%** (6g) | 50% | +25.2% | **DK -112** / FD -112 | pending |
+| Austin Hooper Over 5.5 | reception yds | — | **78%** (6g) | 51% | +26.5% | **DK -118** | pending |
+| Justin Jefferson Under 79.5 | reception yds | — | **76%** (6g) | 50% | +26.4% | **DK -110** | pending |
+| Austin Hooper Over 6.5 | reception yds | — | **76%** (6g) | 50% | +25.6% | **DK -110** / FD -113 | pending |
+| Jordan Addison Under 3.5 | receptions | — | **75%** (6g) | 50% | +25.5% | **DK -112** / FD -112 | pending |
+| Justin Jefferson Under 78.5 | reception yds | — | **75%** (6g) | 50% | +25.3% | **DK -112** | pending |
 | Kayshon Boutte Over 15.5 | reception yds | — | **74%** (7g) | 50% | +24.1% | **FD -114** | pending |
-| Matthew Golden Under 5.5 | receptions | — | **80%** (8g) | 56% | +23.7% | **DK -145** / FD -152 | pending |
-| Justin Jefferson Under 76.5 | reception yds | — | **74%** (6g) | 50% | +23.6% | **FD -114** | pending |
-| DeMario Douglas Under 3.5 | receptions | — | **72%** (8g) | 49% | +23.1% | **DK -102** | pending |
-| Kayshon Boutte Over 16.5 | reception yds | — | **73%** (7g) | 50% | +22.6% | **DK -112** / FD -114 | pending |
+| Matthew Golden Under 5.5 | receptions | — | **80%** (8g) | 56% | +23.7% | **DK -136** / FD -152 | pending |
 
 *Requires 6 current-season games. Below that the model's mean is dominated by last season while the market prices this one, which produced a uniform Under bias in week 4.*
 
@@ -47,21 +45,21 @@ Picks frozen at the price they were read at. **Both books shown; bold = better p
 
 | Game | Market | Pick | Hit% | Value | Books | Result |
 |---|---|---|---|---|---|---|
-| DEN @ CAR | receptions | **Marvin Mims Jr. Under 1.5** | 60% | -1.2¢ | **DK -154** / FD -180 | pending |
-| NYG @ PHI | receptions | **Dallas Goedert Over 3.5** | 56% | -1.4¢ | DK -152 / **FD -130** | pending |
-| NYJ @ KC | ML | **Kansas City Chiefs** | 82% | -1.4¢ | **DK -485** / FD -520 | pending |
-| BUF @ MIN | receptions | **James Cook Over 1.5** | 58% | -1.4¢ | **DK -142** / FD -162 | pending |
-| DEN @ CAR | receptions | **Courtland Sutton Under 3.5** | 57% | -2.0¢ | **DK -137** / FD -154 | pending |
-| DAL @ IND | receptions | **Ryan Flournoy Under 3.5** | 55% | -2.1¢ | DK -142 / **FD -130** | pending |
+| LV @ SF | receptions | **Jack Bech Under 1.5** | 55% | -0.6¢ | DK -141 / **FD -125** | pending |
+| DAL @ IND | receptions | **Ryan Flournoy Under 3.5** | 56% | -0.7¢ | DK -147 / **FD -130** | pending |
+| LV @ SF | receptions | **George Kittle Over 5.5** | 57% | -1.2¢ | DK -152 / **FD -136** | pending |
+| NYG @ PHI | receptions | **Dallas Goedert Over 3.5** | 56% | -1.4¢ | DK -145 / **FD -130** | pending |
+| ARI @ SEA | receptions | **Reggie Virgil Under 1.5** | 59% | -1.5¢ | DK -168 / **FD -148** | pending |
+| DET @ MIA | ML | **Detroit Lions** | 73% | -2.1¢ | DK -310 / **FD -295** | pending |
 | TB @ CHI | ML | **Chicago Bears** | 71% | -2.1¢ | **DK -270** / FD -270 | pending |
-| DET @ MIA | ML | **Detroit Lions** | 73% | -2.2¢ | DK -305 / **FD -295** | pending |
-| LV @ SF | receptions | **Jordan Watkins Over 1.5** | 59% | -2.3¢ | DK -178 / **FD -152** | pending |
-| LV @ SF | ML | **San Francisco 49ers** | 81% | -2.3¢ | **DK -485** / FD -490 | pending |
-| DEN @ CAR | ML | **Denver Broncos** | 57% | -2.7¢ | DK -148 / **FD -142** | pending |
-| DEN @ CAR | receptions | **Tommy Tremble Under 2.5** | 61% | -2.9¢ | **DK -170** / FD -210 | pending |
-| CIN @ ATL | ML | **Cincinnati Bengals** | 61% | -3.0¢ | DK -180 / **FD -166** | pending |
-| GB @ NE | receptions | **Christian Watson Over 4.5** | 56% | -3.1¢ | **DK -135** / FD -148 | pending |
-| CIN @ ATL | receptions | **Kyle Pitts Over 3.5** | 58% | -3.3¢ | **DK -152** / FD -178 | pending |
+| NYJ @ KC | ML | **Kansas City Chiefs** | 82% | -2.2¢ | DK -535 / **FD -520** | pending |
+| CIN @ ATL | receptions | **Drew Sample Over 0.5** | 62% | -2.2¢ | **DK -177** / FD -225 | pending |
+| LV @ SF | ML | **San Francisco 49ers** | 81% | -2.3¢ | DK -485 / **FD -480** | pending |
+| HOU @ LAC | receptions | **Oronde Gadsden II Over 1.5** | 58% | -2.3¢ | DK -160 / **FD -144** | pending |
+| GB @ NE | receptions | **Matthew Golden Under 5.5** | 56% | -2.3¢ | **DK -136** / FD -152 | pending |
+| HOU @ LAC | receptions | **Foster Moreau Under 1.5** | 61% | -2.4¢ | **DK -170** / FD -194 | pending |
+| DEN @ CAR | ML | **Denver Broncos** | 57% | -2.7¢ | **DK -142** / FD -146 | pending |
+| DAL @ IND | receptions | **Tyler Warren Under 5.5** | 56% | -3.0¢ | DK -145 / **FD -136** | pending |
 
 *Value means one book is priced away from the others. Negative is their hold — normal on a settled market.*
 
@@ -71,10 +69,10 @@ Picks frozen at the price they were read at. **Both books shown; bold = better p
 
 | Game | Market | Pick | **Hit%** | Value | Books | Result |
 |---|---|---|---|---|---|---|
-| NYJ @ KC | ML | **Kansas City Chiefs** | **82%** | -1.4¢ | **DK -485** / FD -520 | pending |
-| LV @ SF | ML | **San Francisco 49ers** | **81%** | -2.3¢ | **DK -485** / FD -490 | pending |
-| ARI @ SEA | ML | **Seattle Seahawks** | **79%** | -3.8¢ | DK -470 / **FD -450** | pending |
-| DET @ MIA | ML | **Detroit Lions** | **73%** | -2.2¢ | DK -305 / **FD -295** | pending |
+| NYJ @ KC | ML | **Kansas City Chiefs** | **82%** | -2.2¢ | DK -535 / **FD -520** | pending |
+| LV @ SF | ML | **San Francisco 49ers** | **81%** | -2.3¢ | DK -485 / **FD -480** | pending |
+| ARI @ SEA | ML | **Seattle Seahawks** | **79%** | -3.8¢ | DK -455 / **FD -450** | pending |
+| DET @ MIA | ML | **Detroit Lions** | **73%** | -2.1¢ | DK -310 / **FD -295** | pending |
 | TB @ CHI | ML | **Chicago Bears** | **71%** | -2.1¢ | **DK -270** / FD -270 | pending |
 
 #### Matchup Board — opponent strength (current season only)
@@ -83,40 +81,40 @@ Picks frozen at the price they were read at. **Both books shown; bold = better p
 
 | Game | Pick | Opponent D | Tilt | Hit% | Value | Books |
 |---|---|---|---|---|---|---|
-| ARI @ SEA | **Tyler Allgeier Under 2.5** | vs SEA pass D tough -12% | +12% | 45% | -2.5¢ | DK +106 / **FD +116** |
-| ARI @ SEA | **Reggie Virgil Under 1.5** | vs SEA pass D tough -12% | +12% | 58% | -3.4¢ | DK -158 / **FD -148** |
-| ARI @ SEA | **Elijah Higgins Under 1.5** | vs SEA pass D tough -12% | +12% | 44% | -3.4¢ | DK +113 / **FD +118** |
+| ARI @ SEA | **Reggie Virgil Under 1.5** | vs SEA pass D tough -12% | +12% | 59% | -1.5¢ | DK -168 / **FD -148** |
+| ARI @ SEA | **Elijah Higgins Under 1.5** | vs SEA pass D tough -12% | +12% | 44% | -3.9¢ | DK +113 / **FD +118** |
+| ARI @ SEA | **Tyler Allgeier Under 2.5** | vs SEA pass D tough -12% | +12% | 44% | -3.9¢ | DK +107 / **FD +116** |
 | LV @ SF | **Kaelon Black Over 36.5** | vs LV rush D soft +13% | +13% | 50% | -4.5¢ | **DK -110** / FD -114 |
+| LV @ SF | **Brock Purdy Over 15.5** | vs LV rush D soft +13% | +13% | 50% | -4.6¢ | **DK -112** |
 | ARI @ SEA | **Elijah Higgins Under 13.5** | vs SEA pass D tough -12% | +12% | 50% | -4.5¢ | **DK -110** / FD -114 |
-| TB @ CHI | **Kenny Gainwell Over 10.5** | vs CHI pass D soft +11% | +11% | 50% | -3.3¢ | **DK -107** |
 | LA @ WAS | **Antonio Williams Under 3.5** | vs LA pass D tough -3% | +3% | 41% | +4.3¢ | DK +128 / **FD +152** |
+| LV @ SF | **Christian McCaffrey Over 61.5** | vs LV rush D soft +13% | +13% | 50% | -5.0¢ | **DK -109** |
+| ARI @ SEA | **Trey McBride Under 6.5** | vs SEA pass D tough -12% | +12% | 44% | -4.9¢ | **DK +114** |
 | ARI @ SEA | **Michael Wilson Under 48.5** | vs SEA pass D tough -12% | +12% | 50% | -5.0¢ | **DK -111** / FD -114 |
-| ARI @ SEA | **Trey McBride Under 61.5** | vs SEA pass D tough -12% | +12% | 50% | -5.0¢ | **DK -111** |
-| ARI @ SEA | **Trey McBride Under 6.5** | vs SEA pass D tough -12% | +12% | 45% | -5.0¢ | **DK +113** |
 | ARI @ SEA | **Trey McBride Under 59.5** | vs SEA pass D tough -12% | +12% | 50% | -5.2¢ | **DK -111** / FD -114 |
+| ARI @ SEA | **Reggie Virgil Under 13.5** | vs SEA pass D tough -12% | +12% | 50% | -5.2¢ | **DK -111** |
 | ARI @ SEA | **Trey McBride Under 7.5** | vs SEA pass D tough -12% | +12% | 56% | -5.2¢ | **DK -142** / FD -148 |
-| LV @ SF | **Christian McCaffrey Over 60.5** | vs LV rush D soft +13% | +13% | 50% | -5.4¢ | **DK -112** |
-| ARI @ SEA | **Reggie Virgil Under 13.5** | vs SEA pass D tough -12% | +12% | 51% | -5.3¢ | **DK -116** |
-| LV @ SF | **Brock Purdy Over 15.5** | vs LV rush D soft +13% | +13% | 50% | -5.5¢ | **DK -114** |
+| ARI @ SEA | **Tyler Allgeier Under 16.5** | vs SEA pass D tough -12% | +12% | 51% | -5.2¢ | DK -115 / **FD -114** |
+| LV @ SF | **Kaelon Black Over 41.5** | vs LV rush D soft +13% | +13% | 50% | -5.3¢ | DK -114 / **FD -114** |
 
 <details>
 <summary><b>How each number was built</b></summary>
 
-- **Kenyon Sadiq Over 2.5** (receptions, NYJ @ KC): confidence D (38/100) · market: 41.7% across 5 books -> fair +140 · price: FD +154 -> value +5.8¢ · model: 29.7% on 8 current-season games, divergence -12.0% · matchup: vs KC pass D tough -2% · usage: 27 targets (12% of team), aDOT 5.9 · ⚠️ prices 16h old · ⚠️ 5 books · ⚠️ books disagree (sd 0.024, >90th pct) · ⚠️ prices 16h old · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
-- **Antonio Williams Under 3.5** (receptions, LA @ WAS): confidence D (28/100) · market: 41.4% across 5 books -> fair +142 · price: FD +152 -> value +4.3¢ · model: 59.6% on 7 current-season games, divergence +18.2% · matchup: vs LA pass D tough -3% · usage: 33 targets (15% of team), aDOT 11.1 · ⚠️ prices 16h old · ⚠️ 5 books · ⚠️ books disagree (sd 0.027, >90th pct) · ⚠️ prices 16h old · ⚠️ model on 7 games · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
-- **Breece Hall Over 2.5** (receptions, NYJ @ KC): confidence D (38/100) · market: 40.6% across 5 books -> fair +146 · price: FD +152 -> value +2.3¢ · matchup: vs KC pass D tough -2% · usage: 10 targets (4% of team), aDOT 0.0 · ⚠️ prices 16h old · ⚠️ 5 books · ⚠️ books disagree (sd 0.017, >90th pct) · ⚠️ prices 16h old · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
-- **Harold Fannin Jr. Under 4.5** (receptions, CLE @ NO): confidence D (38/100) · market: 51.6% across 5 books -> fair -107 · price: DK -102 -> value +2.3¢ · model: 59.4% on 8 current-season games, divergence +7.8% · matchup: vs NO pass D soft +2% · usage: 51 targets (21% of team), aDOT 6.0 · ⚠️ prices 16h old · ⚠️ 5 books · ⚠️ books disagree (sd 0.025, >90th pct) · ⚠️ prices 16h old · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
-- **Minnesota Vikings** (ML, BUF @ MIN): calibration: raw de-vig 39.6% -> 40.7% (favourite-longshot bias, 8,796 games) · confidence C (68/100) · market: 40.7% across 11 books -> fair +146 · price: FD +150 -> value +1.7¢ · ⚠️ prices 16h old · ⚠️ prices 16h old · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
-- **Darnell Mooney Over 1.5** (receptions, NYG @ PHI): confidence D (28/100) · market: 40.0% across 5 books -> fair +150 · price: FD +154 -> value +1.7¢ · model: 49.9% on 7 current-season games, divergence +9.9% · matchup: vs PHI pass D soft +5% · usage: 22 targets (9% of team), aDOT 13.6 · ⚠️ prices 16h old · ⚠️ 5 books · ⚠️ books disagree (sd 0.021, >90th pct) · ⚠️ prices 16h old · ⚠️ model on 7 games · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
-- **Tre Tucker Over 3.5** (receptions, LV @ SF): confidence D (38/100) · market: 42.2% across 5 books -> fair +137 · price: FD +140 -> value +1.2¢ · model: 36.8% on 8 current-season games, divergence -5.4% · matchup: vs SF pass D tough -8% · usage: 48 targets (17% of team), aDOT 13.4 · ⚠️ prices 16h old · ⚠️ 5 books · ⚠️ books disagree (sd 0.023, >90th pct) · ⚠️ prices 16h old · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
-- **Washington Commanders** (ML, LA @ WAS): calibration: raw de-vig 33.2% -> 34.3% (favourite-longshot bias, 8,796 games) · confidence C (61/100) · market: 34.3% across 11 books -> fair +191 · price: FD +194 -> value +1.0¢ · ⚠️ prices 16h old · ⚠️ prices 16h old · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
-- **Geno Smith Over 6.5** (rush yds, NYJ @ KC): confidence D (28/100) · market: 50.5% across 5 books -> fair -102 · price: FD -102 -> value +0.0¢ · model: 47.5% on 7 current-season games, divergence -3.0% · matchup: vs KC rush D tough -8% · ⚠️ prices 16h old · ⚠️ 5 books · ⚠️ books disagree (sd 0.018, >90th pct) · ⚠️ prices 16h old · ⚠️ model on 7 games · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
-- **Josh Jacobs Under 3.5** (receptions, GB @ NE): confidence D (38/100) · market: 52.8% across 5 books -> fair -112 · price: DK -112 -> value -0.1¢ · matchup: vs NE pass D avg · usage: 13 targets (4% of team), aDOT 2.8 · ⚠️ prices 16h old · ⚠️ negative value — this is the book's hold · ⚠️ 5 books · ⚠️ books disagree (sd 0.020, >90th pct) · ⚠️ prices 16h old · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
-- **John Metchie III Under 1.5** (receptions, DEN @ CAR): confidence D (38/100) · market: 45.7% across 5 books -> fair +119 · price: FD +118 -> value -0.3¢ · matchup: vs DEN pass D avg · usage: 21 targets (8% of team), aDOT 7.2 · ⚠️ prices 16h old · ⚠️ negative value — this is the book's hold · ⚠️ 5 books · ⚠️ books disagree (sd 0.015, >90th pct) · ⚠️ prices 16h old · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
-- **Jadarian Price Under 1.5** (receptions, ARI @ SEA): confidence D (38/100) · market: 50.3% across 5 books -> fair -101 · price: FD -102 -> value -0.4¢ · matchup: vs ARI pass D soft +10% · usage: 11 targets (4% of team), aDOT 4.1 · ⚠️ prices 16h old · ⚠️ negative value — this is the book's hold · ⚠️ 5 books · ⚠️ books disagree (sd 0.019, >90th pct) · ⚠️ prices 16h old · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
-- **Jahmyr Gibbs Under 3.5** (receptions, DET @ MIA): confidence D (28/100) · market: 42.5% across 5 books -> fair +135 · price: FD +134 -> value -0.6¢ · model: 36.7% on 7 current-season games, divergence -5.8% · matchup: vs MIA pass D avg · usage: 44 targets (18% of team), aDOT 0.5 · ⚠️ prices 16h old · ⚠️ negative value — this is the book's hold · ⚠️ 5 books · ⚠️ books disagree (sd 0.016, >90th pct) · ⚠️ prices 16h old · ⚠️ model on 7 games · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
-- **Malachi Fields Over 2.5** (receptions, NYG @ PHI): confidence D (21/100) · market: 39.1% across 5 books -> fair +156 · price: FD +154 -> value -0.7¢ · model: 38.6% on 7 current-season games, divergence -0.4% · matchup: vs PHI pass D soft +5% · usage: 30 targets (13% of team), aDOT 13.8 · ⚠️ prices 16h old · ⚠️ negative value — this is the book's hold · ⚠️ 5 books · ⚠️ books disagree (sd 0.029, >90th pct) · ⚠️ prices 16h old · ⚠️ model on 7 games · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
-- **Dalton Schultz Under 3.5** (receptions, HOU @ LAC): confidence D (28/100) · market: 45.9% across 5 books -> fair +118 · price: DK +116 -> value -0.8¢ · model: 46.0% on 7 current-season games, divergence +0.0% · matchup: vs LAC pass D avg · usage: 43 targets (19% of team), aDOT 5.6 · ⚠️ prices 16h old · ⚠️ negative value — this is the book's hold · ⚠️ 5 books · ⚠️ books disagree (sd 0.015, >90th pct) · ⚠️ prices 16h old · ⚠️ model on 7 games · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **Antonio Williams Under 3.5** (receptions, LA @ WAS): confidence C (58/100) · market: 41.4% across 5 books -> fair +142 · price: FD +152 -> value +4.3¢ · model: 59.6% on 7 current-season games, divergence +18.2% · matchup: vs LA pass D tough -3% · usage: 33 targets (15% of team), aDOT 11.1 · ⚠️ 5 books · ⚠️ books disagree (sd 0.027, >90th pct) · ⚠️ model on 7 games · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **Colston Loveland Over 50.5** (reception yds, TB @ CHI): confidence D (53/100) · market: 54.5% across 3 books -> fair -120 · price: FD -114 -> value +2.2¢ · model: 44.5% on 8 current-season games, divergence -10.0% · matchup: vs TB pass D tough -3% · usage: 51 targets (20% of team), aDOT 6.6 · ⚠️ thin consensus, 3 books · ⚠️ only 3 books · ⚠️ books disagree (sd 0.029, >90th pct) · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **Darnell Mooney Over 1.5** (receptions, NYG @ PHI): confidence C (58/100) · market: 40.0% across 5 books -> fair +150 · price: FD +154 -> value +1.7¢ · model: 49.9% on 7 current-season games, divergence +9.9% · matchup: vs PHI pass D soft +5% · usage: 22 targets (9% of team), aDOT 13.6 · ⚠️ 5 books · ⚠️ books disagree (sd 0.021, >90th pct) · ⚠️ model on 7 games · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **Washington Commanders** (ML, LA @ WAS): calibration: raw de-vig 33.2% -> 34.3% (favourite-longshot bias, 8,796 games) · confidence A (91/100) · market: 34.3% across 11 books -> fair +191 · price: DK +195 -> value +1.3¢ · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **Harold Fannin Jr. Under 4.5** (receptions, CLE @ NO): confidence C (68/100) · market: 51.6% across 5 books -> fair -107 · price: DK -104 -> value +1.3¢ · model: 59.4% on 8 current-season games, divergence +7.8% · matchup: vs NO pass D soft +2% · usage: 51 targets (21% of team), aDOT 6.0 · ⚠️ 5 books · ⚠️ books disagree (sd 0.020, >90th pct) · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **Tre Tucker Over 3.5** (receptions, LV @ SF): confidence C (68/100) · market: 42.2% across 5 books -> fair +137 · price: FD +140 -> value +1.2¢ · model: 36.8% on 8 current-season games, divergence -5.4% · matchup: vs SF pass D tough -8% · usage: 48 targets (17% of team), aDOT 13.4 · ⚠️ 5 books · ⚠️ books disagree (sd 0.015, >90th pct) · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **Minnesota Vikings** (ML, BUF @ MIN): calibration: raw de-vig 39.4% -> 40.5% (favourite-longshot bias, 8,796 games) · confidence A (98/100) · market: 40.5% across 11 books -> fair +147 · price: FD +150 -> value +1.2¢ · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **Dalton Schultz Under 3.5** (receptions, HOU @ LAC): confidence C (58/100) · market: 45.9% across 5 books -> fair +118 · price: DK +120 -> value +1.0¢ · model: 46.0% on 7 current-season games, divergence +0.0% · matchup: vs LAC pass D avg · usage: 43 targets (19% of team), aDOT 5.6 · ⚠️ 5 books · ⚠️ books disagree (sd 0.021, >90th pct) · ⚠️ model on 7 games · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **Keenan Allen Under 4.5** (receptions, DAL @ IND): confidence C (58/100) · market: 51.0% across 5 books -> fair -104 · price: FD -102 -> value +1.0¢ · model: 53.7% on 7 current-season games, divergence +2.7% · matchup: vs DAL pass D avg · usage: 50 targets (20% of team), aDOT 7.3 · ⚠️ 5 books · ⚠️ books disagree (sd 0.020, >90th pct) · ⚠️ model on 7 games · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **Mike Gesicki Over 2.5** (receptions, CIN @ ATL): confidence C (58/100) · market: 52.0% across 5 books -> fair -108 · price: FD -108 -> value +0.1¢ · model: 45.2% on 6 current-season games, divergence -6.7% · matchup: vs ATL pass D tough -4% · usage: 24 targets (9% of team), aDOT 11.1 · ⚠️ 5 books · ⚠️ books disagree (sd 0.015, >90th pct) · ⚠️ model on 6 games · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **Javonte Williams Under 7.5** (reception yds, DAL @ IND): confidence C (58/100) · market: 50.0% across 5 books -> fair -100 · price: FD +100 -> value +0.0¢ · model: 43.0% on 7 current-season games, divergence -7.0% · matchup: vs IND pass D soft +9% · usage: 24 targets (8% of team), aDOT -1.7 · ⚠️ 5 books · ⚠️ books disagree (sd 0.024, >90th pct) · ⚠️ model on 7 games · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **Adonai Mitchell Over 3.5** (receptions, NYJ @ KC): confidence C (68/100) · market: 54.1% across 5 books -> fair -118 · price: FD -118 -> value -0.1¢ · matchup: vs KC pass D tough -2% · usage: 27 targets (12% of team), aDOT 17.6 · ⚠️ negative value — this is the book's hold · ⚠️ 5 books · ⚠️ books disagree (sd 0.018, >90th pct) · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **Jack Bech Under 1.5** (receptions, LV @ SF): confidence C (68/100) · market: 55.2% across 5 books -> fair -123 · price: FD -125 -> value -0.6¢ · matchup: vs SF pass D tough -8% · usage: 6 targets (2% of team), aDOT 8.3 · ⚠️ negative value — this is the book's hold · ⚠️ 5 books · ⚠️ books disagree (sd 0.016, >90th pct) · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **Jahmyr Gibbs Under 3.5** (receptions, DET @ MIA): confidence C (58/100) · market: 42.5% across 5 books -> fair +135 · price: FD +134 -> value -0.6¢ · model: 36.7% on 7 current-season games, divergence -5.8% · matchup: vs MIA pass D avg · usage: 44 targets (18% of team), aDOT 0.5 · ⚠️ negative value — this is the book's hold · ⚠️ 5 books · ⚠️ books disagree (sd 0.016, >90th pct) · ⚠️ model on 7 games · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **Ryan Flournoy Under 3.5** (receptions, DAL @ IND): confidence C (68/100) · market: 56.1% across 5 books -> fair -128 · price: FD -130 -> value -0.7¢ · model: 59.1% on 8 current-season games, divergence +3.0% · matchup: vs IND pass D soft +9% · usage: 45 targets (15% of team), aDOT 7.1 · ⚠️ negative value — this is the book's hold · ⚠️ 5 books · ⚠️ books disagree (sd 0.017, >90th pct) · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
 
 </details>
 
