@@ -1,19 +1,19 @@
 # Results
 
-Generated 2026-11-08T12:59:09Z. Every pick the board has published, scored against what happened. Each bet counted **once**, at first publication.
+Generated 2026-11-08T19:21:02Z. Every pick the board has published, scored against what happened. Each bet counted **once**, at first publication.
 
-Pick rows logged: **2,475** · unique bets: **650**
+Pick rows logged: **2,490** · unique bets: **660**
 
 ## CLV — did the price beat where the market settled?
 
 ```json
 {
-  "graded": 243,
-  "skipped_no_forward_window": 407,
-  "beat_close": 86,
-  "beat_rate": 0.3539,
-  "mean_clv_pts": -1.991,
-  "z_vs_50": -4.55,
+  "graded": 241,
+  "skipped_no_forward_window": 419,
+  "beat_close": 88,
+  "beat_rate": 0.3651,
+  "mean_clv_pts": -1.915,
+  "z_vs_50": -4.19,
   "verdict": "LOSES to the close"
 }
 ```
@@ -24,13 +24,13 @@ Pick rows logged: **2,475** · unique bets: **650**
 
 ```json
 {
-  "graded": 296,
-  "record": "123-173",
-  "win_rate": 0.4155,
-  "roi": -0.1712,
+  "graded": 299,
+  "record": "124-175",
+  "win_rate": 0.4147,
+  "roi": -0.1729,
   "roi_ci_95": [
-    -0.2868,
-    -0.0485
+    -0.2873,
+    -0.0504
   ],
   "verdict": "negative at 95%"
 }
@@ -332,8 +332,11 @@ Pick rows logged: **2,475** · unique bets: **650**
 | 2026-10-30 | PHI @ WAS | Washington Commanders | DK | -258 | +17 | **W** | +0.39 |
 | 2026-10-30 | ARI @ DAL | Arizona Cardinals | FD | +280 | -3 | **W** | +2.80 |
 | 2026-11-01 | PHI @ WAS | Philadelphia Eagles | DK | +220 | +17 | L | -1.00 |
+| 2026-11-02 | CIN @ ATL | Atlanta Falcons | FD | +154 | -17 | L | -1.00 |
+| 2026-11-02 | CIN @ ATL | Cincinnati Bengals -3.5 | DK | -102 | -17 | **W** | +0.98 |
 | 2026-11-02 | JAX @ BAL | Jacksonville Jaguars | DK | -410 | -23 | **W** | +0.24 |
 | 2026-11-03 | JAX @ BAL | Baltimore Ravens +8.5 | DK | +100 | -23 | L | -1.00 |
+| 2026-11-05 | CIN @ ATL | Atlanta Falcons | DK | +140 | -17 | L | -1.00 |
 
 ## Graduation criteria (pre-registered)
 
