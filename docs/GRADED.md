@@ -1,19 +1,19 @@
 # Results
 
-Generated 2026-11-08T19:25:54Z. Every pick the board has published, scored against what happened. Each bet counted **once**, at first publication.
+Generated 2026-11-09T00:38:46Z. Every pick the board has published, scored against what happened. Each bet counted **once**, at first publication.
 
-Pick rows logged: **2,505** · unique bets: **660**
+Pick rows logged: **2,520** · unique bets: **668**
 
 ## CLV — did the price beat where the market settled?
 
 ```json
 {
-  "graded": 241,
-  "skipped_no_forward_window": 419,
-  "beat_close": 90,
-  "beat_rate": 0.3734,
-  "mean_clv_pts": -1.605,
-  "z_vs_50": -3.93,
+  "graded": 246,
+  "skipped_no_forward_window": 422,
+  "beat_close": 91,
+  "beat_rate": 0.3699,
+  "mean_clv_pts": -1.592,
+  "z_vs_50": -4.08,
   "verdict": "LOSES to the close"
 }
 ```
@@ -24,13 +24,13 @@ Pick rows logged: **2,505** · unique bets: **660**
 
 ```json
 {
-  "graded": 299,
-  "record": "124-175",
-  "win_rate": 0.4147,
-  "roi": -0.1729,
+  "graded": 333,
+  "record": "134-199",
+  "win_rate": 0.4024,
+  "roi": -0.2097,
   "roi_ci_95": [
-    -0.2873,
-    -0.0504
+    -0.3188,
+    -0.0953
   ],
   "verdict": "negative at 95%"
 }
@@ -331,12 +331,46 @@ Pick rows logged: **2,505** · unique bets: **660**
 | 2026-10-30 | ATL @ TB | Over +44.5 | DK | -102 | +16 | L | -1.00 |
 | 2026-10-30 | PHI @ WAS | Washington Commanders | DK | -258 | +17 | **W** | +0.39 |
 | 2026-10-30 | ARI @ DAL | Arizona Cardinals | FD | +280 | -3 | **W** | +2.80 |
+| 2026-11-01 | DAL @ IND | Indianapolis Colts | FD | +198 | -4 | L | -1.00 |
 | 2026-11-01 | PHI @ WAS | Philadelphia Eagles | DK | +220 | +17 | L | -1.00 |
+| 2026-11-01 | LA @ WAS | Los Angeles Rams -5.5 | FD | +100 | -7 | **W** | +1.00 |
+| 2026-11-01 | LA @ WAS | Washington Commanders | DK | +185 | -7 | L | -1.00 |
+| 2026-11-01 | CLE @ NO | Cleveland Browns +2.5 | FD | -102 | +1 | L | -1.00 |
+| 2026-11-01 | CLE @ NO | Cleveland Browns | FD | +126 | +1 | L | -1.00 |
+| 2026-11-02 | LA @ WAS | Washington Commanders | FD | +215 | -7 | L | -1.00 |
+| 2026-11-02 | DEN @ CAR | Carolina Panthers | FD | +130 | -5 | L | -1.00 |
+| 2026-11-02 | DET @ MIA | Detroit Lions | DK | -325 | -10 | **W** | +0.31 |
+| 2026-11-02 | HOU @ LAC | Los Angeles Chargers | FD | +152 | -22 | L | -1.00 |
+| 2026-11-02 | DET @ MIA | Miami Dolphins | FD | +310 | -10 | L | -1.00 |
 | 2026-11-02 | CIN @ ATL | Atlanta Falcons | FD | +154 | -17 | L | -1.00 |
 | 2026-11-02 | CIN @ ATL | Cincinnati Bengals -3.5 | DK | -102 | -17 | **W** | +0.98 |
+| 2026-11-02 | NYG @ PHI | Philadelphia Eagles | FD | +136 | -8 | L | -1.00 |
+| 2026-11-02 | DEN @ CAR | Denver Broncos | FD | -142 | -5 | **W** | +0.70 |
+| 2026-11-02 | ARI @ SEA | Seattle Seahawks | FD | -700 | +14 | **W** | +0.14 |
+| 2026-11-02 | CLE @ NO | New Orleans Saints | DK | -142 | +1 | **W** | +0.70 |
+| 2026-11-02 | LA @ WAS | Washington Commanders +5.5 | FD | -104 | -7 | L | -1.00 |
+| 2026-11-02 | DET @ MIA | Under +48.5 | FD | -104 | -10 | **W** | +0.96 |
+| 2026-11-02 | NYG @ PHI | New York Giants -3 | DK | -102 | -8 | **W** | +0.98 |
+| 2026-11-02 | DAL @ IND | Indianapolis Colts | DK | +215 | -4 | L | -1.00 |
+| 2026-11-02 | DET @ MIA | Miami Dolphins | DK | +295 | -10 | L | -1.00 |
 | 2026-11-02 | JAX @ BAL | Jacksonville Jaguars | DK | -410 | -23 | **W** | +0.24 |
+| 2026-11-02 | NYJ @ KC | New York Jets | FD | +400 | +23 | L | -1.00 |
+| 2026-11-02 | ARI @ SEA | Seattle Seahawks | DK | -700 | +14 | **W** | +0.14 |
 | 2026-11-03 | JAX @ BAL | Baltimore Ravens +8.5 | DK | +100 | -23 | L | -1.00 |
+| 2026-11-03 | LV @ SF | Las Vegas Raiders | FD | +440 | +21 | L | -1.00 |
+| 2026-11-03 | NYG @ PHI | Philadelphia Eagles | DK | +145 | -8 | L | -1.00 |
+| 2026-11-03 | LV @ SF | Las Vegas Raiders +9.5 | FD | -102 | +21 | L | -1.00 |
+| 2026-11-03 | LA @ WAS | Washington Commanders +5.5 | DK | -102 | -7 | L | -1.00 |
+| 2026-11-03 | DEN @ CAR | Denver Broncos | DK | -142 | -5 | **W** | +0.70 |
+| 2026-11-04 | LV @ SF | San Francisco 49ers | DK | -485 | +21 | **W** | +0.21 |
+| 2026-11-04 | ARI @ SEA | Arizona Cardinals | DK | +575 | +14 | L | -1.00 |
+| 2026-11-04 | NYJ @ KC | New York Jets +9.5 | FD | +100 | +23 | L | -1.00 |
+| 2026-11-04 | CLE @ NO | Under +42.5 | FD | +100 | +1 | L | -1.00 |
+| 2026-11-04 | NYJ @ KC | Over +47.5 | FD | -102 | +23 | L | -1.00 |
+| 2026-11-05 | NYJ @ KC | New York Jets | DK | +440 | +23 | L | -1.00 |
+| 2026-11-05 | DEN @ CAR | Carolina Panthers | DK | +130 | -5 | L | -1.00 |
 | 2026-11-05 | CIN @ ATL | Atlanta Falcons | DK | +140 | -17 | L | -1.00 |
+| 2026-11-08 | NYG @ PHI | Philadelphia Eagles +3 | DK | +100 | -8 | L | -1.00 |
 
 ## Graduation criteria (pre-registered)
 
