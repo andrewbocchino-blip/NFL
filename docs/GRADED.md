@@ -1,19 +1,19 @@
 # Results
 
-Generated 2026-11-09T00:38:46Z. Every pick the board has published, scored against what happened. Each bet counted **once**, at first publication.
+Generated 2026-11-09T11:06:45Z. Every pick the board has published, scored against what happened. Each bet counted **once**, at first publication.
 
-Pick rows logged: **2,520** · unique bets: **668**
+Pick rows logged: **2,535** · unique bets: **676**
 
 ## CLV — did the price beat where the market settled?
 
 ```json
 {
-  "graded": 246,
-  "skipped_no_forward_window": 422,
-  "beat_close": 91,
-  "beat_rate": 0.3699,
-  "mean_clv_pts": -1.592,
-  "z_vs_50": -4.08,
+  "graded": 252,
+  "skipped_no_forward_window": 424,
+  "beat_close": 94,
+  "beat_rate": 0.373,
+  "mean_clv_pts": -1.58,
+  "z_vs_50": -4.03,
   "verdict": "LOSES to the close"
 }
 ```
@@ -24,13 +24,13 @@ Pick rows logged: **2,520** · unique bets: **668**
 
 ```json
 {
-  "graded": 333,
-  "record": "134-199",
-  "win_rate": 0.4024,
-  "roi": -0.2097,
+  "graded": 342,
+  "record": "139-203",
+  "win_rate": 0.4064,
+  "roi": -0.2022,
   "roi_ci_95": [
-    -0.3188,
-    -0.0953
+    -0.3088,
+    -0.0877
   ],
   "verdict": "negative at 95%"
 }
@@ -344,15 +344,19 @@ Pick rows logged: **2,520** · unique bets: **668**
 | 2026-11-02 | DET @ MIA | Miami Dolphins | FD | +310 | -10 | L | -1.00 |
 | 2026-11-02 | CIN @ ATL | Atlanta Falcons | FD | +154 | -17 | L | -1.00 |
 | 2026-11-02 | CIN @ ATL | Cincinnati Bengals -3.5 | DK | -102 | -17 | **W** | +0.98 |
+| 2026-11-02 | TB @ CHI | Tampa Bay Buccaneers | FD | +220 | +3 | L | -1.00 |
 | 2026-11-02 | NYG @ PHI | Philadelphia Eagles | FD | +136 | -8 | L | -1.00 |
 | 2026-11-02 | DEN @ CAR | Denver Broncos | FD | -142 | -5 | **W** | +0.70 |
 | 2026-11-02 | ARI @ SEA | Seattle Seahawks | FD | -700 | +14 | **W** | +0.14 |
 | 2026-11-02 | CLE @ NO | New Orleans Saints | DK | -142 | +1 | **W** | +0.70 |
+| 2026-11-02 | GB @ NE | Over +47.5 | FD | -104 | -18 | **W** | +0.96 |
 | 2026-11-02 | LA @ WAS | Washington Commanders +5.5 | FD | -104 | -7 | L | -1.00 |
 | 2026-11-02 | DET @ MIA | Under +48.5 | FD | -104 | -10 | **W** | +0.96 |
+| 2026-11-02 | GB @ NE | New England Patriots | FD | -142 | -18 | L | -1.00 |
 | 2026-11-02 | NYG @ PHI | New York Giants -3 | DK | -102 | -8 | **W** | +0.98 |
 | 2026-11-02 | DAL @ IND | Indianapolis Colts | DK | +215 | -4 | L | -1.00 |
 | 2026-11-02 | DET @ MIA | Miami Dolphins | DK | +295 | -10 | L | -1.00 |
+| 2026-11-02 | GB @ NE | Over +47.5 | DK | -102 | -18 | **W** | +0.98 |
 | 2026-11-02 | JAX @ BAL | Jacksonville Jaguars | DK | -410 | -23 | **W** | +0.24 |
 | 2026-11-02 | NYJ @ KC | New York Jets | FD | +400 | +23 | L | -1.00 |
 | 2026-11-02 | ARI @ SEA | Seattle Seahawks | DK | -700 | +14 | **W** | +0.14 |
@@ -362,15 +366,20 @@ Pick rows logged: **2,520** · unique bets: **668**
 | 2026-11-03 | LV @ SF | Las Vegas Raiders +9.5 | FD | -102 | +21 | L | -1.00 |
 | 2026-11-03 | LA @ WAS | Washington Commanders +5.5 | DK | -102 | -7 | L | -1.00 |
 | 2026-11-03 | DEN @ CAR | Denver Broncos | DK | -142 | -5 | **W** | +0.70 |
+| 2026-11-03 | GB @ NE | Green Bay Packers | DK | +140 | -18 | **W** | +1.40 |
+| 2026-11-04 | TB @ CHI | Chicago Bears | FD | -260 | +3 | **W** | +0.38 |
 | 2026-11-04 | LV @ SF | San Francisco 49ers | DK | -485 | +21 | **W** | +0.21 |
 | 2026-11-04 | ARI @ SEA | Arizona Cardinals | DK | +575 | +14 | L | -1.00 |
 | 2026-11-04 | NYJ @ KC | New York Jets +9.5 | FD | +100 | +23 | L | -1.00 |
 | 2026-11-04 | CLE @ NO | Under +42.5 | FD | +100 | +1 | L | -1.00 |
 | 2026-11-04 | NYJ @ KC | Over +47.5 | FD | -102 | +23 | L | -1.00 |
 | 2026-11-05 | NYJ @ KC | New York Jets | DK | +440 | +23 | L | -1.00 |
+| 2026-11-05 | GB @ NE | Over +46.5 | FD | -104 | -18 | **W** | +0.96 |
 | 2026-11-05 | DEN @ CAR | Carolina Panthers | DK | +130 | -5 | L | -1.00 |
 | 2026-11-05 | CIN @ ATL | Atlanta Falcons | DK | +140 | -17 | L | -1.00 |
 | 2026-11-08 | NYG @ PHI | Philadelphia Eagles +3 | DK | +100 | -8 | L | -1.00 |
+| 2026-11-08 | TB @ CHI | Tampa Bay Buccaneers | DK | +220 | +3 | L | -1.00 |
+| 2026-11-09 | TB @ CHI | Tampa Bay Buccaneers +6 | DK | -102 | +3 | L | -1.00 |
 
 ## Graduation criteria (pre-registered)
 
