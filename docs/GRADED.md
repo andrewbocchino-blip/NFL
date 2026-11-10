@@ -1,19 +1,19 @@
 # Results
 
-Generated 2026-11-09T22:06:15Z. Every pick the board has published, scored against what happened. Each bet counted **once**, at first publication.
+Generated 2026-11-10T06:38:48Z. Every pick the board has published, scored against what happened. Each bet counted **once**, at first publication.
 
-Pick rows logged: **2,550** · unique bets: **682**
+Pick rows logged: **2,565** · unique bets: **686**
 
 ## CLV — did the price beat where the market settled?
 
 ```json
 {
-  "graded": 254,
-  "skipped_no_forward_window": 428,
+  "graded": 257,
+  "skipped_no_forward_window": 429,
   "beat_close": 95,
-  "beat_rate": 0.374,
-  "mean_clv_pts": -1.592,
-  "z_vs_50": -4.02,
+  "beat_rate": 0.3696,
+  "mean_clv_pts": -1.615,
+  "z_vs_50": -4.18,
   "verdict": "LOSES to the close"
 }
 ```
@@ -24,13 +24,13 @@ Pick rows logged: **2,550** · unique bets: **682**
 
 ```json
 {
-  "graded": 342,
-  "record": "139-203",
-  "win_rate": 0.4064,
-  "roi": -0.2022,
+  "graded": 346,
+  "record": "140-206",
+  "win_rate": 0.4046,
+  "roi": -0.2057,
   "roi_ci_95": [
-    -0.3088,
-    -0.0877
+    -0.311,
+    -0.0955
   ],
   "verdict": "negative at 95%"
 }
@@ -360,15 +360,19 @@ Pick rows logged: **2,550** · unique bets: **682**
 | 2026-11-02 | JAX @ BAL | Jacksonville Jaguars | DK | -410 | -23 | **W** | +0.24 |
 | 2026-11-02 | NYJ @ KC | New York Jets | FD | +400 | +23 | L | -1.00 |
 | 2026-11-02 | ARI @ SEA | Seattle Seahawks | DK | -700 | +14 | **W** | +0.14 |
+| 2026-11-03 | BUF @ MIN | Buffalo Bills -3 | DK | -102 | -17 | **W** | +0.98 |
 | 2026-11-03 | JAX @ BAL | Baltimore Ravens +8.5 | DK | +100 | -23 | L | -1.00 |
 | 2026-11-03 | LV @ SF | Las Vegas Raiders | FD | +440 | +21 | L | -1.00 |
+| 2026-11-03 | BUF @ MIN | Minnesota Vikings | DK | +154 | -17 | L | -1.00 |
 | 2026-11-03 | NYG @ PHI | Philadelphia Eagles | DK | +145 | -8 | L | -1.00 |
 | 2026-11-03 | LV @ SF | Las Vegas Raiders +9.5 | FD | -102 | +21 | L | -1.00 |
+| 2026-11-03 | BUF @ MIN | Over +46.5 | FD | -104 | -17 | L | -1.00 |
 | 2026-11-03 | LA @ WAS | Washington Commanders +5.5 | DK | -102 | -7 | L | -1.00 |
 | 2026-11-03 | DEN @ CAR | Denver Broncos | DK | -142 | -5 | **W** | +0.70 |
 | 2026-11-03 | GB @ NE | Green Bay Packers | DK | +140 | -18 | **W** | +1.40 |
 | 2026-11-04 | TB @ CHI | Chicago Bears | FD | -260 | +3 | **W** | +0.38 |
 | 2026-11-04 | LV @ SF | San Francisco 49ers | DK | -485 | +21 | **W** | +0.21 |
+| 2026-11-04 | BUF @ MIN | Minnesota Vikings | FD | +146 | -17 | L | -1.00 |
 | 2026-11-04 | ARI @ SEA | Arizona Cardinals | DK | +575 | +14 | L | -1.00 |
 | 2026-11-04 | NYJ @ KC | New York Jets +9.5 | FD | +100 | +23 | L | -1.00 |
 | 2026-11-04 | CLE @ NO | Under +42.5 | FD | +100 | +1 | L | -1.00 |

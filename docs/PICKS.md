@@ -2,7 +2,7 @@
 
 Picks frozen at the price they were read at. **Both books shown; bold = better price.** Paper only.
 
-14 games · 226 DK/FD prices · lines 0h old · props 21h old
+14 games · 78 DK/FD prices · lines 0h old · no props
 
 | Column | Means |
 |---|---|
@@ -11,7 +11,79 @@ Picks frozen at the price they were read at. **Both books shown; bold = better p
 | **Model** | our own estimate, independent of price (props only) |
 | **Conf** | A-D: how well we know these numbers — book agreement, sample size, historical calibration of that band, line movement, price age. **Not** the chance of winning. |
 
-> ⚠️ **Prices are 21h old — no PLAY can be issued.** Run capture-odds, then regenerate.
+## 2026-11-10
+
+| Verdict | Conf | Game | Market | Pick | Hit% | Value | Books (best bold) |
+|---|---|---|---|---|---|---|---|
+| PASS | — | _no DK/FD price clears the bar on this board_ | | | | | |
+
+#### Model Divergence — our number vs **no-vig** market
+
+*Divergence means our number disagrees with the market — it does NOT mean the market is wrong. When we disagree the more likely explanation is that our number is worse. Model is calibrated 60-80% (walk-forward n=66,527: 60-70 reads 62.9%, 70-80 reads 77.5%) and capped at 80%.*
+
+| Player | Market | Line | **Model** | No-vig | Diverg. | Books | Result |
+|---|---|---|---|---|---|---|---|
+| _no prop with 6+ current-season games reaches 60%_ | | | | | | | |
+
+*Requires 6 current-season games. Below that the model's mean is dominated by last season while the market prices this one, which produced a uniform Under bias in week 4.*
+
+#### Value Board — DK/FD furthest off the market
+
+| Game | Market | Pick | Hit% | Value | Books | Result |
+|---|---|---|---|---|---|---|
+| BUF @ NYJ | ML | **Buffalo Bills** | 80% | -1.5¢ | DK -535 / **FD -430** | pending |
+| LA @ ARI | ML | **Los Angeles Rams** | 80% | -1.5¢ | DK -455 / **FD -430** | pending |
+| NE @ DET | ML | **Detroit Lions** | 58% | -2.4¢ | **DK -148** / FD -154 | pending |
+| PIT @ CIN | ML | **Cincinnati Bengals** | 63% | -2.4¢ | **DK -180** / FD -198 | pending |
+| MIA @ IND | ML | **Indianapolis Colts** | 55% | -3.5¢ | **DK -135** / FD -136 | pending |
+| JAX @ TEN | ML | **Jacksonville Jaguars** | 82% | -3.8¢ | DK -600 / **FD -590** | pending |
+| LAC @ BAL | ML | **Baltimore Ravens** | 66% | -4.2¢ | **DK -225** / FD -235 | pending |
+| KC @ ATL | ML | **Kansas City Chiefs** | 61% | -4.4¢ | DK -180 / **FD -178** | pending |
+| HOU @ CLE | ML | **Houston Texans** | 66% | -5.4¢ | **DK -230** / FD -235 | pending |
+| SEA @ LV | ML | **Seattle Seahawks** | 61% | -5.4¢ | **DK -180** / FD -180 | pending |
+| SF @ DAL | ML | **San Francisco 49ers** | 64% | -5.7¢ | DK -218 / **FD -215** | pending |
+| MIN @ GB | ML | **Green Bay Packers** | 64% | -6.6¢ | **DK -218** / FD -220 | pending |
+
+*Value means one book is priced away from the others. Negative is their hold — normal on a settled market.*
+
+#### Probability Board — every bet at 70%+ to hit
+
+*The 70-80% range is the best-calibrated band on the board: predicted 74.7%, actual 76.2% over 8,796 team-games.*
+
+| Game | Market | Pick | **Hit%** | Value | Books | Result |
+|---|---|---|---|---|---|---|
+| JAX @ TEN | ML | **Jacksonville Jaguars** | **82%** | -3.8¢ | DK -600 / **FD -590** | pending |
+| BUF @ NYJ | ML | **Buffalo Bills** | **80%** | -1.5¢ | DK -535 / **FD -430** | pending |
+| LA @ ARI | ML | **Los Angeles Rams** | **80%** | -1.5¢ | DK -455 / **FD -430** | pending |
+
+#### Matchup Board — opponent strength (current season only)
+
+*9 games of 2026 data, shrunk by sample size. Prior-season defence explains 2-5% of current-season defence, so it is excluded. The book already knows the ranking — this answers 'who are they playing'.*
+
+| Game | Pick | Opponent D | Tilt | Hit% | Value | Books |
+|---|---|---|---|---|---|---|
+| _no matchup differs enough from average_ | | | | | | |
+
+<details>
+<summary><b>How each number was built</b></summary>
+
+- **Minnesota Vikings** (ML, MIN @ GB): calibration: raw de-vig 34.9% -> 36.0% (favourite-longshot bias, 8,796 games) · confidence B (71/100) · market: 36.0% across 9 books -> fair +178 · price: FD +184 -> value +2.2¢ · ⚠️ books disagree (sd 0.018, >90th pct) · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **New York Jets** (ML, BUF @ NYJ): calibration: raw de-vig 21.4% -> 20.1% (favourite-longshot bias, 8,796 games) · confidence B (80/100) · market: 20.1% across 9 books -> fair +399 · price: DK +400 -> value +0.3¢ · ⚠️ books loose (sd 0.009) · ⚠️ 20% band is off by 1.3 pts historically · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **Cleveland Browns** (ML, HOU @ CLE): calibration: raw de-vig 32.9% -> 34.0% (favourite-longshot bias, 8,796 games) · confidence A (91/100) · market: 34.0% across 11 books -> fair +194 · price: FD +194 -> value +0.1¢ · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **Under +47.5** (Total, CAR @ NO): confidence A (90/100) · market: 50.0% across 10 books -> fair -100 · price: FD +100 -> value +0.0¢ · ⚠️ line moved 1.0 pts · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **Dallas Cowboys** (ML, SF @ DAL): calibration: raw de-vig 34.5% -> 35.6% (favourite-longshot bias, 8,796 games) · confidence A (91/100) · market: 35.6% across 11 books -> fair +181 · price: DK +180 -> value -0.3¢ · ⚠️ negative value — this is the book's hold · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **Arizona Cardinals +7.5** (Spread, LA @ ARI): confidence B (80/100) · market: 51.1% across 9 books -> fair -104 · price: DK -105 -> value -0.3¢ · ⚠️ negative value — this is the book's hold · ⚠️ books loose (sd 0.010) · ⚠️ line moved 1.0 pts · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **Pittsburgh Steelers** (ML, PIT @ CIN): calibration: raw de-vig 36.2% -> 37.3% (favourite-longshot bias, 8,796 games) · confidence A (91/100) · market: 37.3% across 11 books -> fair +168 · price: FD +166 -> value -0.9¢ · ⚠️ negative value — this is the book's hold · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **Los Angeles Chargers** (ML, LAC @ BAL): calibration: raw de-vig 32.6% -> 33.7% (favourite-longshot bias, 8,796 games) · confidence A (91/100) · market: 33.7% across 10 books -> fair +197 · price: FD +194 -> value -1.0¢ · ⚠️ negative value — this is the book's hold · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **Las Vegas Raiders** (ML, SEA @ LV): calibration: raw de-vig 38.1% -> 39.2% (favourite-longshot bias, 8,796 games) · confidence A (91/100) · market: 39.2% across 11 books -> fair +155 · price: FD +152 -> value -1.3¢ · ⚠️ negative value — this is the book's hold · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **Cleveland Browns +4.5** (Spread, HOU @ CLE): confidence A (90/100) · market: 50.5% across 10 books -> fair -102 · price: DK -105 -> value -1.4¢ · ⚠️ negative value — this is the book's hold · ⚠️ line moved 0.5 pts · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **Los Angeles Rams** (ML, LA @ ARI): calibration: raw de-vig 78.6% -> 79.9% (favourite-longshot bias, 8,796 games) · confidence A (89/100) · market: 79.9% across 11 books -> fair -399 · price: FD -430 -> value -1.5¢ · ⚠️ negative value — this is the book's hold · ⚠️ 80% band is off by 1.4 pts historically · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **Buffalo Bills** (ML, BUF @ NYJ): calibration: raw de-vig 78.6% -> 79.9% (favourite-longshot bias, 8,796 games) · confidence B (79/100) · market: 79.9% across 9 books -> fair -399 · price: FD -430 -> value -1.5¢ · ⚠️ negative value — this is the book's hold · ⚠️ books loose (sd 0.009) · ⚠️ 80% band is off by 1.4 pts historically · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **New Orleans Saints** (ML, CAR @ NO): confidence A (98/100) · market: 52.0% across 10 books -> fair -108 · price: FD -112 -> value -1.7¢ · ⚠️ negative value — this is the book's hold · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **New York Giants** (ML, WAS @ NYG): confidence A (98/100) · market: 54.8% across 10 books -> fair -121 · price: FD -126 -> value -1.8¢ · ⚠️ negative value — this is the book's hold · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+- **Los Angeles Rams -7.5** (Spread, LA @ ARI): confidence B (80/100) · market: 48.9% across 9 books -> fair +104 · price: FD +100 -> value -2.2¢ · ⚠️ negative value — this is the book's hold · ⚠️ books loose (sd 0.010) · ⚠️ line moved 1.0 pts · ⚠️ no demonstrated projection edge: spreads t=+0.13, totals t=-2.77
+
+</details>
 
 ## 2026-11-09
 
